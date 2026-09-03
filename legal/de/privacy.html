@@ -26,7 +26,7 @@
   <main>
 
     <h1>Datenschutzerklärung</h1>
-    <p class="meta">Gültig ab 2. September 2026 · Version 2026.09.0</p>
+    <p class="meta">Gültig ab 3. September 2026 · Version 2026.09.1</p>
 
     <div class="callout">
       <p>Kurz gefasst: IOTHS ist Offline-first. Ihre Notizen bleiben auf Ihrem Gerät. Wir lesen sie nie, verkaufen sie nie und nutzen sie nie, um ein Modell zu trainieren. In der App bleiben Analysen deaktiviert, bis Sie sie einschalten. Die öffentliche Marketingwebsite verwendet separate, cookie-freie Seitenaufruf-Analysen wie unten beschrieben. Link-Vorschauen sind standardmäßig aktiviert und können deaktiviert werden.</p>
@@ -50,9 +50,11 @@
         <li><strong>Ein von Ihnen gewählter externer Ordner.</strong> Sie können IOTHS auf einen über die iOS-Dateien-Auswahl ausgewählten Ordner verweisen, wenn Ihr ausgewählter Anbieter die dauerhafte Ordnerauswahl zulässt. Ihre Notizen und Anhänge werden dann direkt in diesen Ordner geschrieben und von diesem Anbieter unter Ihrem eigenen Konto, dessen Bedingungen und dessen Datenschutzerklärung verarbeitet. Wir haben darauf keinen Zugriff.</li>
         <li><strong>GitHub-Synchronisierung.</strong> Wenn Sie ein GitHub-Repository verbinden, sendet und empfängt IOTHS unterstützte Vault-Dateien direkt zwischen Ihrem Gerät und einem eigenen Repository-Pfad unter Ihrem GitHub-Konto. Dazu können Notizinhalte, Dateinamen, YAML-Frontmatter, Anhänge, Archivdateien, Papierkorbdateien und die IOTHS-Bibliotheksmarkierung gehören. Die Autorisierung erfolgt über den geführten GitHub-App-Ablauf oder, als erweiterte Ausweichlösung, über ein persönliches Zugriffstoken. Anmeldedaten werden im iOS-Schlüsselbund (Keychain) auf Ihrem Gerät gespeichert. Wir erhalten weder die Anmeldedaten noch Repository-Angaben oder synchronisierte Inhalte.</li>
         <li><strong>GitLab-Synchronisierung.</strong> Wenn Sie ein GitLab.com-Projekt verbinden, sendet und empfängt IOTHS unterstützte Vault-Dateien direkt zwischen Ihrem Gerät und einem eigenen Pfad in einem von Ihnen gewählten Branch innerhalb dieses Projekts. Dazu können Notizinhalte, Dateinamen, YAML-Frontmatter, Anhänge, Archivdateien, Papierkorbdateien und die IOTHS-Bibliotheksmarkierung gehören. Die Autorisierung erfolgt über den OAuth-Anmeldeablauf von GitLab. Der OAuth-Berechtigungsumfang von GitLab ist für diesen Ablauf grundsätzlich breit angelegt, aber IOTHS liest und schreibt ausschließlich das eine von Ihnen ausgewählte Projekt und den ausgewählten Pfad. Anmeldedaten werden im iOS-Schlüsselbund (Keychain) auf Ihrem Gerät gespeichert. Wir erhalten weder die Anmeldedaten noch Projektangaben oder synchronisierte Inhalte.</li>
+        <li><strong>OneDrive-Synchronisierung.</strong> Wenn Sie ein persönliches Microsoft-Konto verbinden, sendet und empfängt IOTHS unterstützte Vault-Dateien direkt zwischen Ihrem Gerät und einem eigenen Anwendungsordner <code>Apps/IOTHS</code>, den Microsoft in Ihrem OneDrive anlegt. Dazu können Notizinhalte, Dateinamen, YAML-Frontmatter, Anhänge, Archivdateien, Papierkorbdateien und die IOTHS-Bibliotheksmarkierung gehören. Die Autorisierung erfolgt über den Anmeldeablauf von Microsoft mit der minimal nötigen Berechtigung <code>Files.ReadWrite.AppFolder</code> – IOTHS kann ausschließlich diesen einen Anwendungsordner sehen, nicht Ihr übriges OneDrive. Dazwischen gibt es keinen IOTHS-Server und keinen Token-Austauschdienst. Anmeldedaten werden im iOS-Schlüsselbund (Keychain) auf Ihrem Gerät gespeichert. Wir erhalten weder die Anmeldedaten noch Angaben zu Ihrem Microsoft-Konto oder synchronisierte Inhalte. Geschäfts- oder Schulkonten von Microsoft werden nicht unterstützt.</li>
       </ul>
       <p>Jede Person mit Zugriff auf das ausgewählte GitHub-Repository kann die dort gespeicherten Dateien lesen. Bei einem öffentlichen Repository sind die synchronisierten Dateien öffentlich. Wenn Sie die GitHub-Synchronisierung in IOTHS stoppen, endet der Netzwerkzugriff und die gespeicherte Verbindung sowie die Anmeldedaten werden vom Gerät entfernt; lokale Notizen bleiben erhalten. Die GitHub-Autorisierung bleibt aktiv, bis Sie sie über GitHub widerrufen.</p>
       <p>Jede Person mit Zugriff auf das ausgewählte GitLab-Projekt kann die dort gespeicherten Dateien lesen. Bei einem öffentlichen Projekt sind die synchronisierten Dateien öffentlich. Wenn Sie die GitLab-Synchronisierung in IOTHS stoppen, endet der Netzwerkzugriff und die gespeicherte Verbindung sowie die Anmeldedaten werden vom Gerät entfernt; lokale Notizen bleiben erhalten. Die GitLab-Autorisierung bleibt aktiv, bis Sie sie in den Anwendungseinstellungen Ihres GitLab-Kontos widerrufen.</p>
+      <p>Der OneDrive-Anwendungsordner ist in OneDrive und in der Dateien-App sichtbar; jede Person mit Zugriff auf Ihr Microsoft-Konto kann die dort gespeicherten Dateien lesen. Wenn Sie die OneDrive-Synchronisierung in IOTHS stoppen, endet der Netzwerkzugriff und die gespeicherte Verbindung sowie die Anmeldedaten werden vom Gerät entfernt; lokale Notizen bleiben erhalten. Die Microsoft-Autorisierung bleibt aktiv, bis Sie sie in Ihrem Microsoft-Konto unter „Apps und Dienste, denen Sie Zugriff gewährt haben" widerrufen.</p>
     </section>
 
     <section>
@@ -68,6 +70,7 @@
         <li>Öffnen der Funktionstour aus den Einstellungen</li>
         <li>Start, Abschluss oder Fehlschlag der GitHub-Autorisierung – nur eine grobe Ergebniskategorie, niemals Konto, Repository, Pfad, Code oder Anmeldedaten</li>
         <li>Start, Abschluss oder Fehlschlag der GitLab-Autorisierung – nur eine grobe Ergebniskategorie, niemals Konto, Projekt, Pfad, Code oder Anmeldedaten</li>
+        <li>Start, Abschluss oder Fehlschlag der OneDrive-Autorisierung – nur eine grobe Ergebniskategorie, niemals Microsoft-Konto, Mandant, Laufwerk, Ordner, Code oder Anmeldedaten</li>
       </ul>
       <p>Kein Signal enthält jemals Notizinhalte, Notiztitel, Tags oder daraus abgeleitete Daten. Die eigene Datenschutzerklärung von TelemetryDeck finden Sie unter <a href="https://telemetrydeck.com/privacy" rel="noopener noreferrer" target="_blank">telemetrydeck.com/privacy</a>.</p>
       <p>Die Analyse ist optional und standardmäßig deaktiviert. Sie können sie in der App unter <strong>Einstellungen → Datenschutz → IOTHS verbessern helfen</strong> ein- oder ausschalten. Wenn sie deaktiviert ist, werden keine Signale gesendet – auch kein Sitzungssignal – bis Sie sie einschalten.</p>
@@ -76,7 +79,7 @@
 
     <section>
       <h2>Kein IOTHS-Konto erforderlich</h2>
-      <p>IOTHS erfordert kein vom Entwickler betriebenes Konto und keine entsprechende Anmeldung. Optionale Anbieter können ein eigenes Konto und eine Autorisierung verlangen: Für die GitHub-Synchronisierung ist ein GitHub-Konto erforderlich, für die GitLab-Synchronisierung ein GitLab.com-Konto, und Dateienanbieter können ein Konto bei diesem Anbieter verlangen. Wir erhalten Ihre Anbieter-Anmeldedaten nicht.</p>
+      <p>IOTHS erfordert kein vom Entwickler betriebenes Konto und keine entsprechende Anmeldung. Optionale Anbieter können ein eigenes Konto und eine Autorisierung verlangen: Für die GitHub-Synchronisierung ist ein GitHub-Konto erforderlich, für die GitLab-Synchronisierung ein GitLab.com-Konto, für die OneDrive-Synchronisierung ein persönliches Microsoft-Konto, und Dateienanbieter können ein Konto bei diesem Anbieter verlangen. Wir erhalten Ihre Anbieter-Anmeldedaten nicht.</p>
     </section>
 
     <section>
@@ -95,6 +98,7 @@
         <li><strong>Ihr gewählter Dateianbieter</strong> (wenn Sie einen externen Ordner auswählen) – bei einem iCloud-Drive-Ordner ist dies Apple; es gilt <a href="https://www.apple.com/legal/privacy/" rel="noopener noreferrer" target="_blank">Apples Datenschutzerklärung</a>. Wenn Sie einen Ordner eines anderen Anbieters wählen, gilt für die dort abgelegten Dateien dessen eigene Datenschutzerklärung.</li>
         <li><strong>GitHub</strong> (wenn Sie die GitHub-Synchronisierung aktivieren) – es gilt die <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" rel="noopener noreferrer" target="_blank">Datenschutzerklärung von GitHub</a>.</li>
         <li><strong>GitLab</strong> (wenn Sie die GitLab-Synchronisierung aktivieren) – es gilt die <a href="https://about.gitlab.com/privacy/" rel="noopener noreferrer" target="_blank">Datenschutzerklärung von GitLab</a>.</li>
+        <li><strong>Microsoft</strong> (wenn Sie die OneDrive-Synchronisierung aktivieren) – es gilt die <a href="https://privacy.microsoft.com/privacystatement" rel="noopener noreferrer" target="_blank">Microsoft-Datenschutzerklärung</a>.</li>
       </ul>
       <p>Sofern Sie Link-Vorschauen nicht deaktivieren, erhalten aus Notizen verlinkte Websites gewöhnliche Webanfragen für die verlinkten URLs. Abgesehen von den oben beschriebenen Diensten und Websites, die für optionale Link-Vorschauen kontaktiert werden, erhält kein anderer Drittanbieterdienst Ihre Daten.</p>
     </section>
@@ -102,7 +106,7 @@
     <section>
       <h2>Datenspeicherung und Löschung</h2>
       <p>Da wir keine personenbezogenen Daten oder Notizinhalte erfassen, gibt es für uns nichts, was wir in Ihrem Namen löschen könnten.</p>
-      <p>Durch das Löschen der App werden die lokal auf Ihrem Gerät gespeicherten Notizdaten entfernt. <strong>Nicht</strong> gelöscht werden Kopien, die bereits in einen externen Ordner eines Dateianbieters, in ein GitHub-Repository oder in ein GitLab-Projekt geschrieben wurden – diese Kopien verbleiben beim jeweiligen Anbieter unter Ihrem eigenen Konto. Löschen Sie sie dort, wenn Sie sie entfernen möchten.</p>
+      <p>Durch das Löschen der App werden die lokal auf Ihrem Gerät gespeicherten Notizdaten entfernt. <strong>Nicht</strong> gelöscht werden Kopien, die bereits in einen externen Ordner eines Dateianbieters, in ein GitHub-Repository, in ein GitLab-Projekt oder in einen OneDrive-Anwendungsordner geschrieben wurden – diese Kopien verbleiben beim jeweiligen Anbieter unter Ihrem eigenen Konto. Löschen Sie sie dort, wenn Sie sie entfernen möchten.</p>
     </section>
 
     <section>
@@ -124,7 +128,7 @@
 
     <section>
       <h2>Marken</h2>
-      <p>IOTHS nennt Dienste wie Apple, iCloud, Obsidian, GitHub, GitLab, TelemetryDeck und Cloudflare ausschließlich zur Bezeichnung optionaler Integrationen und der oben beschriebenen Auftragsverarbeiter. Diese Namen und Logos sind Marken der jeweiligen Inhaber. IOTHS ist unabhängig und wird von keinem dieser Anbieter unterstützt, gesponsert oder ist mit ihnen verbunden.</p>
+      <p>IOTHS nennt Dienste wie Apple, iCloud, Obsidian, GitHub, GitLab, Microsoft, OneDrive, TelemetryDeck und Cloudflare ausschließlich zur Bezeichnung optionaler Integrationen und der oben beschriebenen Auftragsverarbeiter. Diese Namen und Logos sind Marken der jeweiligen Inhaber. IOTHS ist unabhängig und wird von keinem dieser Anbieter unterstützt, gesponsert oder ist mit ihnen verbunden.</p>
     </section>
 
     <section>
