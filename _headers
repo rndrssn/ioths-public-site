@@ -11,6 +11,10 @@
 /icon-why-240.png
   Cache-Control: public, max-age=604800
 
+/.well-known/microsoft-identity-association.json
+  Content-Type: application/json
+  Cache-Control: public, max-age=3600
+
 https://ioths-legal.pages.dev/*
   X-Robots-Tag: noindex
 

@@ -9,11 +9,13 @@ mkdir -p "$output_directory"
 find "$output_directory" -mindepth 1 -maxdepth 1 -exec rm -rf -- {} +
 mkdir -p "$output_directory/legal/de"
 mkdir -p "$output_directory/assets"
+mkdir -p "$output_directory/.well-known"
 
 cp "$repository_root/index.html" "$output_directory/index.html"
 cp "$repository_root/404.html" "$output_directory/404.html"
 cp "$repository_root/support.html" "$output_directory/support.html"
 cp "$repository_root/robots.txt" "$output_directory/robots.txt"
+cp "$repository_root/.well-known/microsoft-identity-association.json" "$output_directory/.well-known/microsoft-identity-association.json"
 cp "$repository_root/sitemap.xml" "$output_directory/sitemap.xml"
 cp "$repository_root/style.css" "$output_directory/style.css"
 cp "$repository_root/_headers" "$output_directory/_headers"
