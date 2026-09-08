@@ -425,13 +425,24 @@ footer p {
   letter-spacing: 0.06em;
   text-transform: uppercase;
   text-decoration: none;
-  color: var(--bg);
-  background: var(--fg);
+  color: var(--attention-text);
+  background: var(--attention);
   border-radius: var(--radius-pill);
   padding: var(--space-sm) var(--space-xl);
 }
 
-.button-primary:hover { color: var(--bg); opacity: 0.85; }
+.button-primary a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.button-primary:hover {
+  color: var(--attention-text);
+  opacity: 0.85;
+  text-decoration: none;
+}
+
+.button-primary a:hover { text-decoration: none; }
 
 .cta-note {
   font-family: var(--font-mono);
@@ -609,7 +620,7 @@ header .link-row { margin-top: 0; }
 }
 
 .feature-section--kanban {
-  grid-template-columns: minmax(0, 1fr) minmax(23rem, 0.75fr);
+  grid-template-columns: minmax(0, 1fr);
 }
 
 .feature-section--reversed .product-artwork {
@@ -630,18 +641,14 @@ header .link-row { margin-top: 0; }
 
 .kanban-mode-gallery {
   display: grid;
-  gap: var(--space-lg);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(1rem, 3vw, 2rem);
   width: 100%;
 }
 
 .product-artwork--kanban-mode {
-  aspect-ratio: 16 / 9;
-  transform: none;
-}
-
-.product-artwork--kanban-mode img {
   width: 100%;
-  height: auto;
+  transform: none;
 }
 
 .feature-section--reversed .product-artwork--feature {
@@ -905,7 +912,7 @@ header .link-row { margin-top: 0; }
 
   .product-artwork--kanban { max-width: min(27rem, 78vw); }
 
-  .kanban-mode-gallery { max-width: min(34rem, 92vw); justify-self: center; }
+  .kanban-mode-gallery { grid-template-columns: 1fr; max-width: min(44rem, 92vw); justify-self: center; }
 
   .feature-section--reversed .product-artwork { order: 0; }
 
@@ -1018,10 +1025,13 @@ html[data-design="control-room"] .hero-descriptor {
   color: #f6f4ee;
 }
 
-html[data-design="control-room"] .button-primary {
+html[data-design="control-room"] .landing-main .button-primary {
   color: #111111;
   background: #ffd83e;
+  text-decoration: none;
 }
+
+html[data-design="control-room"] .landing-main .button-primary a { color: #111111; }
 
 html[data-design="control-room"] .cta-note,
 html[data-design="control-room"] .eyebrow,
