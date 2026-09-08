@@ -35,6 +35,7 @@ App and documentation links use the `ioths.bedrockrebel.app` custom domain.
 | Path | What it is |
 | --- | --- |
 | `index.html` | Marketing landing page (the only indexed page here) |
+| `llms.txt` | Concise product facts and canonical links for AI systems that choose to use the emerging convention; the HTML landing page remains authoritative |
 | `legal/privacy.html` / `legal/de/privacy.html` | Privacy policy (EN / DE) |
 | `legal/terms.html` / `legal/de/terms.html` | Terms of Use (EN / DE) |
 | `legal/impressum.html` | German legal notice (§ 5 DDG) |

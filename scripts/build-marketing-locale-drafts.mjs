@@ -97,7 +97,7 @@ for (const locale of manifest.locales) {
       .replace(`<meta property="og:url" content="${siteURL}/">`, `<meta property="og:url" content="${siteURL}/${locale.code}/">`)
       .replaceAll(`"url": "${siteURL}/"`, `"url": "${siteURL}/${locale.code}/"`)
       .replaceAll(`"@id": "${siteURL}/#`, `"@id": "${siteURL}/${locale.code}/#`)
-      .replace('"inLanguage": "en"', `"inLanguage": "${locale.code}"`);
+      .replaceAll('"inLanguage": "en"', `"inLanguage": "${locale.code}"`);
   }
 
   fs.mkdirSync(outputDirectory, { recursive: true });

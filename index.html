@@ -8,6 +8,8 @@
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
   <meta name="author" content="Bedrock Rebellion">
   <meta name="theme-color" content="#0e0f0e">
+  <meta name="apple-itunes-app" content="app-id=6787224776">
+  <link rel="alternate" type="text/plain" href="/llms.txt" title="IOTHS product information">
   <link rel="canonical" href="https://ioths.bedrockrebel.app/">
 
   <script src="https://cdn.telemetrydeck.com/websdk/telemetrydeck.min.js" data-app-id="1DCF7FFD-85DF-487C-93D3-439C23BFA67A" defer></script>
@@ -44,6 +46,22 @@
             { "@type": "Thing", "name": "Conway's Game of Life" },
             { "@type": "Thing", "name": "Complex adaptive systems" }
           ],
+          "publisher": { "@id": "https://bedrockrebel.app/#organization" },
+          "inLanguage": "en"
+        },
+        {
+          "@type": "WebPage",
+          "@id": "https://ioths.bedrockrebel.app/#webpage",
+          "url": "https://ioths.bedrockrebel.app/",
+          "name": "IOTHS",
+          "isPartOf": { "@id": "https://ioths.bedrockrebel.app/#website" },
+          "mainEntity": { "@id": "https://ioths.bedrockrebel.app/#app" },
+          "primaryImageOfPage": {
+            "@type": "ImageObject",
+            "url": "https://ioths.bedrockrebel.app/assets/marketing/social-card.png",
+            "width": 1200,
+            "height": 630
+          },
           "inLanguage": "en"
         },
         {
@@ -70,11 +88,23 @@
             "Optional Files-folder, GitHub, GitLab, and OneDrive storage"
           ],
           "downloadUrl": "https://apps.apple.com/nl/app/ioths/id6787224776",
-          "author": {
-            "@type": "Organization",
-            "name": "Bedrock Rebellion",
-            "url": "https://bedrockrebel.app/"
-          }
+          "installUrl": "https://apps.apple.com/app/id6787224776",
+          "sameAs": "https://apps.apple.com/app/id6787224776",
+          "mainEntityOfPage": { "@id": "https://ioths.bedrockrebel.app/#webpage" },
+          "softwareHelp": "https://ioths.bedrockrebel.app/support",
+          "offers": {
+            "@type": "Offer",
+            "price": 0,
+            "url": "https://apps.apple.com/app/id6787224776"
+          },
+          "author": { "@id": "https://bedrockrebel.app/#organization" },
+          "publisher": { "@id": "https://bedrockrebel.app/#organization" }
+        },
+        {
+          "@type": "Organization",
+          "@id": "https://bedrockrebel.app/#organization",
+          "name": "Bedrock Rebellion",
+          "url": "https://bedrockrebel.app/"
         }
       ]
     }
@@ -155,9 +185,9 @@
       </aside>
     </section>
 
-    <section class="feature-section feature-section--with-artwork feature-section--kanban">
+    <section class="feature-section feature-section--with-artwork feature-section--kanban" aria-labelledby="tasks-kanban-title">
       <div>
-        <h2>Tasks, kanban, and focus</h2>
+        <h2 id="tasks-kanban-title">Tasks, kanban, and focus</h2>
         <div class="feature-grid">
           <div class="feature">
             <h3>Notes that double as tasks</h3>
@@ -187,9 +217,9 @@
       </div>
     </section>
 
-    <section class="feature-section feature-section--with-artwork feature-section--reversed">
+    <section class="feature-section feature-section--with-artwork feature-section--reversed" aria-labelledby="capture-title">
       <div>
-        <h2>Capture, fast</h2>
+        <h2 id="capture-title">Capture, fast</h2>
         <div class="feature-grid">
           <div class="feature">
             <h3>Type, dictate, or snap a photo</h3>
@@ -214,10 +244,10 @@
       </figure>
     </section>
 
-    <section class="source-showcase">
+    <section class="source-showcase" aria-labelledby="plain-files-title">
       <div class="source-showcase-copy">
         <p class="eyebrow">No black box</p>
-        <h2>Built on plain files</h2>
+        <h2 id="plain-files-title">Built on plain files</h2>
         <p>Notes are stored as <code>.md</code> files with YAML frontmatter — the same structure Obsidian uses. Nothing proprietary, nothing to migrate later. Open your notes in any text editor, on any device, at any time.</p>
       </div>
       <figure class="product-artwork product-artwork--source">
@@ -225,14 +255,14 @@
       </figure>
     </section>
 
-    <section>
-      <h2>Private by default</h2>
+    <section aria-labelledby="privacy-title">
+      <h2 id="privacy-title">Private by default</h2>
       <p>Your notes stay on this device until you explicitly turn on a sync destination. There's no IOTHS account and no developer-operated sign-in. Usage analytics are off unless you turn them on, and even then they never include note content, titles, or tags. Nothing is sold. Nothing trains an AI model. Read the full <a href="/legal/privacy">Privacy Policy</a>.</p>
     </section>
 
-    <section class="feature-section feature-section--with-artwork feature-section--reversed">
+    <section class="feature-section feature-section--with-artwork feature-section--reversed" aria-labelledby="storage-title">
       <div>
-        <h2>Unlock more storage</h2>
+        <h2 id="storage-title">Unlock more storage</h2>
         <p><strong>Full Unlock</strong> is a one-time purchase — not a subscription — that adds:</p>
         <ul>
           <li><strong>Files folder storage</strong>, when your selected provider allows folder selection</li>
@@ -247,10 +277,10 @@
       </figure>
     </section>
 
-    <section class="why-section">
+    <section class="why-section" aria-labelledby="why-title">
       <div class="why-section-content">
         <div>
-          <h2>Why this exists</h2>
+          <h2 id="why-title">Why this exists</h2>
           <p>I built IOTHS for myself, first. I'd never found a notes app that actually fit — not functionally, not in how it felt to use — so I made the one I wanted. That's where it started: not to monetize it, not to be seen. Just to have it.</p>
           <p>The icon is a small nod to Conway's Game of Life and complexity theory: simple local rules, surprising patterns. It is a familiar way to think about emergence in complex adaptive systems, not a claim that IOTHS models them. IOTHS is simply a place where a thought can stay small until the work asks for more structure.</p>
         </div>

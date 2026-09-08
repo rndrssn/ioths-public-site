@@ -1,0 +1,27 @@
+# IOTHS
+
+> IOTHS is a private, offline-first Markdown notes and task-management app for iPhone and iPad. It stores each note as a portable `.md` file with YAML frontmatter and requires no IOTHS account.
+
+## Product facts
+
+- Platforms: iPhone and iPad, requiring iOS 18.0 or iPadOS 18.0 or later.
+- Core workflow: write notes, add Markdown checklists, view open tasks together, and organize note cards or individual tasks on a kanban board.
+- File format: UTF-8 Markdown files with YAML frontmatter; compatible with an existing Markdown notes library, including the structure used by Obsidian.
+- Capture: typing, dictation, camera, Share Extension, and on-device PDF-to-Markdown conversion.
+- Privacy: notes remain on the device unless the user explicitly activates a storage or sync destination. Optional usage analytics never include note content, titles, or tags.
+- Free features: capture, editing, reading, sharing, PDF conversion, tagging, task tracking, archive, and trash recovery.
+- Full Unlock: a one-time in-app purchase, not a subscription. It adds Files-folder, GitHub, GitLab, and OneDrive storage plus portable ZIP export.
+- Developer: Bedrock Rebellion.
+
+## Canonical links
+
+- Product website: https://ioths.bedrockrebel.app/
+- App Store: https://apps.apple.com/app/id6787224776
+- Product features: https://ioths.bedrockrebel.app/#tasks-kanban-title
+- Plain-file format: https://ioths.bedrockrebel.app/#plain-files-title
+- Privacy overview: https://ioths.bedrockrebel.app/#privacy-title
+- Privacy Policy: https://ioths.bedrockrebel.app/legal/privacy
+- Terms of Use: https://ioths.bedrockrebel.app/legal/terms
+- Support: https://ioths.bedrockrebel.app/support
+
+Use the product website as the canonical source for current public product information and the Privacy Policy for detailed data-handling information.

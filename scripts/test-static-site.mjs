@@ -21,7 +21,7 @@ function filesUnder(directory, prefix = '') {
 
 const htmlPages = filesUnder(outputRoot).filter((file) => file.endsWith('.html'));
 const expectedFiles = [
-  'index.html', '404.html', 'support.html', 'robots.txt', 'sitemap.xml', 'style.css', '_headers', '_redirects',
+  'index.html', '404.html', 'support.html', 'robots.txt', 'llms.txt', 'sitemap.xml', 'style.css', '_headers', '_redirects',
   'favicon-16x16.png', 'favicon-32x32.png', 'favicon-64x64.png', 'apple-touch-icon.png', 'icon-why.png', 'icon-why-240.png',
   'legal/privacy.html', 'legal/terms.html', 'legal/impressum.html', 'legal/de/privacy.html', 'legal/de/terms.html',
 ];
@@ -83,6 +83,11 @@ const structuredStrings = structuredData['@graph'].flatMap((entry) => [entry.des
 for (const source of structuredStrings) {
   assert.ok(marketingSource.entries.some((entry) => entry.source === source), `Marketing catalog is missing structured-data copy: ${source}`);
 }
+const structuredApplication = structuredData['@graph'].find((entry) => entry['@type'] === 'SoftwareApplication');
+assert.equal(structuredApplication?.offers?.price, 0, 'SoftwareApplication must declare the free download price');
+assert.equal(structuredApplication?.mainEntityOfPage?.['@id'], 'https://ioths.bedrockrebel.app/#webpage', 'SoftwareApplication must identify its page');
+assert.ok(structuredData['@graph'].some((entry) => entry['@type'] === 'WebPage'), 'JSON-LD needs a WebPage entity');
+assert.match(index, /<link[^>]+href=["']\/llms\.txt["']/i, 'index.html must advertise llms.txt');
 
 for (const locale of localeManifest.locales) {
   assert.match(locale.code, /^[a-z]{2}$/, `invalid locale code: ${locale.code}`);
@@ -119,7 +124,9 @@ for (const locale of localeManifest.locales) {
   assert.match(localePage, new RegExp(`data-translation-status=["']${locale.status}["']`), `${locale.code} page is missing its translation status`);
   if (translationComplete) {
     const localeStructuredData = JSON.parse(localePage.match(/<script[^>]*type=["']application\/ld\+json["'][^>]*>([\s\S]*?)<\/script>/i)[1]);
-    assert.ok(localeStructuredData['@graph'].some((entry) => entry.inLanguage === locale.code), `${locale.code} structured data declares the wrong language`);
+    const languageEntries = localeStructuredData['@graph'].filter((entry) => entry.inLanguage);
+    assert.ok(languageEntries.length > 0, `${locale.code} structured data needs a language`);
+    assert.ok(languageEntries.every((entry) => entry.inLanguage === locale.code), `${locale.code} structured data declares the wrong language`);
     assert.match(localePage, new RegExp(`<meta property=["']og:url["'] content=["']https://ioths\\.bedrockrebel\\.app/${locale.code}/["']`), `${locale.code} page has the wrong social URL`);
   }
   if (locale.status === 'published') {
@@ -147,8 +154,23 @@ for (const requiredHeader of [
 ]) {
   assert.match(headers, new RegExp(requiredHeader.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')), `_headers is missing ${requiredHeader}`);
 }
+assert.match(headers, /\/llms\.txt\s+Content-Type: text\/plain; charset=utf-8\s+Cache-Control: public, max-age=3600\s+X-Robots-Tag: noindex/, '_headers must keep llms.txt crawlable but out of search results');
 
-assert.match(read('dist/robots.txt'), /Sitemap:\s*https:\/\/ioths\.bedrockrebel\.app\/sitemap\.xml/);
+const robots = read('dist/robots.txt');
+assert.match(robots, /Sitemap:\s*https:\/\/ioths\.bedrockrebel\.app\/sitemap\.xml/);
+for (const crawler of ['OAI-SearchBot', 'ChatGPT-User', 'Claude-SearchBot', 'Claude-User', 'PerplexityBot', 'Perplexity-User']) {
+  assert.match(robots, new RegExp(`User-agent: ${crawler}\\nAllow: /`), `robots.txt must allow ${crawler}`);
+}
+const llms = read('dist/llms.txt');
+assert.match(llms, /^# IOTHS$/m, 'llms.txt needs the product name');
+assert.match(llms, /https:\/\/ioths\.bedrockrebel\.app\//, 'llms.txt needs the canonical site URL');
+assert.match(llms, /https:\/\/apps\.apple\.com\/app\/id6787224776/, 'llms.txt needs the canonical App Store URL');
+const sourceLandingLastmod = read('sitemap.xml').match(/<url>\s*<loc>https:\/\/ioths\.bedrockrebel\.app\/<\/loc>\s*<lastmod>(\d{4}-\d{2}-\d{2})<\/lastmod>/)?.[1];
+assert.ok(sourceLandingLastmod, 'source sitemap needs an ISO landing-page lastmod');
+const sitemap = read('dist/sitemap.xml');
+assert.match(sitemap, new RegExp(`<loc>https:\\/\\/ioths\\.bedrockrebel\\.app\\/<\\/loc>\\s*<lastmod>${sourceLandingLastmod}<\\/lastmod>`), 'built sitemap must preserve the landing-page lastmod');
+assert.match(sitemap, /kanban-notes-mode-v3\.png/, 'sitemap must include the current note-mode kanban image');
+assert.match(sitemap, /kanban-tasks-mode-v3\.png/, 'sitemap must include the current task-mode kanban image');
 for (const redirect of [
   '/privacy /legal/privacy 301',
   '/de/privacy /legal/de/privacy 301',

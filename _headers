@@ -11,6 +11,11 @@
 /icon-why-240.png
   Cache-Control: public, max-age=604800
 
+/llms.txt
+  Content-Type: text/plain; charset=utf-8
+  Cache-Control: public, max-age=3600
+  X-Robots-Tag: noindex
+
 /.well-known/microsoft-identity-association.json
   Content-Type: application/json
   Cache-Control: public, max-age=3600
