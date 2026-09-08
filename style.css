@@ -628,6 +628,22 @@ header .link-row { margin-top: 0; }
 
 .product-artwork--kanban { max-width: 27rem; }
 
+.kanban-mode-gallery {
+  display: grid;
+  gap: var(--space-lg);
+  width: 100%;
+}
+
+.product-artwork--kanban-mode {
+  aspect-ratio: 16 / 9;
+  transform: none;
+}
+
+.product-artwork--kanban-mode img {
+  width: 100%;
+  height: auto;
+}
+
 .feature-section--reversed .product-artwork--feature {
   justify-self: start;
   transform: rotate(-1.25deg);
@@ -888,6 +904,8 @@ header .link-row { margin-top: 0; }
   .product-artwork--source { max-width: min(22rem, 78vw); }
 
   .product-artwork--kanban { max-width: min(27rem, 78vw); }
+
+  .kanban-mode-gallery { max-width: min(34rem, 92vw); justify-self: center; }
 
   .feature-section--reversed .product-artwork { order: 0; }
 

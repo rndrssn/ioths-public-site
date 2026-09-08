@@ -1,6 +1,6 @@
 {
   "locale": "en",
-  "sourceDigest": "fc7cb5c59f68cae9a895a52dc116560d61668e6f8646be89d3c37ee81f23b7c4",
+  "sourceDigest": "6df0a53e63a2cd9c3668176ccbb8586f46a1364dcef598335a12675f6575e616",
   "entries": [
     {
       "id": "metadata.title",
@@ -69,26 +69,31 @@
     },
     {
       "id": "accessibility.5",
-      "source": "IOTHS Kanban view with a focused lane of Markdown task notes",
+      "source": "IOTHS Kanban in note mode, with note cards in Open, In Progress, and Done lanes",
       "context": "Accessible description."
     },
     {
       "id": "accessibility.6",
-      "source": "IOTHS note editor on iPhone with a photo attachment, Markdown link, tags, and checklist",
+      "source": "IOTHS Kanban in task mode, with individual tasks grouped under their source notes",
       "context": "Accessible description."
     },
     {
       "id": "accessibility.7",
-      "source": "IOTHS raw Markdown editor on iPhone, showing portable Markdown source",
+      "source": "IOTHS note editor on iPhone with a photo attachment, Markdown link, tags, and checklist",
       "context": "Accessible description."
     },
     {
       "id": "accessibility.8",
-      "source": "IOTHS Storage setup on iPhone with on-device, Files folder, GitHub, GitLab, and portable export options",
+      "source": "IOTHS raw Markdown editor on iPhone, showing portable Markdown source",
       "context": "Accessible description."
     },
     {
       "id": "accessibility.9",
+      "source": "IOTHS Storage setup on iPhone with on-device, Files folder, GitHub, GitLab, and portable export options",
+      "context": "Accessible description."
+    },
+    {
+      "id": "accessibility.10",
       "source": "The IOTHS app icon: a note dissolving into scattered pixels",
       "context": "Accessible description."
     },
@@ -129,7 +134,7 @@
     },
     {
       "id": "content.span.7",
-      "source": "Coming soon to the App Store",
+      "source": "<a href=\"https://apps.apple.com/nl/app/ioths/id6787224776\" target=\"_blank\" rel=\"noopener noreferrer\">Download on the App Store</a>",
       "context": "SPAN content. Preserve any inline HTML tags and attributes."
     },
     {
@@ -234,7 +239,7 @@
     },
     {
       "id": "content.p.28",
-      "source": "Switch between Tile, List, and Kanban layouts. Cards move lanes automatically as tasks get checked off — a kanban board built for one, not a team.",
+      "source": "Switch between Tile, List, and Kanban layouts. In Kanban, choose note cards or individual tasks grouped by their source note. Cards move lanes automatically as tasks get checked off.",
       "context": "P content. Preserve any inline HTML tags and attributes."
     },
     {
@@ -354,7 +359,7 @@
     },
     {
       "id": "content.li.52",
-      "source": "<strong>Portable export</strong> — save your whole Library as a ZIP archive anytime",
+      "source": "<strong>OneDrive storage and sync</strong>, to a dedicated app folder in your personal Microsoft account, plus <strong>portable export</strong> — save your whole Library as a ZIP archive anytime",
       "context": "LI content. Preserve any inline HTML tags and attributes."
     },
     {
@@ -434,7 +439,7 @@
     },
     {
       "id": "structuredData.application.feature.4",
-      "source": "Optional Files-folder, GitHub, and GitLab storage",
+      "source": "Optional Files-folder, GitHub, GitLab, and OneDrive storage",
       "context": "Schema.org SoftwareApplication feature. Keep concise and factual."
     },
     {
