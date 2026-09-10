@@ -23,7 +23,7 @@ const htmlPages = filesUnder(outputRoot).filter((file) => file.endsWith('.html')
 const expectedFiles = [
   'index.html', '404.html', 'support.html', 'robots.txt', 'llms.txt', 'sitemap.xml', 'style.css', '_headers', '_redirects',
   'favicon-16x16.png', 'favicon-32x32.png', 'favicon-64x64.png', 'apple-touch-icon.png', 'icon-why.png', 'icon-why-240.png',
-  'legal/privacy.html', 'legal/terms.html', 'legal/impressum.html', 'legal/de/privacy.html', 'legal/de/terms.html',
+  'legal/privacy.html', 'legal/terms.html', 'legal/legal-notice.html', 'legal/impressum.html', 'legal/de/privacy.html', 'legal/de/terms.html',
 ];
 
 function read(relativePath) {

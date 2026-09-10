@@ -1,6 +1,6 @@
 {
   "locale": "ko",
-  "sourceDigest": "3b3a26f649a60ad25af42ebd918765d0c0e5f6723d721e59434ab207181ddc0c",
+  "sourceDigest": "634d580631c28e50704d2969c25c428c1a7ab14e9ac38e16911d4c3d4ac73b3a",
   "translations": {
     "metadata.title": "IOTHS — 복잡성 이론에서 영감을 받은 Markdown 노트",
     "metadata.description.0": "복잡성 이론, Conway's Game of Life, 복잡 적응 시스템에서 영감을 받은 iPhone 및 iPad용 비공개 오프라인 우선 Markdown 노트입니다.",
@@ -82,7 +82,7 @@
     "content.a.58": "개인정보 처리방침",
     "content.a.59": "이용 약관",
     "content.p.60": "IOTHS &mdash; Bedrock Rebellion이 정성껏 만들었어요",
-    "content.p.61": "<a href=\"/support\">문의</a> &middot; <a href=\"/legal/privacy\">개인정보 처리방침</a> &middot; <a href=\"/legal/terms\">이용 약관</a><span id=\"impressum-link\"> &middot; <a href=\"/legal/impressum\">법적 고지</a></span>",
+    "content.p.61": "<a href=\"/support\">문의</a> &middot; <a href=\"/legal/privacy\">개인정보 처리방침</a> &middot; <a href=\"/legal/terms\">이용 약관</a> &middot; <a href=\"/legal/legal-notice\">법적 고지</a>",
     "structuredData.website.description": "복잡성 이론과 Conway's Game of Life에서 영감을 받은, 기존 노트 라이브러리용 iPhone 및 iPad의 비공개 오프라인 우선 Markdown 노트입니다.",
     "structuredData.application.description": "iPhone 및 iPad용 비공개 오프라인 우선 Markdown 노트 앱입니다. 복잡성 이론, Conway's Game of Life, 복잡 적응 시스템에서 영감을 받아 노트를 작업과 개인 보드로 발전시킬 수 있습니다.",
     "structuredData.application.feature.0": "오프라인 우선 노트 기록 및 편집",

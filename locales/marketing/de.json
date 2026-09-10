@@ -1,6 +1,6 @@
 {
   "locale": "de",
-  "sourceDigest": "3b3a26f649a60ad25af42ebd918765d0c0e5f6723d721e59434ab207181ddc0c",
+  "sourceDigest": "634d580631c28e50704d2969c25c428c1a7ab14e9ac38e16911d4c3d4ac73b3a",
   "translations": {
     "metadata.title": "IOTHS — Markdown-Notizen, inspiriert von der Komplexitätstheorie",
     "metadata.description.0": "Private, offline-first Markdown-Notizen für iPhone und iPad, inspiriert von Komplexitätstheorie, Conway's Game of Life und komplexen adaptiven Systemen.",
@@ -82,7 +82,7 @@
     "content.a.58": "Datenschutzerklärung",
     "content.a.59": "Nutzungsbedingungen",
     "content.p.60": "IOTHS &mdash; mit Sorgfalt entwickelt von Bedrock Rebellion",
-    "content.p.61": "<a href=\"/support\">Kontakt</a> &middot; <a href=\"/legal/privacy\">Datenschutzerklärung</a> &middot; <a href=\"/legal/terms\">Nutzungsbedingungen</a><span id=\"impressum-link\"> &middot; <a href=\"/legal/impressum\">Impressum</a></span>",
+    "content.p.61": "<a href=\"/support\">Kontakt</a> &middot; <a href=\"/legal/privacy\">Datenschutzerklärung</a> &middot; <a href=\"/legal/terms\">Nutzungsbedingungen</a> &middot; <a href=\"/legal/legal-notice\">Impressum</a>",
     "structuredData.website.description": "Private, offline-first Markdown-Notizen für eine bestehende Notizbibliothek auf iPhone und iPad, inspiriert von Komplexitätstheorie und Conway's Game of Life.",
     "structuredData.application.description": "Eine private, offline-first Markdown-Notiz-App für iPhone und iPad. Inspiriert von Komplexitätstheorie, Conway's Game of Life und komplexen adaptiven Systemen lässt sie Notizen zu Aufgaben und einem persönlichen Board wachsen.",
     "structuredData.application.feature.0": "Offline-first-Erfassung und -Bearbeitung von Notizen",
