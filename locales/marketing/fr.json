@@ -1,6 +1,6 @@
 {
   "locale": "fr",
-  "sourceDigest": "634d580631c28e50704d2969c25c428c1a7ab14e9ac38e16911d4c3d4ac73b3a",
+  "sourceDigest": "e988528c3b4ddd4f44e0fc35996b40f85922b8796a40b17a61a53d25b8c6c21c",
   "translations": {
     "metadata.title": "IOTHS — Notes Markdown inspirées par la théorie de la complexité",
     "metadata.description.0": "Notes Markdown privées et hors ligne pour iPhone et iPad, inspirées par la théorie de la complexité, Conway's Game of Life et les systèmes adaptatifs complexes.",
@@ -43,7 +43,7 @@
     "content.button.19": "Réinitialiser",
     "content.span.20": "Génération 0",
     "content.summary.21": "Chaque case joue à un petit jeu de survie : les cellules vivantes survivent avec deux ou trois voisines, et les cases vides naissent avec trois. C’est une référence ludique, pas un modèle de votre travail.",
-    "content.p.22": "Pour aller plus loin, explorez <a href=\"https://rndrssn.github.io/platoscave/modules/emergence/\" target=\"_blank\" rel=\"noopener noreferrer\">les expériences sur l’émergence de Plato's Cave</a>.",
+    "content.p.22": "Pour aller plus loin, explorez <a href=\"https://platoscave.bedrockrebel.app/modules/emergence/\" target=\"_blank\" rel=\"noopener noreferrer\">les expériences sur l’émergence de Plato's Cave</a>.",
     "content.p.23": "Référence : John Horton Conway's Game of Life (1970) &mdash; <a href=\"https://web.stanford.edu/class/sts145/Library/life.pdf\" target=\"_blank\" rel=\"noopener noreferrer\">la première présentation publique</a> par Martin Gardner.",
     "content.h2.24": "Tâches, Kanban et concentration",
     "content.h3.25": "Des notes qui font aussi office de tâches",

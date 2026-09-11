@@ -1,6 +1,6 @@
 {
   "locale": "en",
-  "sourceDigest": "634d580631c28e50704d2969c25c428c1a7ab14e9ac38e16911d4c3d4ac73b3a",
+  "sourceDigest": "e988528c3b4ddd4f44e0fc35996b40f85922b8796a40b17a61a53d25b8c6c21c",
   "entries": [
     {
       "id": "metadata.title",
@@ -209,7 +209,7 @@
     },
     {
       "id": "content.p.22",
-      "source": "For a deeper dive, explore <a href=\"https://rndrssn.github.io/platoscave/modules/emergence/\" target=\"_blank\" rel=\"noopener noreferrer\">Plato's Cave's emergence experiments</a>.",
+      "source": "For a deeper dive, explore <a href=\"https://platoscave.bedrockrebel.app/modules/emergence/\" target=\"_blank\" rel=\"noopener noreferrer\">Plato's Cave's emergence experiments</a>.",
       "context": "P content. Preserve any inline HTML tags and attributes."
     },
     {

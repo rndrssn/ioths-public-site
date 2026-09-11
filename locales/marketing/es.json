@@ -1,6 +1,6 @@
 {
   "locale": "es",
-  "sourceDigest": "634d580631c28e50704d2969c25c428c1a7ab14e9ac38e16911d4c3d4ac73b3a",
+  "sourceDigest": "e988528c3b4ddd4f44e0fc35996b40f85922b8796a40b17a61a53d25b8c6c21c",
   "translations": {
     "metadata.title": "IOTHS — Notas Markdown inspiradas en la teoría de la complejidad",
     "metadata.description.0": "Notas Markdown privadas y sin conexión para iPhone y iPad, inspiradas en la teoría de la complejidad, Conway's Game of Life y los sistemas adaptativos complejos.",
@@ -43,7 +43,7 @@
     "content.button.19": "Reiniciar",
     "content.span.20": "Generación 0",
     "content.summary.21": "Cada casilla juega un pequeño juego de supervivencia: las células vivas sobreviven con dos o tres vecinas y las casillas vacías nacen con tres. Es una referencia lúdica, no un modelo de tu trabajo.",
-    "content.p.22": "Para profundizar, explora <a href=\"https://rndrssn.github.io/platoscave/modules/emergence/\" target=\"_blank\" rel=\"noopener noreferrer\">los experimentos sobre emergencia de Plato's Cave</a>.",
+    "content.p.22": "Para profundizar, explora <a href=\"https://platoscave.bedrockrebel.app/modules/emergence/\" target=\"_blank\" rel=\"noopener noreferrer\">los experimentos sobre emergencia de Plato's Cave</a>.",
     "content.p.23": "Referencia: Conway's Game of Life (1970), de John Horton Conway &mdash; <a href=\"https://web.stanford.edu/class/sts145/Library/life.pdf\" target=\"_blank\" rel=\"noopener noreferrer\">la presentación pública original</a> de Martin Gardner.",
     "content.h2.24": "Tareas, kanban y concentración",
     "content.h3.25": "Notas que también son tareas",

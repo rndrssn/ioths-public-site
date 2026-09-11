@@ -1,6 +1,6 @@
 {
   "locale": "ko",
-  "sourceDigest": "634d580631c28e50704d2969c25c428c1a7ab14e9ac38e16911d4c3d4ac73b3a",
+  "sourceDigest": "e988528c3b4ddd4f44e0fc35996b40f85922b8796a40b17a61a53d25b8c6c21c",
   "translations": {
     "metadata.title": "IOTHS — 복잡성 이론에서 영감을 받은 Markdown 노트",
     "metadata.description.0": "복잡성 이론, Conway's Game of Life, 복잡 적응 시스템에서 영감을 받은 iPhone 및 iPad용 비공개 오프라인 우선 Markdown 노트입니다.",
@@ -43,7 +43,7 @@
     "content.button.19": "초기화",
     "content.span.20": "0세대",
     "content.summary.21": "각 칸은 작은 생존 게임을 합니다. 살아 있는 세포는 이웃이 둘 또는 셋이면 살아남고, 빈 칸은 셋이면 태어납니다. 이는 작업을 모델링한 것이 아니라 장난스러운 참조입니다.",
-    "content.p.22": "더 깊이 알아보려면 <a href=\"https://rndrssn.github.io/platoscave/modules/emergence/\" target=\"_blank\" rel=\"noopener noreferrer\">Plato's Cave의 창발 실험</a>을 살펴보세요.",
+    "content.p.22": "더 깊이 알아보려면 <a href=\"https://platoscave.bedrockrebel.app/modules/emergence/\" target=\"_blank\" rel=\"noopener noreferrer\">Plato's Cave의 창발 실험</a>을 살펴보세요.",
     "content.p.23": "참고: John Horton Conway의 Conway's Game of Life(1970) &mdash; Martin Gardner가 쓴 <a href=\"https://web.stanford.edu/class/sts145/Library/life.pdf\" target=\"_blank\" rel=\"noopener noreferrer\">최초의 대중 소개 글</a>.",
     "content.h2.24": "할 일, Kanban, 집중",
     "content.h3.25": "할 일이 되는 노트",
