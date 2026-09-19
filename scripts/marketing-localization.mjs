@@ -120,6 +120,7 @@ function sync() {
     entries: extractSourceCatalog(html),
   };
   const previousSources = new Map(previousSourceCatalog.entries.map((entry) => [entry.id, entry.source]));
+  const previousIDsBySource = new Map(previousSourceCatalog.entries.map((entry) => [entry.source, entry.id]));
   writeJSON(sourceCatalogPath, sourceCatalog);
 
   for (const locale of manifest().locales) {
@@ -127,8 +128,9 @@ function sync() {
     const canMigrate = existing.sourceDigest === previousSourceCatalog.sourceDigest;
     const translations = {};
     for (const entry of sourceCatalog.entries) {
-      const translation = existing.translations?.[entry.id];
-      if (canMigrate && translation && previousSources.get(entry.id) === entry.source) translations[entry.id] = translation;
+      const unchangedEntryID = previousSources.get(entry.id) === entry.source ? entry.id : previousIDsBySource.get(entry.source);
+      const translation = existing.translations?.[unchangedEntryID];
+      if (canMigrate && translation) translations[entry.id] = translation;
     }
     writeJSON(localeCatalogPath(locale.code), {
       locale: locale.code,

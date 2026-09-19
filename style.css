@@ -1377,23 +1377,11 @@ html[data-design="research-journal"] .journal-section {
   padding-top: 4rem;
 }
 html[data-design="research-journal"] .journal-margin-note p + p { margin-top: 1rem; }
-html[data-design="research-journal"] .journal-observations {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 1.5rem;
-}
-html[data-design="research-journal"] .journal-observation {
-  padding-top: 1rem;
-  border-top: 1px solid var(--ink-ghost);
-}
-html[data-design="research-journal"] .journal-observation h3 { margin-block: 1rem .75rem; }
-html[data-design="research-journal"] .journal-observation p,
 html[data-design="research-journal"] .journal-explanation,
 html[data-design="research-journal"] .journal-legal-note {
   color: var(--ink-mid);
   font-size: var(--fs-body);
 }
-html[data-design="research-journal"] .journal-response { margin-top: 1.25rem !important; color: var(--ink) !important; }
 html[data-design="research-journal"] .journal-specimen {
   margin-top: 2rem;
   border: 1px solid var(--ink-ghost);
@@ -1434,8 +1422,13 @@ html[data-design="research-journal"] .journal-explanation {
   border-left: 1px solid var(--ink-ghost);
 }
 html[data-design="research-journal"] .journal-explanation h3 { margin-bottom: .75rem; }
-html[data-design="research-journal"] .journal-emergence-copy p + p { margin-top: 1rem; }
 html[data-design="research-journal"] .journal-life { margin-top: 2rem; }
+html[data-design="research-journal"] .journal-end .journal-life--reference {
+  grid-column: 1 / -1;
+  width: min(100%, 28rem);
+  margin-top: 1rem;
+  padding: 1rem;
+}
 html[data-design="research-journal"] .journal-life canvas {
   display: block;
   width: 100%;
@@ -1520,10 +1513,10 @@ html[data-design="research-journal"] :focus-visible { outline: 2px solid var(--s
   html[data-design="research-journal"] .journal-abstract { grid-template-columns: 1fr; gap: 1rem; }
   html[data-design="research-journal"] .journal-abstract .journal-footnote { grid-column: auto; }
   html[data-design="research-journal"] .journal-section { padding-top: 3rem; }
-  html[data-design="research-journal"] .journal-observations { grid-template-columns: 1fr; gap: 1rem; }
   html[data-design="research-journal"] .journal-specimen-panel { grid-template-columns: 1fr; gap: 1.25rem; padding: 1.25rem; }
   html[data-design="research-journal"] .journal-explanation { padding: 1.25rem 0 0; border-top: 1px solid var(--ink-ghost); border-left: 0; }
   html[data-design="research-journal"] .journal-end { grid-template-columns: 1fr; gap: 2rem; margin-top: 3rem !important; padding-top: 2rem; }
+  html[data-design="research-journal"] .journal-end .journal-life--reference { width: 100%; }
   html[data-design="research-journal"] .journal-footer { margin-top: 3rem; }
 }
 @media (max-width: 420px) {
