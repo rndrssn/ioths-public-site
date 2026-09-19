@@ -1423,6 +1423,7 @@ html[data-design="research-journal"] .journal-specimen-panel {
   min-height: 14rem;
   padding: 2rem;
 }
+html[data-design="research-journal"] .journal-specimen-panel[hidden] { display: none; }
 html[data-design="research-journal"] .journal-specimen-panel pre {
   overflow-wrap: anywhere;
   white-space: pre-wrap;
