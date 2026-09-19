@@ -188,7 +188,7 @@ original scope. Is that still workable?
       const context = canvas.getContext('2d');
       if (!context) return;
       const style = getComputedStyle(canvas);
-      const colors = { paper: style.getPropertyValue('--paper').trim(), grid: style.getPropertyValue('--paper-deep').trim(), cell: style.getPropertyValue('--viz-sage').trim() || style.getPropertyValue('--sage').trim() };
+      const colors = { paper: style.getPropertyValue('--paper').trim(), grid: style.getPropertyValue('--paper-deep').trim(), cell: style.getPropertyValue('--attention').trim() };
       const lifeLabels = {
         start: 'Start',
         pause: 'Pause',

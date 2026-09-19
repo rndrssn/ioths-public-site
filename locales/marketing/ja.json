@@ -1,6 +1,6 @@
 {
   "locale": "ja",
-  "sourceDigest": "1fd967993e81609ec35ab9c0cae4d44d218a68530dcf30d8926ab077906cd646",
+  "sourceDigest": "db6fc29787c65336b998f0bad2ddf5ff4b87fc7d4f56df58077998d92aea1ec9",
   "translations": {
     "metadata.title": "ioths — メモに計画は必要ありません",
     "metadata.description.0": "iPhone および iPad のオフライン Markdown メモ。質問を書き留め、明確になったらタスクを追加し、ファイルを Obsidian が読み取れる形式に保ってください。",
