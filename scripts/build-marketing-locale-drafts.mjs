@@ -72,18 +72,21 @@ for (const locale of manifest.locales) {
     const translation = targetCatalog.translations[entry.id];
     if (translation) output = output.replace(entry.source, () => translation);
   }
-  const translationFor = (sourceText) => {
-    const id = sourceCatalog.entries.find((entry) => entry.source === sourceText)?.id;
-    return id ? targetCatalog.translations[id] : undefined;
-  };
-  const startLabel = translationFor('Let it evolve');
-  if (startLabel) output = output.replaceAll("'Let it evolve'", JSON.stringify(startLabel));
-  const pauseLabel = translationFor('Pause');
-  if (pauseLabel) output = output.replaceAll("'Pause'", JSON.stringify(pauseLabel));
-  const generationLabel = translationFor('Generation {generation}');
-  if (generationLabel) {
-    const [before, after] = generationLabel.split('{generation}');
-    output = output.replace('status.textContent = `Generation ${generation}`;', `status.textContent = ${JSON.stringify(before)} + generation + ${JSON.stringify(after)};`);
+  const lifeLabel = (key, fallback) => targetCatalog.translations['life.' + key] ?? fallback;
+  for (const [key, fallback] of [
+    ['start', 'Start'],
+    ['pause', 'Pause'],
+    ['step', 'Step'],
+    ['reset', 'Reset'],
+    ['paused', 'Paused'],
+    ['running', 'Running'],
+    ['generation', 'Generation {generation}'],
+    ['livingCells', '{population} living cells'],
+  ]) {
+    output = output.replace(
+      key + ": '" + fallback + "'",
+      key + ': ' + JSON.stringify(lifeLabel(key, fallback))
+    );
   }
   output = output
     .replace('<html lang="en"', `<html lang="${translationComplete ? locale.code : 'en'}" data-target-locale="${locale.code}" data-translation-status="${locale.status}"`)
@@ -97,7 +100,7 @@ for (const locale of manifest.locales) {
       .replace(`<meta property="og:url" content="${siteURL}/">`, `<meta property="og:url" content="${siteURL}/${locale.code}/">`)
       .replaceAll(`"url": "${siteURL}/"`, `"url": "${siteURL}/${locale.code}/"`)
       .replaceAll(`"@id": "${siteURL}/#`, `"@id": "${siteURL}/${locale.code}/#`)
-      .replaceAll('"inLanguage": "en"', `"inLanguage": "${locale.code}"`);
+      .replaceAll(/"inLanguage"\s*:\s*"en"/g, `"inLanguage": "${locale.code}"`);
   }
 
   fs.mkdirSync(outputDirectory, { recursive: true });

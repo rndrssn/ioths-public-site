@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="description" content="A systems atlas direction for ioths: mobile capture, deliberate work, and portable Markdown files.">
+  <meta name="theme-color" content="#13232e">
+  <title>ioths — Small input. Open possibilities. · Atlas concept</title>
+  <link rel="icon" href="/favicon-32x32.png">
+  <link rel="stylesheet" href="/mockups/mockups.css">
+</head>
+<body class="atlas">
+  <a class="skip" href="#main">Skip to content</a>
+  <div class="concept-bar"><span>Design study / 02</span><nav aria-label="Design concepts"><a href="/mockups/">Overview</a><a href="/mockups/01-research-journal.html">Journal</a><a href="/mockups/02-systems-atlas.html" aria-current="page">Atlas</a><a href="/mockups/03-field-notes.html">Field notes</a></nav></div>
+  <header class="masthead wrap">
+    <a class="brand" href="/mockups/02-systems-atlas.html" aria-label="ioths atlas concept home"><svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M0 0h6v6H0zm8 0h6v6H8zm0 8h6v6H8zm8 8h6v6h-6zm0-8h6v6h-6z"/></svg>ioths<span class="label muted" style="margin-left: 10px">/</span></a>
+    <nav aria-label="Page sections"><a href="#constraints">Constraints</a><a href="#work">Work in view</a><a href="#boundaries">Boundaries</a></nav>
+  </header>
+  <main id="main" class="wrap">
+    <section class="atlas-hero" aria-labelledby="title">
+      <p class="label accent">An open format for work in formation</p>
+      <div class="atlas-title"><h1 id="title">Small input.<br><span>Open possibilities.</span></h1><div><p class="lead">An idea arrives before its structure does. ioths lets you capture it in Markdown, add next steps, and see the work take shape.</p><p class="muted">A mobile companion for people who already think in Obsidian.</p><a class="text-link" href="#constraints">Read the design constraints <span aria-hidden="true">↓</span></a></div></div>
+      <figure class="schematic">
+        <div class="plate-head label"><span>01 / The path of a thought</span><span>Conceptual view</span></div>
+        <div class="schematic-grid">
+          <div class="schematic-node"><span class="label muted">Input</span><h3>An observation</h3><p>A sentence. A question.<br>Something worth returning to.</p></div>
+          <div class="connector" aria-hidden="true">→</div>
+          <div class="schematic-node core"><span class="label accent">Capture / ioths</span><h3>A Markdown note</h3><p>Written on your phone.<br>Available without a connection.</p></div>
+          <div class="connector" aria-hidden="true">→</div>
+          <div class="schematic-node"><span class="label muted">Possibility</span><h3>Your next step</h3><p>Keep reading. Add a task.<br>Continue in your chosen tools.</p></div>
+        </div>
+        <figcaption class="schematic-caption"><span>THE FILE IS THE CONTINUITY BETWEEN TOOLS.</span><span>Storage connection is optional and configured by you.</span></figcaption>
+      </figure>
+    </section>
+    <section id="constraints" class="atlas-section" aria-labelledby="constraints-title">
+      <div class="section-top"><p class="label accent">01 / Design constraints</p><h2 id="constraints-title">A useful tool begins<br>with useful limits.</h2></div>
+      <div class="constraint-table">
+        <article class="constraint-row"><span class="label">C.01</span><h3>Capture cannot depend<br>on a connection.</h3><p>Write and read locally. A thought on a flight, underground, or away from a desk still has somewhere to go. Optional sync is a separate choice.</p></article>
+        <article class="constraint-row"><span class="label">C.02</span><h3>A thought should not need<br>a project definition.</h3><p>Start with text. Checklist items turn a note into a task note when you have next steps. The question and its work stay together.</p></article>
+        <article class="constraint-row"><span class="label">C.03</span><h3>The file must remain useful<br>outside the application.</h3><p>Notes are Markdown with YAML frontmatter. The format is compatible with Obsidian and readable in ordinary text editors.</p></article>
+        <article class="constraint-row"><span class="label">C.04</span><h3>Attention needs<br>an explicit boundary.</h3><p>Set a limit on in-progress notes. Use the board to see what is open, active, and done, with checklist state determining the lanes.</p></article>
+      </div>
+    </section>
+    <section id="work" class="atlas-section" aria-labelledby="work-title">
+      <div class="section-top"><p class="label accent">02 / From text to action</p><h2 id="work-title">The work is already<br>inside the note.</h2></div>
+      <div class="atlas-work">
+        <div><h3>Give it a view.</h3><p>A checklist describes the next steps. The Tasks view collects open items. Kanban shows notes or individual tasks grouped by their source note.</p><p style="margin-top: 18px">These are views of the same work. The original note keeps the surrounding thought intact.</p><p class="footnote">PRODUCT VIEW / Kanban, note mode<br>Actual ioths interface</p></div>
+        <figure class="atlas-board"><span class="label">Open → In Progress → Done</span><img src="/assets/marketing/kanban-notes-mode-v3.png" width="2736" height="1359" loading="lazy" alt="Actual ioths Kanban interface, with note cards arranged in Open, In Progress, and Done lanes"><figcaption>Checklist state makes progress visible. An in-progress limit bounds active notes.</figcaption></figure>
+      </div>
+    </section>
+    <section id="boundaries" class="atlas-section" aria-labelledby="boundaries-title">
+      <div class="section-top"><p class="label accent">03 / System boundaries</p><h2 id="boundaries-title">Know what the<br>tool takes on.</h2></div>
+      <div style="margin-top: 40px">
+        <details open><summary>Where do the notes live?</summary><p>On your device by default. You can choose an optional storage destination. One Library uses one storage mode at a time; ioths does not automatically connect every tool or vault.</p></details>
+        <details><summary>How does it fit with Obsidian?</summary><p>ioths uses Markdown files with YAML frontmatter, compatible with an Obsidian workflow. It provides a focused mobile capture surface. Connecting storage requires setup; format compatibility is not automatic two-way sync with any existing vault.</p></details>
+        <details><summary>What does the purchase change?</summary><p>Local note-taking is free. Full Unlock is a one-time purchase for optional capabilities, including Files-folder, GitHub, and GitLab storage. It is not a subscription.</p></details>
+        <details><summary>Is this a model of how thinking works?</summary><p>No. The app’s reference to emergence is an inspiration for its design. A note can gain structure through simple actions, but this is not a validated cognitive model or a claim of measured productivity gains.</p></details>
+      </div>
+    </section>
+    <section class="quiet-end" aria-labelledby="end-title"><div><p class="label accent">ioths / iPhone + iPad</p><h2 id="end-title">Keep the useful part.</h2><p class="muted">The observation. The context. The next step.<br>And the file that holds them.</p></div><div><p>No ioths account is required. Note content stays on your device unless you activate an optional storage destination.</p><p class="legal-note">Independent software by Bedrock Rebellion. For the details behind these boundaries, read the <a href="/legal/privacy.html">privacy policy</a>.</p><a class="text-link" href="https://apps.apple.com/app/id6787224776">View ioths on the App Store <span aria-hidden="true">↗</span></a></div></section>
+  </main>
+  <footer class="site-footer wrap"><p>ioths / Plain files. Deliberate tools.</p><nav aria-label="Legal and support"><a href="/support.html">Contact</a><a href="/legal/privacy.html">Privacy</a><a href="/legal/terms.html">Terms</a><a href="/legal/legal-notice.html">Legal notice</a></nav></footer>
+</body>
+</html>

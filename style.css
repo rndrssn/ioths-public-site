@@ -1157,3 +1157,634 @@ html[data-design="emergence"] .product-artwork--source { transform: rotate(-4deg
   .product-artwork--feature,
   .product-artwork--source { transform: none !important; }
 }
+
+/* Research journal — the production landing page. Its rules are scoped so the
+   legal and support pages retain their independent layouts. */
+html[data-design="research-journal"] {
+  --journal-fs-nav-title: 1.1rem;
+  --journal-fs-link-nav: .75rem;
+  --journal-fs-footer-text: .75rem;
+  --journal-fs-heading-card: 1.5rem;
+  --journal-fs-heading-min: 2rem;
+  --journal-fs-button: .75rem;
+  --journal-fs-note-meta: .7rem;
+  scroll-behavior: smooth;
+}
+html[data-design="research-journal"] body {
+  overflow-x: clip;
+}
+
+html[data-design="research-journal"] .skip {
+  position: absolute;
+  top: -6rem;
+  left: 1rem;
+  z-index: 20;
+  padding: .5rem .75rem;
+  color: var(--paper);
+  background: var(--ink);
+}
+html[data-design="research-journal"] .skip:focus { top: 1rem; }
+html[data-design="research-journal"] .journal-wrap {
+  width: min(1140px, calc(100% - 5rem));
+  margin-inline: auto;
+}
+html[data-design="research-journal"] .journal-header {
+  display: block;
+  max-width: none;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+html[data-design="research-journal"] .journal-masthead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 6rem;
+  gap: 1.5rem;
+  border-bottom: 1px solid var(--ink);
+}
+html[data-design="research-journal"] .journal-brand,
+html[data-design="research-journal"] .journal-wordmark,
+html[data-design="research-journal"] .journal-download,
+html[data-design="research-journal"] .journal-app-identity,
+html[data-design="research-journal"] .journal-life-controls,
+html[data-design="research-journal"] .journal-footer > div,
+html[data-design="research-journal"] .journal-footer nav {
+  display: flex;
+  align-items: center;
+}
+html[data-design="research-journal"] .journal-brand { gap: 1.5rem; }
+html[data-design="research-journal"] .journal-wordmark {
+  gap: .75rem;
+  color: var(--ink);
+  font-family: var(--serif-alt);
+  font-size: calc(var(--journal-fs-nav-title) * 2.535);
+  line-height: 1;
+  letter-spacing: .04em;
+  text-decoration: none;
+}
+html[data-design="research-journal"] .journal-app-icon { flex: none; object-fit: contain; }
+html[data-design="research-journal"] .journal-tagline {
+  padding-left: 1.5rem;
+  border-left: 1px solid var(--ink-ghost);
+}
+html[data-design="research-journal"] .journal-masthead nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  font: 400 var(--journal-fs-link-nav)/1.5 var(--mono);
+}
+html[data-design="research-journal"] .journal-masthead nav a,
+html[data-design="research-journal"] .journal-footer a {
+  color: var(--link-text);
+  text-decoration: none;
+}
+html[data-design="research-journal"] .journal-masthead nav a:hover,
+html[data-design="research-journal"] .journal-footer a:hover { text-decoration: underline; color: var(--link-text-hover); }
+html[data-design="research-journal"] .journal-main {
+  max-width: none;
+  margin: 0 auto;
+  padding: 0;
+}
+html[data-design="research-journal"] .journal-main section,
+html[data-design="research-journal"] .journal-main section:first-of-type {
+  margin: 0;
+  border: 0;
+}
+html[data-design="research-journal"] .journal-main h1,
+html[data-design="research-journal"] .journal-main h2,
+html[data-design="research-journal"] .journal-main h3,
+html[data-design="research-journal"] .journal-main p,
+html[data-design="research-journal"] .journal-main pre,
+html[data-design="research-journal"] .journal-main figure {
+  margin: 0;
+}
+html[data-design="research-journal"] .journal-main h1,
+html[data-design="research-journal"] .journal-main h2 {
+  font-family: var(--serif-alt);
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: .04em;
+  line-height: 1.04;
+}
+html[data-design="research-journal"] .journal-main h1 {
+  max-width: 14ch;
+  margin-block: 1.5rem 2rem;
+  font-size: clamp(var(--fs-heading-hero-min), 7.4vw, var(--fs-heading-hero-max));
+}
+html[data-design="research-journal"] .journal-main h1 em { color: var(--rust); font-style: normal; }
+html[data-design="research-journal"] .journal-main h2 {
+  max-width: 24ch;
+  margin-bottom: 1.5rem;
+  font-size: clamp(var(--journal-fs-heading-min), 4vw, var(--fs-heading-module-max));
+}
+html[data-design="research-journal"] .journal-main h3 {
+  font: 400 var(--journal-fs-heading-card)/1.2 var(--serif);
+  letter-spacing: -.015em;
+}
+html[data-design="research-journal"] .journal-label {
+  font: 400 var(--fs-label-section)/1.6 var(--mono);
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+html[data-design="research-journal"] .journal-accent { color: var(--rust); }
+html[data-design="research-journal"] .journal-muted,
+html[data-design="research-journal"] .journal-footnote,
+html[data-design="research-journal"] .journal-legal-note { color: var(--ink-faint); }
+html[data-design="research-journal"] .journal-footnote {
+  font: 400 var(--journal-fs-note-meta)/1.7 var(--mono);
+}
+html[data-design="research-journal"] .journal-lead {
+  max-width: 55ch;
+  color: var(--ink-mid);
+  font: 400 var(--fs-body-hero)/1.72 var(--serif);
+}
+html[data-design="research-journal"] .journal-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr);
+  gap: 3rem;
+  padding-block: 4rem;
+}
+html[data-design="research-journal"] .journal-download {
+  flex-wrap: wrap;
+  gap: var(--space-lg);
+  margin-top: 1.5rem;
+}
+/* Apple's badge requires a quarter-height clear space and unmodified artwork. */
+html[data-design="research-journal"] .app-store-badge {
+  display: inline-flex;
+  flex: none;
+  padding: 12px;
+  text-decoration: none;
+}
+html[data-design="research-journal"] .app-store-badge img { width: auto; height: 48px; }
+html[data-design="research-journal"] .app-store-badge--closing { margin-top: 1rem; }
+html[data-design="research-journal"] .journal-text-link {
+  display: inline-block;
+  margin-top: var(--space-sm);
+  color: var(--link-text);
+  font: 400 var(--fs-link-diagnosis)/1.7 var(--mono);
+}
+html[data-design="research-journal"] .journal-text-link:hover { color: var(--link-text-hover); }
+html[data-design="research-journal"] .journal-plate,
+html[data-design="research-journal"] .journal-life {
+  padding: 1.5rem;
+  border: 1px solid var(--ink-ghost);
+  background: var(--paper-dark);
+}
+html[data-design="research-journal"] .journal-plate { align-self: center; }
+html[data-design="research-journal"] .journal-plate svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin-block: 1.25rem;
+  color: var(--ink);
+}
+html[data-design="research-journal"] .journal-plate svg text { font-family: var(--mono); }
+html[data-design="research-journal"] .diagram-note { fill: var(--ink-ghost); }
+html[data-design="research-journal"] .diagram-active { fill: var(--sage); }
+html[data-design="research-journal"] .journal-plate-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--ink-ghost);
+}
+html[data-design="research-journal"] .journal-plate-caption {
+  padding-top: 1rem;
+  border-top: 1px solid var(--ink-ghost);
+  color: var(--ink-mid);
+  font-size: var(--fs-body);
+}
+html[data-design="research-journal"] .journal-abstract {
+  display: grid;
+  grid-template-columns: 8rem minmax(0, 1fr) 12rem;
+  gap: 2rem;
+  padding-block: 1.5rem;
+  border-block: 1px solid var(--ink);
+}
+html[data-design="research-journal"] .journal-abstract > p:not(.journal-footnote) {
+  font: 400 var(--fs-heading-module-card)/1.5 var(--serif);
+}
+html[data-design="research-journal"] .journal-abstract .journal-footnote {
+  padding-left: 1.5rem;
+  border-left: 1px solid var(--ink-ghost);
+}
+html[data-design="research-journal"] .journal-section {
+  display: grid;
+  grid-template-columns: 8rem minmax(0, 1fr);
+  gap: 2rem;
+  padding-top: 4rem;
+}
+html[data-design="research-journal"] .journal-margin-note p + p { margin-top: 1rem; }
+html[data-design="research-journal"] .journal-observations {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.5rem;
+}
+html[data-design="research-journal"] .journal-observation {
+  padding-top: 1rem;
+  border-top: 1px solid var(--ink-ghost);
+}
+html[data-design="research-journal"] .journal-observation h3 { margin-block: 1rem .75rem; }
+html[data-design="research-journal"] .journal-observation p,
+html[data-design="research-journal"] .journal-explanation,
+html[data-design="research-journal"] .journal-legal-note {
+  color: var(--ink-mid);
+  font-size: var(--fs-body);
+}
+html[data-design="research-journal"] .journal-response { margin-top: 1.25rem !important; color: var(--ink) !important; }
+html[data-design="research-journal"] .journal-specimen {
+  margin-top: 2rem;
+  border: 1px solid var(--ink-ghost);
+}
+html[data-design="research-journal"] .journal-specimen-controls {
+  display: flex;
+  border-bottom: 1px solid var(--ink-ghost);
+}
+html[data-design="research-journal"] .journal-specimen-controls button {
+  flex: 1;
+  min-height: 44px;
+  padding: .75rem;
+  border: 0;
+  border-right: 1px solid var(--ink-ghost);
+  color: var(--ink-mid);
+  background: var(--paper);
+  font: 400 var(--journal-fs-button)/1.5 var(--mono);
+  letter-spacing: .06em;
+  text-transform: uppercase;
+}
+html[data-design="research-journal"] .journal-specimen-controls button:last-child { border-right: 0; }
+html[data-design="research-journal"] .journal-specimen-controls button[aria-pressed="true"] { color: var(--paper); background: var(--ink); }
+html[data-design="research-journal"] .journal-specimen-panel {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 2rem;
+  min-height: 14rem;
+  padding: 2rem;
+}
+html[data-design="research-journal"] .journal-specimen-panel pre {
+  overflow-wrap: anywhere;
+  white-space: pre-wrap;
+  font: 400 var(--journal-fs-note-meta)/2 var(--mono);
+}
+html[data-design="research-journal"] .journal-explanation {
+  padding-left: 1.5rem;
+  border-left: 1px solid var(--ink-ghost);
+}
+html[data-design="research-journal"] .journal-explanation h3 { margin-bottom: .75rem; }
+html[data-design="research-journal"] .journal-emergence-copy p + p { margin-top: 1rem; }
+html[data-design="research-journal"] .journal-life { margin-top: 2rem; }
+html[data-design="research-journal"] .journal-life canvas {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin-block: 1.25rem;
+  border: 1px solid var(--paper-deep);
+  image-rendering: pixelated;
+}
+html[data-design="research-journal"] .journal-life-controls { flex-wrap: wrap; gap: var(--space-xs); }
+html[data-design="research-journal"] .journal-life-controls button {
+  min-height: 44px;
+  padding: .75rem 1.25rem;
+  border: 1px solid var(--ink-ghost);
+  color: var(--ink-mid);
+  background: var(--paper);
+  font: 400 var(--journal-fs-button)/1.25 var(--mono);
+  letter-spacing: .06em;
+  text-transform: uppercase;
+}
+html[data-design="research-journal"] .journal-life-controls button:hover { border-color: var(--ink); background: var(--paper-deep); }
+html[data-design="research-journal"] .journal-life-controls button[aria-pressed] { color: var(--paper); border-color: var(--ink); background: var(--ink); }
+html[data-design="research-journal"] .journal-life-status { margin-block: 1rem; }
+html[data-design="research-journal"] .journal-life-rules { margin-top: 1.25rem; }
+html[data-design="research-journal"] .journal-life-rules summary { cursor: pointer; font: 400 var(--journal-fs-button)/1.7 var(--mono); }
+html[data-design="research-journal"] .journal-life-rules p { max-width: 65ch; margin-top: 1rem; color: var(--ink-mid); }
+html[data-design="research-journal"] .journal-life-fallback { padding-block: 2rem; }
+html[data-design="research-journal"] .journal-end {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  margin-top: 4rem !important;
+  padding-top: 3rem;
+  border-top: 1px solid var(--ink) !important;
+}
+html[data-design="research-journal"] .journal-end h2 { margin-block: 1rem 1.5rem; }
+html[data-design="research-journal"] .journal-end p + p { margin-top: 1rem; }
+html[data-design="research-journal"] .journal-app-identity { gap: var(--space-md); margin-block: 1.25rem; }
+html[data-design="research-journal"] .journal-app-identity h3 {
+  font: 400 2rem/1.04 var(--serif-alt);
+  letter-spacing: .04em;
+  text-transform: lowercase;
+}
+html[data-design="research-journal"] .journal-footer {
+  max-width: none;
+  margin: 4rem 0 0;
+  padding: 2rem 0;
+  border-top: 1px solid var(--ink-ghost);
+  text-align: left;
+}
+html[data-design="research-journal"] .journal-footer > div {
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  color: var(--ink-faint);
+  font: 400 var(--journal-fs-footer-text)/1.7 var(--mono);
+}
+html[data-design="research-journal"] .journal-footer p {
+  color: inherit;
+  font: inherit;
+  letter-spacing: 0;
+}
+html[data-design="research-journal"] .journal-footer nav { flex-wrap: wrap; gap: 1.25rem; }
+html[data-design="research-journal"] .journal-trademark {
+  flex-basis: 100%;
+  max-width: 95ch;
+  font-size: .625rem !important;
+}
+html[data-design="research-journal"] :focus-visible { outline: 2px solid var(--sage); outline-offset: 2px; }
+
+@media (max-width: 1050px) {
+  html[data-design="research-journal"] .journal-abstract { grid-template-columns: 8rem minmax(0, 1fr); }
+  html[data-design="research-journal"] .journal-abstract .journal-footnote { grid-column: 2; padding: 0; border: 0; }
+  html[data-design="research-journal"] .journal-section { grid-template-columns: 1fr; gap: 1rem; }
+  html[data-design="research-journal"] .journal-end { gap: 2rem; }
+}
+@media (max-width: 760px) {
+  html[data-design="research-journal"] .journal-wrap { width: calc(100% - 2.5rem); }
+  html[data-design="research-journal"] .journal-masthead { min-height: 5rem; gap: 1rem; }
+  html[data-design="research-journal"] .journal-tagline { display: none; }
+  html[data-design="research-journal"] .journal-masthead nav { gap: 1rem; font-size: var(--journal-fs-note-meta); }
+  html[data-design="research-journal"] .journal-hero { grid-template-columns: 1fr; gap: 2rem; padding-block: 3rem; }
+  html[data-design="research-journal"] .journal-main h1 { font-size: clamp(var(--fs-heading-hero-min), 12vw, var(--fs-heading-hero-max)); }
+  html[data-design="research-journal"] .journal-abstract { grid-template-columns: 1fr; gap: 1rem; }
+  html[data-design="research-journal"] .journal-abstract .journal-footnote { grid-column: auto; }
+  html[data-design="research-journal"] .journal-section { padding-top: 3rem; }
+  html[data-design="research-journal"] .journal-observations { grid-template-columns: 1fr; gap: 1rem; }
+  html[data-design="research-journal"] .journal-specimen-panel { grid-template-columns: 1fr; gap: 1.25rem; padding: 1.25rem; }
+  html[data-design="research-journal"] .journal-explanation { padding: 1.25rem 0 0; border-top: 1px solid var(--ink-ghost); border-left: 0; }
+  html[data-design="research-journal"] .journal-end { grid-template-columns: 1fr; gap: 2rem; margin-top: 3rem !important; padding-top: 2rem; }
+  html[data-design="research-journal"] .journal-footer { margin-top: 3rem; }
+}
+@media (max-width: 420px) {
+  html[data-design="research-journal"] .journal-masthead { flex-wrap: wrap; padding-block: 1rem; }
+  html[data-design="research-journal"] .journal-masthead nav { width: 100%; justify-content: space-between; }
+  html[data-design="research-journal"] .journal-specimen-controls button { font-size: .625rem; padding-inline: .5rem; }
+  html[data-design="research-journal"] .journal-life { padding: 1rem; }
+  html[data-design="research-journal"] .journal-life-controls button { padding-inline: .75rem; }
+}
+
+/* Journal documents share the public site's reading system while preserving
+   the long-form measure required by support and legal content. */
+body.journal-document { overflow-x: clip; }
+.journal-document-wrap {
+  width: min(1140px, calc(100% - 5rem));
+  margin-inline: auto;
+}
+.journal-document-skip {
+  position: absolute;
+  top: -6rem;
+  left: 1rem;
+  z-index: 20;
+  padding: .5rem .75rem;
+  color: var(--paper);
+  background: var(--ink);
+}
+.journal-document-skip:focus { top: 1rem; }
+.journal-document-header {
+  display: block;
+  max-width: none;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+.journal-document-masthead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 6rem;
+  gap: 1.5rem;
+  border-bottom: 1px solid var(--ink);
+}
+.journal-document-wordmark {
+  display: inline-flex;
+  align-items: center;
+  gap: .65rem;
+  color: var(--ink);
+  font-family: var(--serif-alt);
+  font-size: calc(1.1rem * 2.535);
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: .04em;
+  line-height: 1;
+  text-decoration: none;
+}
+.journal-document-wordmark img { flex: none; object-fit: contain; }
+.journal-document-wordmark .back-icon {
+  color: var(--ink-faint);
+  font-family: var(--mono);
+  font-size: .75rem;
+}
+.journal-document-label {
+  margin: 0;
+  color: var(--ink-faint);
+  font: 400 var(--fs-label-section)/1.6 var(--mono);
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+.journal-document-accent { color: var(--rust); }
+.journal-document-language {
+  display: flex;
+  gap: .75rem;
+  font: 400 .75rem/1.5 var(--mono);
+  letter-spacing: .06em;
+}
+.journal-document-language a {
+  padding: .25rem .4rem;
+  color: var(--ink-faint);
+  text-decoration: none;
+}
+.journal-document-language a.active {
+  color: var(--paper);
+  background: var(--ink);
+}
+.journal-document-main {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 3.5rem 0 5rem;
+}
+.journal-document-main h1,
+.journal-document-main h2 {
+  font-family: var(--serif-alt);
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: .04em;
+  line-height: 1.04;
+}
+.journal-document-main h1 {
+  margin: 1rem 0 .5rem;
+  color: var(--ink);
+  font-size: clamp(2.7rem, 6vw, 4.5rem);
+}
+.journal-document-main h2 {
+  margin: 0 0 1rem;
+  color: var(--ink);
+  font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+}
+.journal-document-main .meta {
+  margin-bottom: 2.5rem;
+  color: var(--ink-faint);
+  font: 400 var(--journal-fs-note-meta, .7rem)/1.7 var(--mono);
+  letter-spacing: .04em;
+}
+.journal-document-main .callout {
+  margin-bottom: 0;
+  padding: 1.5rem;
+  border: 1px solid var(--ink-ghost);
+  border-left: 1px solid var(--ink-ghost);
+  border-radius: 0;
+  color: var(--ink-mid);
+  background: var(--paper-dark);
+}
+.journal-document-main .callout p { margin: 0; }
+.journal-document-main section {
+  margin: 0;
+  padding: 2.5rem 0;
+  border-top: 1px solid var(--ink-ghost);
+}
+.journal-document-main .callout + section { margin-top: 2.5rem; }
+.journal-document-main section:first-of-type { border-top: 1px solid var(--ink-ghost); }
+.journal-document-main p,
+.journal-document-main li { color: var(--ink-mid); }
+.journal-document-main ul {
+  margin: 0 0 1rem 1.25rem;
+  color: var(--ink-mid);
+}
+.journal-document-main li + li { margin-top: .5rem; }
+.journal-document-main code {
+  color: var(--ink-mid);
+  border-radius: 0;
+  background: var(--paper-deep);
+}
+.journal-document-main a { color: var(--link-text); }
+.journal-document-main a:hover { color: var(--link-text-hover); }
+.journal-document-footer {
+  max-width: none;
+  margin: 0;
+  padding: 2rem 0;
+  border-top: 1px solid var(--ink-ghost);
+  text-align: left;
+}
+.journal-document-footer > div {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1.5rem;
+  color: var(--ink-faint);
+  font: 400 .75rem/1.7 var(--mono);
+}
+.journal-document-footer p {
+  margin: 0;
+  color: inherit;
+  font: inherit;
+  letter-spacing: 0;
+}
+.journal-document-footer nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+}
+.journal-document-footer a {
+  color: var(--link-text);
+  text-decoration: none;
+}
+.journal-document-footer a:hover { color: var(--link-text-hover); text-decoration: underline; }
+
+/* The form shares its surface, hierarchy, and focus treatment with the
+   journal document rather than carrying a page-local style block. */
+.journal-document .contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  margin-top: 2.5rem;
+  padding-top: 2.5rem;
+  border-top: 1px solid var(--ink-ghost);
+}
+.journal-document .field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+.journal-document .field label,
+.journal-document .field .hint,
+.journal-document .privacy-notice {
+  color: var(--ink-faint);
+  font-family: var(--mono);
+  font-size: .7rem;
+  letter-spacing: .04em;
+}
+.journal-document .field label { text-transform: uppercase; }
+.journal-document .field-optional { color: var(--ink-faint); text-transform: none; }
+.journal-document .field input,
+.journal-document .field select,
+.journal-document .field textarea {
+  width: 100%;
+  box-sizing: border-box;
+  padding: .75rem 1rem;
+  border: 1px solid var(--ink-ghost);
+  border-radius: 0;
+  outline: none;
+  color: var(--ink);
+  background: var(--paper);
+  font: 400 1rem/1.5 var(--serif);
+  -webkit-appearance: none;
+}
+.journal-document .field input:focus,
+.journal-document .field select:focus,
+.journal-document .field textarea:focus {
+  border-color: var(--sage);
+  outline: 1px solid var(--sage);
+  outline-offset: 2px;
+}
+.journal-document .field textarea { min-height: 140px; resize: vertical; }
+.journal-document .privacy-notice { margin: 0; line-height: 1.7; }
+.journal-document .privacy-notice a { color: var(--link-text); }
+.journal-document .submit-btn {
+  align-self: flex-start;
+  padding: .75rem 1.25rem;
+  border: 1px solid var(--ink);
+  border-radius: 0;
+  color: var(--paper);
+  background: var(--ink);
+  cursor: pointer;
+  font: 400 .75rem/1.25 var(--mono);
+  letter-spacing: .06em;
+  text-transform: uppercase;
+}
+.journal-document .submit-btn:hover { background: var(--ink-mid); }
+.journal-document .submit-btn:disabled { cursor: default; opacity: .45; }
+.journal-document #status {
+  display: none;
+  padding: .75rem 1rem;
+  border: 1px solid var(--ink-ghost);
+  font: 400 .875rem/1.5 var(--serif);
+}
+.journal-document #status.success {
+  display: block;
+  color: var(--sage);
+  border-color: var(--sage);
+  background: color-mix(in srgb, var(--sage) 8%, var(--paper));
+}
+.journal-document #status.error {
+  display: block;
+  color: var(--rust);
+  border-color: var(--rust);
+  background: color-mix(in srgb, var(--rust) 8%, var(--paper));
+}
+
+@media (max-width: 760px) {
+  .journal-document-wrap { width: calc(100% - 2.5rem); }
+  .journal-document-masthead { min-height: 5rem; }
+  .journal-document-main { width: calc(100% - 2.5rem); padding-block: 2.5rem 4rem; }
+  .journal-document-main section { padding-block: 2rem; }
+  .journal-document-footer > div { align-items: flex-start; flex-direction: column; gap: 1rem; }
+}

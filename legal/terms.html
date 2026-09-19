@@ -13,22 +13,23 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 </head>
-<body>
-
-  <header>
-    <a class="wordmark" href="/"><span class="back-icon" aria-hidden="true">←</span>IOTHS</a>
-    <nav class="lang-switch">
+<body class="journal-document">
+  <a class="journal-document-skip" href="#main">Skip to content</a>
+  <header class="journal-document-header">
+    <div class="journal-document-wrap journal-document-masthead">
+      <a class="journal-document-wordmark" href="/"><span class="back-icon" aria-hidden="true">←</span><img src="/icon-why-240.png" alt="" width="32" height="32" decoding="async">ioths</a>
+      <nav class="journal-document-language" aria-label="Language">
       <a href="/legal/terms" class="active">EN</a>
       <a href="/legal/de/terms">DE</a>
-    </nav>
+      </nav>
+    </div>
   </header>
-
-  <main>
-
+  <main id="main" class="journal-document-main">
+    <p class="journal-document-label journal-document-accent">Legal / terms</p>
     <h1>Terms of Use</h1>
     <p class="meta">Effective 8 September 2026 · Version 2026.09.3</p>
 
-    <div class="callout">
+    <div class="callout journal-document-summary">
       <p>The short version: IOTHS is a tool for your notes. You own your data. We are not liable for data loss. The app is provided as-is.</p>
     </div>
 
@@ -114,9 +115,11 @@
 
   </main>
 
-  <footer>
-    <p>IOTHS &mdash; made with care</p>
-    <p><a href="/support">Contact</a> &middot; <a href="/legal/privacy">Privacy Policy</a> &middot; <a href="/legal/legal-notice">Legal Notice</a></p>
+  <footer class="journal-document-footer">
+    <div class="journal-document-wrap">
+      <p>ioths / An independent tool by Bedrock Rebellion</p>
+      <nav aria-label="Legal"><a href="/support">Contact</a><a href="/legal/privacy">Privacy</a><a href="/legal/legal-notice">Legal notice</a></nav>
+    </div>
   </footer>
 
 </body>

@@ -1,115 +1,40 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="plain-readable" data-design="control-room">
+<html lang="en" data-theme="plain-readable" data-design="research-journal">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>IOTHS — Markdown Notes Inspired by Complexity Theory</title>
-  <meta name="description" content="Private, offline-first Markdown notes for iPhone and iPad, inspired by complexity theory, Conway's Game of Life, and complex adaptive systems.">
+  <title>ioths — A note doesn’t need a plan</title>
+  <meta name="description" content="Offline Markdown notes for iPhone and iPad. Write down a question, add tasks when they become clear, and keep the files in a format Obsidian can read.">
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
   <meta name="author" content="Bedrock Rebellion">
-  <meta name="theme-color" content="#0e0f0e">
+  <meta name="theme-color" content="#ffffff">
   <meta name="apple-itunes-app" content="app-id=6787224776">
   <link rel="alternate" type="text/plain" href="/llms.txt" title="IOTHS product information">
   <link rel="canonical" href="https://ioths.bedrockrebel.app/">
-
   <script src="https://cdn.telemetrydeck.com/websdk/telemetrydeck.min.js" data-app-id="1DCF7FFD-85DF-487C-93D3-439C23BFA67A" defer></script>
-
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://ioths.bedrockrebel.app/">
   <meta property="og:site_name" content="IOTHS">
-  <meta property="og:title" content="IOTHS — Markdown Notes Inspired by Complexity Theory">
-  <meta property="og:description" content="Private, offline-first Markdown notes inspired by complexity theory and Conway's Game of Life. Let a note grow as work takes shape.">
+  <meta property="og:title" content="ioths — A note doesn’t need a plan">
+  <meta property="og:description" content="Offline Markdown notes for iPhone and iPad. Write down a question, add tasks when they become clear, and keep the files in a format Obsidian can read.">
   <meta property="og:image" content="https://ioths.bedrockrebel.app/assets/marketing/social-card.png">
   <meta property="og:image:type" content="image/png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="IOTHS: private Markdown capture for an existing notes library">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="IOTHS — Markdown Notes Inspired by Complexity Theory">
-  <meta name="twitter:description" content="Private, offline-first Markdown notes inspired by complexity theory and Conway's Game of Life. Let a note grow as work takes shape.">
+  <meta name="twitter:title" content="ioths — A note doesn’t need a plan">
+  <meta name="twitter:description" content="Offline Markdown notes for iPhone and iPad. Write down a question, add tasks when they become clear, and keep the files in a format Obsidian can read.">
   <meta name="twitter:image" content="https://ioths.bedrockrebel.app/assets/marketing/social-card.png">
   <meta name="twitter:image:alt" content="IOTHS: private Markdown capture for an existing notes library">
-
   <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@graph": [
-        {
-          "@type": "WebSite",
-          "@id": "https://ioths.bedrockrebel.app/#website",
-          "url": "https://ioths.bedrockrebel.app/",
-          "name": "IOTHS",
-          "alternateName": ["ioths", "ioths.bedrockrebel.app"],
-          "description": "Private, offline-first Markdown notes for an existing notes library on iPhone and iPad, inspired by complexity theory and Conway's Game of Life.",
-          "about": [
-            { "@type": "Thing", "name": "Complexity theory" },
-            { "@type": "Thing", "name": "Conway's Game of Life" },
-            { "@type": "Thing", "name": "Complex adaptive systems" }
-          ],
-          "publisher": { "@id": "https://bedrockrebel.app/#organization" },
-          "inLanguage": "en"
-        },
-        {
-          "@type": "WebPage",
-          "@id": "https://ioths.bedrockrebel.app/#webpage",
-          "url": "https://ioths.bedrockrebel.app/",
-          "name": "IOTHS",
-          "isPartOf": { "@id": "https://ioths.bedrockrebel.app/#website" },
-          "mainEntity": { "@id": "https://ioths.bedrockrebel.app/#app" },
-          "primaryImageOfPage": {
-            "@type": "ImageObject",
-            "url": "https://ioths.bedrockrebel.app/assets/marketing/social-card.png",
-            "width": 1200,
-            "height": 630
-          },
-          "inLanguage": "en"
-        },
-        {
-          "@type": "SoftwareApplication",
-          "@id": "https://ioths.bedrockrebel.app/#app",
-          "name": "IOTHS",
-          "url": "https://ioths.bedrockrebel.app/",
-          "description": "A private, offline-first Markdown notes app for iPhone and iPad. Inspired by complexity theory, Conway's Game of Life, and complex adaptive systems, it lets notes grow into tasks and a personal board.",
-          "applicationCategory": "ProductivityApplication",
-          "operatingSystem": ["iOS 18.0 or later", "iPadOS 18.0 or later"],
-          "image": "https://ioths.bedrockrebel.app/assets/marketing/social-card.png",
-          "screenshot": [
-            "https://ioths.bedrockrebel.app/assets/marketing/library-744.png",
-            "https://ioths.bedrockrebel.app/assets/marketing/kanban-744.png",
-            "https://ioths.bedrockrebel.app/assets/marketing/natural-note-744.png",
-            "https://ioths.bedrockrebel.app/assets/marketing/raw-markdown-744.png",
-            "https://ioths.bedrockrebel.app/assets/marketing/storage-744.png"
-          ],
-          "featureList": [
-            "Offline-first note capture and editing",
-            "Portable Markdown files with YAML frontmatter",
-            "Checklist, task, and kanban views",
-            "On-device PDF-to-Markdown conversion",
-            "Optional Files-folder, GitHub, GitLab, and OneDrive storage"
-          ],
-          "downloadUrl": "https://apps.apple.com/nl/app/ioths/id6787224776",
-          "installUrl": "https://apps.apple.com/app/id6787224776",
-          "sameAs": "https://apps.apple.com/app/id6787224776",
-          "mainEntityOfPage": { "@id": "https://ioths.bedrockrebel.app/#webpage" },
-          "softwareHelp": "https://ioths.bedrockrebel.app/support",
-          "offers": {
-            "@type": "Offer",
-            "price": 0,
-            "url": "https://apps.apple.com/app/id6787224776"
-          },
-          "author": { "@id": "https://bedrockrebel.app/#organization" },
-          "publisher": { "@id": "https://bedrockrebel.app/#organization" }
-        },
-        {
-          "@type": "Organization",
-          "@id": "https://bedrockrebel.app/#organization",
-          "name": "Bedrock Rebellion",
-          "url": "https://bedrockrebel.app/"
-        }
-      ]
-    }
+    {"@context":"https://schema.org","@graph":[
+      {"@type":"WebSite","@id":"https://ioths.bedrockrebel.app/#website","url":"https://ioths.bedrockrebel.app/","name":"IOTHS","alternateName":["ioths","ioths.bedrockrebel.app"],"description":"Offline Markdown notes for iPhone and iPad. Write down a question, add tasks when they become clear, and keep the files in a format Obsidian can read.","about":[{"@type":"Thing","name":"Complexity theory"},{"@type":"Thing","name":"Conway's Game of Life"},{"@type":"Thing","name":"Complex adaptive systems"}],"publisher":{"@id":"https://bedrockrebel.app/#organization"},"inLanguage":"en"},
+      {"@type":"WebPage","@id":"https://ioths.bedrockrebel.app/#webpage","url":"https://ioths.bedrockrebel.app/","name":"IOTHS","isPartOf":{"@id":"https://ioths.bedrockrebel.app/#website"},"mainEntity":{"@id":"https://ioths.bedrockrebel.app/#app"},"primaryImageOfPage":{"@type":"ImageObject","url":"https://ioths.bedrockrebel.app/assets/marketing/social-card.png","width":1200,"height":630},"inLanguage":"en"},
+      {"@type":"SoftwareApplication","@id":"https://ioths.bedrockrebel.app/#app","name":"IOTHS","url":"https://ioths.bedrockrebel.app/","description":"An offline Markdown notes app for iPhone and iPad. Write down a question, add tasks when they become clear, and keep the files in a format Obsidian can read.","applicationCategory":"ProductivityApplication","operatingSystem":["iOS 18.0 or later","iPadOS 18.0 or later"],"image":"https://ioths.bedrockrebel.app/assets/marketing/social-card.png","screenshot":["https://ioths.bedrockrebel.app/assets/marketing/library-744.png","https://ioths.bedrockrebel.app/assets/marketing/kanban-744.png","https://ioths.bedrockrebel.app/assets/marketing/natural-note-744.png","https://ioths.bedrockrebel.app/assets/marketing/raw-markdown-744.png","https://ioths.bedrockrebel.app/assets/marketing/storage-744.png"],"featureList":["Offline-first note capture and editing","Portable Markdown files with YAML frontmatter","Checklist, task, and board views","On-device PDF-to-Markdown conversion","Optional Files-folder, GitHub, GitLab, and OneDrive storage"],"downloadUrl":"https://apps.apple.com/app/id6787224776","installUrl":"https://apps.apple.com/app/id6787224776","sameAs":"https://apps.apple.com/app/id6787224776","mainEntityOfPage":{"@id":"https://ioths.bedrockrebel.app/#webpage"},"softwareHelp":"https://ioths.bedrockrebel.app/support","offers":{"@type":"Offer","price":0,"url":"https://apps.apple.com/app/id6787224776"},"author":{"@id":"https://bedrockrebel.app/#organization"},"publisher":{"@id":"https://bedrockrebel.app/#organization"}},
+      {"@type":"Organization","@id":"https://bedrockrebel.app/#organization","name":"Bedrock Rebellion","url":"https://bedrockrebel.app/"}
+    ]}
   </script>
-
   <link rel="preload" href="/assets/platoscave/fonts/JTUSjIg69CK48gW7PXoo9Wlhyw.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/assets/platoscave/fonts/source-serif-4-latin-variable.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="/assets/platoscave/plain-readable.css">
@@ -120,355 +45,234 @@
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 </head>
 <body>
-
   <script type="application/json" id="marketing-locale-config">{"published":[]}</script>
-
-  <header>
-    <a class="wordmark" href="/">IOTHS</a>
-    <nav class="link-row" aria-label="Primary">
-      <a href="/support">Support</a>
-      <a href="/legal/privacy">Privacy</a>
-      <a href="/legal/terms">Terms</a>
-    </nav>
-  </header>
-
-  <main class="landing-main">
-
-    <div class="hero hero--product">
-      <div class="hero-copy">
-        <p class="eyebrow">For people who think in plain text</p>
-        <h1><span class="hero-product-name">IOTHS</span><span class="hero-descriptor">Capture the work before it becomes a plan</span></h1>
-        <p class="lede">A private, offline-first Markdown companion for your existing notes library. Begin with a note, add checkboxes when the work appears, and keep every file readable, portable, and yours.</p>
-        <div class="cta-row">
-          <span class="button-primary"><a href="https://apps.apple.com/nl/app/ioths/id6787224776" target="_blank" rel="noopener noreferrer">Download on the App Store</a></span>
-          <span class="cta-note">No account required. No proprietary format.</span>
-        </div>
+  <a class="skip journal-skip" href="#main">Skip to content</a>
+  <header class="journal-header">
+    <div class="journal-wrap journal-masthead">
+      <div class="journal-brand">
+        <a class="journal-wordmark" href="/" aria-label="ioths home"><img class="journal-app-icon" src="/icon-why-240.png" alt="" width="48" height="48" decoding="async">ioths</a>
+        <span class="journal-label journal-tagline">Notes, tasks<br>and unfinished questions</span>
       </div>
-      <figure class="product-artwork product-artwork--hero">
-        <img src="/assets/marketing/library-576.png" srcset="/assets/marketing/library-496.png 496w, /assets/marketing/library-576.png 576w, /assets/marketing/library-744.png 744w" sizes="(max-width: 760px) 280px, 320px" alt="IOTHS Library in dark mode on iPhone, showing notes, task progress, tags, and link previews" width="576" height="1246" fetchpriority="high" decoding="async">
-      </figure>
+      <nav aria-label="Page sections"><a href="#observations">Observations</a><a href="#practice">Practice</a><a href="#about">About</a></nav>
     </div>
-
-    <section class="emergence-story" aria-labelledby="emergence-title">
-      <div class="emergence-story-copy">
-        <p class="eyebrow">A small idea about emergence</p>
-        <h2 id="emergence-title">Start with the smallest true thing.</h2>
-        <p>Knowledge work rarely arrives as a neat plan. It starts as an observation, a question, or a half-formed thought. In IOTHS, that thought can stay a note until a few checkboxes reveal work worth doing.</p>
-        <p>The app does not pretend to predict what happens next. It gives the work somewhere calm to change shape: a note becomes a checklist, a checklist becomes active work, and the board shows the pattern that is already there.</p>
-
-        <ol class="work-shape-path">
-          <li><span class="work-shape-step">01</span><span><strong>Notice</strong> Write the first useful sentence.</span></li>
-          <li><span class="work-shape-step">02</span><span><strong>Explore</strong> Add a checklist when there are next steps.</span></li>
-          <li><span class="work-shape-step">03</span><span><strong>Commit</strong> Mark one note in progress when it matters now.</span></li>
-          <li><span class="work-shape-step">04</span><span><strong>See</strong> Let the task view and board make the work visible.</span></li>
-        </ol>
-      </div>
-
-      <aside class="life-playground" aria-label="A small Conway's Game of Life playground">
-        <div class="life-playground-heading">
-          <p class="life-playground-kicker">A nod to the icon</p>
-          <img class="life-playground-icon" src="/icon-why-240.png" alt="" width="48" height="48" loading="lazy" decoding="async">
-        </div>
-        <canvas id="life-field" class="life-field" width="720" height="576" role="img" aria-label="A paused Conway's Game of Life field seeded with an R-pentomino pattern"></canvas>
-        <div class="life-controls" role="group" aria-label="Game of Life controls">
-          <button class="life-button" id="life-toggle" type="button" aria-pressed="false">Let it evolve</button>
-          <button class="life-button life-button--quiet" id="life-reset" type="button">Reset</button>
-          <span id="life-status" class="life-status" aria-live="off">Generation 0</span>
-        </div>
-        <details class="life-context">
-          <summary class="life-playground-note">Every square plays a tiny survival game: living cells survive with two or three neighbours, and empty squares are born with three. This is a playful reference, not a model of your work.</summary>
-          <div class="life-context-copy">
-            <p class="life-deeper-link">For a deeper dive, explore <a href="https://platoscave.bedrockrebel.app/modules/emergence/" target="_blank" rel="noopener noreferrer">Plato's Cave's emergence experiments</a>.</p>
-            <p class="life-reference">Reference: John Horton Conway's Game of Life (1970) &mdash; <a href="https://web.stanford.edu/class/sts145/Library/life.pdf" target="_blank" rel="noopener noreferrer">the original public account</a> by Martin Gardner.</p>
-          </div>
-        </details>
-      </aside>
-    </section>
-
-    <section class="feature-section feature-section--with-artwork feature-section--kanban" aria-labelledby="tasks-kanban-title">
+  </header>
+  <main id="main" class="landing-main journal-main journal-wrap">
+    <section class="journal-hero" aria-labelledby="title">
       <div>
-        <h2 id="tasks-kanban-title">Tasks, kanban, and focus</h2>
-        <div class="feature-grid">
-          <div class="feature">
-            <h3>Notes that double as tasks</h3>
-            <p>Any checklist inside a note turns it into a task note — no separate task manager to maintain.</p>
-          </div>
-          <div class="feature">
-            <h3>A kanban board built for one</h3>
-            <p>Switch between Tile, List, and Kanban layouts. In Kanban, choose note cards or individual tasks grouped by their source note. Cards move lanes automatically as tasks get checked off.</p>
-          </div>
-          <div class="feature">
-            <h3>A work-in-progress limit that means it</h3>
-            <p>Cap how many notes can be "in progress" at once, so focus stays real instead of aspirational.</p>
-          </div>
-          <div class="feature">
-            <h3>Every task, one screen</h3>
-            <p>A dedicated Tasks view flattens every open checklist item across your whole Library into one list.</p>
-          </div>
+        <p class="journal-label journal-accent">Offline notes in Markdown</p>
+        <h1 id="title">A note doesn’t<br>need a <em>plan.</em></h1>
+        <p class="journal-lead">You can know that something is worth writing down without knowing what to do with it. ioths is a notes app for iPhone and iPad. It works offline and saves Markdown files, so the note can become part of an existing Obsidian library.</p>
+        <div class="journal-download">
+          <a class="app-store-badge" href="https://apps.apple.com/app/id6787224776" target="_blank" rel="noopener noreferrer" aria-label="Download ioths on the App Store"><img src="/assets/marketing/download-on-the-app-store.svg" alt="Download on the App Store" width="144" height="48"></a>
+          <p class="journal-footnote">For iPhone and iPad.<br>No ioths account required.</p>
         </div>
+        <a class="journal-text-link" href="#observations">What it’s for <span aria-hidden="true">↓</span></a>
       </div>
-      <div class="kanban-mode-gallery">
-        <figure class="product-artwork product-artwork--kanban-mode">
-          <img src="/assets/marketing/kanban-notes-mode-v3.png" alt="IOTHS Kanban in note mode, with note cards in Open, In Progress, and Done lanes" width="2736" height="1359" loading="lazy" decoding="async">
-        </figure>
-        <figure class="product-artwork product-artwork--kanban-mode">
-          <img src="/assets/marketing/kanban-tasks-mode-v3.png" alt="IOTHS Kanban in task mode, with individual tasks grouped under their source notes" width="2736" height="1359" loading="lazy" decoding="async">
-        </figure>
-      </div>
-    </section>
-
-    <section class="feature-section feature-section--with-artwork feature-section--reversed" aria-labelledby="capture-title">
-      <div>
-        <h2 id="capture-title">Capture, fast</h2>
-        <div class="feature-grid">
-          <div class="feature">
-            <h3>Type, dictate, or snap a photo</h3>
-            <p>Camera, voice, and Share Extension capture land straight in Markdown.</p>
-          </div>
-          <div class="feature">
-            <h3>PDF to Markdown</h3>
-            <p>Convert a PDF to Markdown with on-device review before you save.</p>
-          </div>
-          <div class="feature">
-            <h3>Tags, pins, and search</h3>
-            <p>Tags, pinned notes, and quick search keep everything findable.</p>
-          </div>
-          <div class="feature">
-            <h3>Widgets</h3>
-            <p>A Home Screen widget for a glanceable view of what matters most.</p>
-          </div>
-        </div>
-      </div>
-      <figure class="product-artwork product-artwork--feature">
-        <img src="/assets/marketing/natural-note-496.png" srcset="/assets/marketing/natural-note-496.png 496w, /assets/marketing/natural-note-744.png 744w" sizes="(max-width: 760px) 224px, 256px" alt="IOTHS note editor on iPhone with a photo attachment, Markdown link, tags, and checklist" width="496" height="1073" loading="lazy" decoding="async">
+      <figure class="journal-plate">
+        <div class="journal-plate-head journal-label"><span>Fig. 01 / From note to task</span><span>IOTHS</span></div>
+        <svg viewBox="0 0 360 320" role="img" aria-labelledby="journal-diagram-title journal-diagram-desc">
+          <title id="journal-diagram-title">A note with a checklist, shown on the board</title>
+          <desc id="journal-diagram-desc">Write a note, add checklist items, then see its progress on the board. The checklist stays in the note.</desc>
+          <g fill="none" stroke="currentColor" stroke-width="1"><circle cx="43" cy="40" r="5" fill="currentColor"/><path d="M48 40h55m-5-4 5 4-5 4M180 77v40m-4-5 4 5 4-5M180 207v40m-4-5 4 5 4-5"/><rect x="108" y="12" width="204" height="65"/><rect x="71" y="120" width="241" height="87"/><path d="M71 149h241M84 161h9v9h-9zm0 20h9v9h-9zm22-16h151m-151 20h111"/><rect x="45" y="250" width="288" height="54"/><path d="M141 250v54m96-54v54M45 267h288"/><rect class="diagram-note" x="54" y="277" width="65" height="17" stroke="none"/><rect class="diagram-active" x="150" y="277" width="65" height="17" stroke="none"/></g>
+          <g fill="currentColor" font-family="monospace" font-size="10"><text x="19" y="63">thought</text><text x="121" y="32">a question to</text><text x="121" y="53">come back to</text><text x="85" y="139">+ something to follow up</text><text x="55" y="262" font-size="8">OPEN</text><text x="151" y="262" font-size="8">IN PROGRESS</text><text x="246" y="262" font-size="8">DONE</text></g>
+        </svg>
+        <figcaption class="journal-plate-caption">The checklist belongs to the note. The board shows its progress without separating the task from the text that explains it.</figcaption>
       </figure>
     </section>
-
-    <section class="source-showcase" aria-labelledby="plain-files-title">
-      <div class="source-showcase-copy">
-        <p class="eyebrow">No black box</p>
-        <h2 id="plain-files-title">Built on plain files</h2>
-        <p>Notes are stored as <code>.md</code> files with YAML frontmatter — the same structure Obsidian uses. Nothing proprietary, nothing to migrate later. Open your notes in any text editor, on any device, at any time.</p>
-      </div>
-      <figure class="product-artwork product-artwork--source">
-        <img src="/assets/marketing/raw-markdown-496.png" srcset="/assets/marketing/raw-markdown-496.png 496w, /assets/marketing/raw-markdown-744.png 744w" sizes="(max-width: 760px) 224px, 264px" alt="IOTHS raw Markdown editor on iPhone, showing portable Markdown source" width="496" height="1073" loading="lazy" decoding="async">
-      </figure>
+    <section class="journal-abstract" aria-label="The premise">
+      <span class="journal-label">The premise</span>
+      <p>Writing something down and deciding what to do about it are different decisions.</p>
+      <p class="journal-footnote">For an existing Markdown library.<br>Obsidian users in particular.</p>
     </section>
-
-    <section aria-labelledby="privacy-title">
-      <h2 id="privacy-title">Private by default</h2>
-      <p>Your notes stay on this device until you explicitly turn on a sync destination. There's no IOTHS account and no developer-operated sign-in. Usage analytics are off unless you turn them on, and even then they never include note content, titles, or tags. Nothing is sold. Nothing trains an AI model. Read the full <a href="/legal/privacy">Privacy Policy</a>.</p>
-    </section>
-
-    <section class="feature-section feature-section--with-artwork feature-section--reversed" aria-labelledby="storage-title">
+    <section id="observations" class="journal-section" aria-labelledby="observations-title">
+      <aside class="journal-margin-note"><p class="journal-label journal-accent">01 / Observations</p><p class="journal-footnote">Where a notes app can help.</p></aside>
       <div>
-        <h2 id="storage-title">Unlock more storage</h2>
-        <p><strong>Full Unlock</strong> is a one-time purchase — not a subscription — that adds:</p>
-        <ul>
-          <li><strong>Files folder storage</strong>, when your selected provider allows folder selection</li>
-          <li><strong>GitHub storage and sync</strong>, to a dedicated repository path</li>
-          <li><strong>GitLab storage and sync</strong>, to a dedicated project path</li>
-          <li><strong>OneDrive storage and sync</strong>, to a dedicated app folder in your personal Microsoft account, plus <strong>portable export</strong> — save your whole Library as a ZIP archive anytime</li>
-        </ul>
-        <p>Capture, editing, reading, sharing, PDF conversion, tagging, task tracking, archive, and trash recovery are free, forever.</p>
-      </div>
-      <figure class="product-artwork product-artwork--feature">
-        <img src="/assets/marketing/storage-496.png" srcset="/assets/marketing/storage-496.png 496w, /assets/marketing/storage-744.png 744w" sizes="(max-width: 760px) 224px, 256px" alt="IOTHS Storage setup on iPhone with on-device, Files folder, GitHub, GitLab, and portable export options" width="496" height="1073" loading="lazy" decoding="async">
-      </figure>
-    </section>
-
-    <section class="why-section" aria-labelledby="why-title">
-      <div class="why-section-content">
-        <div>
-          <h2 id="why-title">Why this exists</h2>
-          <p>I built IOTHS for myself, first. I'd never found a notes app that actually fit — not functionally, not in how it felt to use — so I made the one I wanted. That's where it started: not to monetize it, not to be seen. Just to have it.</p>
-          <p>The icon is a small nod to Conway's Game of Life and complexity theory: simple local rules, surprising patterns. It is a familiar way to think about emergence in complex adaptive systems, not a claim that IOTHS models them. IOTHS is simply a place where a thought can stay small until the work asks for more structure.</p>
+        <h2 id="observations-title">What gets in the way.</h2>
+        <div class="journal-observations">
+          <article class="journal-observation"><span class="journal-label journal-muted">Away from the desk</span><h3>Waiting until later.</h3><p>A question comes up on the train. Waiting until you’re back at your desk means relying on memory, including the bit that made the question worth asking.</p><p class="journal-response">In ioths, you can write the note on your phone without a connection. Sync is optional.</p></article>
+          <article class="journal-observation"><span class="journal-label journal-muted">Before the task</span><h3>Deciding too soon.</h3><p>An observation may become a task, but it may also be wrong. Giving it a project and a status doesn’t make it any better understood.</p><p class="journal-response">Start with text. If there is a next step, add a checkbox to that note.</p></article>
+          <article class="journal-observation"><span class="journal-label journal-muted">Keeping the files</span><h3>Depending on a format.</h3><p>The notes may outlast the tool used to write them. A file you can read elsewhere leaves you more room to change how you work.</p><p class="journal-response">ioths writes <code>.md</code> files with YAML frontmatter. Obsidian and ordinary text editors can read them.</p></article>
         </div>
-        <!-- icon-why.png: composited from the app's own AppIcon.icon foreground
-             layer, not exported from a build — Xcode's thinned build output had
-             visible compression artifacts at this size. Regenerate the same way
-             if the icon artwork changes; see README.md. -->
-        <figure class="why-artwork">
-          <img src="/icon-why-240.png" alt="The IOTHS app icon: a note dissolving into scattered pixels" width="240" height="240" loading="lazy" decoding="async">
+      </div>
+    </section>
+    <section id="practice" class="journal-section" aria-labelledby="practice-title">
+      <aside class="journal-margin-note"><p class="journal-label journal-accent">02 / In practice</p><p class="journal-footnote">An example note, with its follow-up work.</p></aside>
+      <div>
+        <h2 id="practice-title">Keep the task with its context.</h2>
+        <p>The example below starts with a question about a changed deadline. The next steps appear in the same note, beside the reason for doing them.</p>
+        <div class="journal-specimen" data-specimen>
+          <div class="journal-specimen-controls" role="group" aria-label="Choose a stage of the example note" hidden><button type="button" data-stage="capture" aria-pressed="true" aria-controls="capture-panel">01 / Note</button><button type="button" data-stage="explore" aria-pressed="false" aria-controls="explore-panel">02 / Checklist</button><button type="button" data-stage="focus" aria-pressed="false" aria-controls="focus-panel">03 / Working</button></div>
+          <div id="capture-panel" class="journal-specimen-panel" data-panel="capture"><pre># Why are we reviewing this again?
+
+We changed the deadline, but kept the
+original scope. Is that still workable?
+
+#delivery</pre><div class="journal-explanation"><h3>The question is still open.</h3><p>The note records what changed and what remains uncertain. That is enough to come back to, even before there is an answer.</p></div></div>
+          <div id="explore-panel" class="journal-specimen-panel" data-panel="explore"><pre># Why are we reviewing this again?
+
+We changed the deadline, but kept the
+original scope. Is that still workable?
+
+- [ ] Compare scope with the deadline
+- [ ] Raise the trade-off at the review
+
+#delivery</pre><div class="journal-explanation"><h3>There is something to check.</h3><p>A checklist makes the follow-up explicit. Its open items also appear in Tasks, alongside items from other notes. The original question stays where it was written.</p></div></div>
+          <div id="focus-panel" class="journal-specimen-panel" data-panel="focus"><pre># Why are we reviewing this again?
+
+We changed the deadline, but kept the
+original scope. Is that still workable?
+
+- [x] Compare scope with the deadline
+- [ ] Raise the trade-off at the review
+
+#delivery</pre><div class="journal-explanation"><h3>One item done; one still open.</h3><p>Mark the note in progress to put it in the board’s In Progress lane. The work-in-progress limit caps how many notes carry that status. You choose the limit.</p></div></div>
+        </div>
+      </div>
+    </section>
+    <section id="emergence" class="journal-section" aria-labelledby="emergence-title">
+      <aside class="journal-margin-note"><p class="journal-label journal-accent">03 / Emergence</p><p class="journal-footnote">Conway’s Game of Life.</p></aside>
+      <div>
+        <h2 id="emergence-title">What the icon refers to.</h2>
+        <div class="journal-emergence-copy"><p>Conway’s Game of Life applies a fixed rule to every cell on a grid. Each update depends on the cell and its eight neighbours. The same starting cells produce the same sequence every time, although the larger pattern can be difficult to anticipate from those rules alone.</p><p>This is the emergence reference in the icon. There is a related idea in how ioths handles a note: you can write a question, return with more context, and find work that wasn’t apparent when you started. The useful structure develops through those actions.</p><p class="journal-footnote">The connection is an analogy. Game of Life does not model how people think.</p></div>
+        <figure class="journal-life" aria-labelledby="life-caption">
+          <div class="journal-plate-head journal-label"><span>Fig. 02 / Game of Life</span><span>Seed: R-pentomino</span></div>
+          <p id="journal-life-fallback" class="journal-life-fallback">This interactive figure needs JavaScript and canvas support. It begins with five living cells in an R-pentomino pattern; the rules are described below.</p>
+          <canvas id="journal-life-field" width="720" height="576" role="img" aria-label="Paused Game of Life field: generation 0, 5 living cells" aria-describedby="life-caption" hidden></canvas>
+          <div id="journal-life-controls" class="journal-life-controls" role="group" aria-label="Game of Life controls" hidden><button id="journal-life-toggle" type="button" aria-pressed="false" aria-controls="journal-life-field">Start</button><button id="journal-life-step" type="button" aria-controls="journal-life-field">Step</button><button id="journal-life-reset" type="button" aria-controls="journal-life-field">Reset</button></div>
+          <p id="journal-life-status" class="journal-footnote journal-life-status" role="status" aria-live="polite" aria-atomic="true" hidden></p>
+          <figcaption id="life-caption" class="journal-plate-caption">Press Start to run the simulation, or Step to inspect one generation at a time. Watch which groups disappear and which persist. Reset restores the same five cells, so you can repeat the sequence.</figcaption>
+          <details class="journal-life-rules"><summary>Read the rules</summary><p>A living cell survives with two or three living neighbours. An empty cell becomes alive with exactly three. All other cells are empty in the next generation. Every cell updates at the same time.</p><p>This field is finite: the left and right edges join, as do the top and bottom. A pattern that reaches an edge can return from the other side.</p><a class="journal-text-link" href="https://platoscave.bedrockrebel.app/modules/emergence/" target="_blank" rel="noopener noreferrer">More on emergence at Plato’s Cave <span aria-hidden="true">↗</span></a></details>
         </figure>
       </div>
-      <div class="link-row">
-        <a href="/support">Support</a>
-        <a href="/legal/privacy">Privacy Policy</a>
-        <a href="/legal/terms">Terms of Use</a>
+    </section>
+    <section class="journal-section" aria-labelledby="working-title">
+      <aside class="journal-margin-note"><p class="journal-label journal-accent">04 / Working conditions</p><p class="journal-footnote">The practical part.</p></aside>
+      <div>
+        <h2 id="working-title">The rest of the tool stays close to the file.</h2>
+        <div class="journal-observations journal-capabilities">
+          <article class="journal-observation"><h3>Capture and find.</h3><p>Type, dictate, take a photo, or use the Share Extension. Tags, pinned notes, search, archive, and trash recovery keep the library usable. PDF conversion is reviewed on-device before you save.</p></article>
+          <article class="journal-observation"><h3>See the work.</h3><p>The Tasks view collects open checklist items from across the library. The board can show notes or individual tasks grouped by their source note. It reports the state already in your files.</p></article>
+          <article class="journal-observation"><h3>Choose where it lives.</h3><p>Notes stay on your device by default. Full Unlock is a one-time purchase for Files-folder storage, GitHub, GitLab, OneDrive, and ZIP export. Local note-taking is free.</p></article>
+        </div>
       </div>
     </section>
-
+    <section id="about" class="journal-end" aria-labelledby="about-title">
+      <div><p class="journal-label journal-accent">05 / About</p><h2 id="about-title">Why I made it.</h2><p>I built ioths for myself because the notes apps I had tried never quite fitted, either in what they did or how they felt to use.</p><p>The result is fairly specific: somewhere to write on the phone, keep the file, and add tasks without copying the thought into another tool. If you already use Obsidian, the file format will be familiar.</p></div>
+      <div><p class="journal-label journal-accent">Using the app</p><div class="journal-app-identity"><img class="journal-app-icon" src="/icon-why-240.png" alt="ioths app icon: a note dissolving into yellow cells" width="64" height="64" loading="lazy" decoding="async"><div><h3>IOTHS</h3><p class="journal-footnote">For iPhone and iPad.</p></div></div><p>There’s no ioths account to create. Notes stay on your device unless you choose an external storage destination.</p><p class="journal-legal-note">Usage analytics are off unless you turn them on; they never include note content, titles, or tags. Nothing is sold or used to train an AI model. Read the <a href="/legal/privacy">Privacy Policy</a>.</p><a class="app-store-badge app-store-badge--closing" href="https://apps.apple.com/app/id6787224776" target="_blank" rel="noopener noreferrer" aria-label="Download ioths on the App Store"><img src="/assets/marketing/download-on-the-app-store.svg" alt="Download on the App Store" width="144" height="48"></a></div>
+    </section>
   </main>
-
-  <footer>
-    <p>IOTHS &mdash; made with care by Bedrock Rebellion</p>
-    <p><a href="/support">Contact</a> &middot; <a href="/legal/privacy">Privacy Policy</a> &middot; <a href="/legal/terms">Terms of Use</a> &middot; <a href="/legal/legal-notice">Legal Notice</a></p>
-  </footer>
-
+  <footer class="journal-footer"><div class="journal-wrap"><p>ioths / An independent tool by Bedrock Rebellion</p><nav aria-label="Legal and support"><a href="/support">Contact</a><a href="/legal/privacy">Privacy</a><a href="/legal/terms">Terms</a><a href="/legal/legal-notice">Legal notice</a></nav><p class="journal-trademark">Apple, the Apple logo, iPhone, and iPad are trademarks of Apple Inc., registered in the U.S. and other countries. App Store is a service mark of Apple Inc.</p></div></footer>
   <script>
     (() => {
       if (window.location.pathname !== '/' && window.location.pathname !== '/index.html') return;
-
       const config = document.getElementById('marketing-locale-config');
       if (!config) return;
-
       let publishedLocales;
-      try {
-        publishedLocales = JSON.parse(config.textContent).published;
-      } catch {
-        return;
-      }
+      try { publishedLocales = JSON.parse(config.textContent).published; } catch { return; }
       if (!Array.isArray(publishedLocales) || publishedLocales.length === 0) return;
-
       const available = new Map(publishedLocales.map((locale) => [locale.code, locale]));
-      const browserLanguages = Array.isArray(navigator.languages) && navigator.languages.length > 0
-        ? navigator.languages
-        : [navigator.language];
-      const preferredLocale = browserLanguages
-        .map((tag) => String(tag || '').toLowerCase())
-        .map((tag) => tag.startsWith('pt') ? 'pt-BR' : tag.split('-')[0])
-        .find((locale) => available.has(locale));
+      const browserLanguages = Array.isArray(navigator.languages) && navigator.languages.length > 0 ? navigator.languages : [navigator.language];
+      const preferredLocale = browserLanguages.map((tag) => String(tag || '').toLowerCase()).map((tag) => tag.startsWith('pt') ? 'pt-BR' : tag.split('-')[0]).find((locale) => available.has(locale));
       const localeLabels = available.get(preferredLocale);
       if (!localeLabels) return;
-
       const choiceKey = 'ioths-site-locale';
       let savedChoice = null;
-      try {
-        savedChoice = window.localStorage.getItem(choiceKey);
-      } catch {
-        // Storage can be unavailable in private browsing; the prompt still works for this visit.
-      }
+      try { savedChoice = window.localStorage.getItem(choiceKey); } catch { /* Storage can be unavailable in private browsing. */ }
       if (savedChoice) return;
-
       const suggestion = document.createElement('aside');
       suggestion.className = 'locale-suggestion';
       suggestion.setAttribute('aria-label', localeLabels[preferredLocale].aria);
-      suggestion.innerHTML = `
-        <p>${localeLabels[preferredLocale].prompt}</p>
-        <div class="locale-suggestion-actions">
-          <a class="locale-suggestion-link">${localeLabels[preferredLocale].language}</a>
-          <button type="button" class="locale-suggestion-dismiss">${localeLabels[preferredLocale].dismiss}</button>
-        </div>
-      `;
+      suggestion.innerHTML = '<p>' + localeLabels[preferredLocale].prompt + '</p><div class="locale-suggestion-actions"><a class="locale-suggestion-link">' + localeLabels[preferredLocale].language + '</a><button type="button" class="locale-suggestion-dismiss">' + localeLabels[preferredLocale].dismiss + '</button></div>';
       document.body.append(suggestion);
-      suggestion.querySelector('.locale-suggestion-link').setAttribute('href', `/${preferredLocale}/`);
-
+      suggestion.querySelector('.locale-suggestion-link').setAttribute('href', '/' + preferredLocale + '/');
       const remember = (choice) => {
-        try {
-          window.localStorage.setItem(choiceKey, choice);
-        } catch {
-          // Dismissing remains effective until this page is reloaded.
-        }
+        try { window.localStorage.setItem(choiceKey, choice); } catch { /* Dismissing remains effective until reload. */ }
         suggestion.remove();
       };
       suggestion.querySelector('.locale-suggestion-link').addEventListener('click', () => remember(preferredLocale));
       suggestion.querySelector('.locale-suggestion-dismiss').addEventListener('click', () => remember('en'));
     })();
-
     (() => {
-      const canvas = document.getElementById('life-field');
-      const toggle = document.getElementById('life-toggle');
-      const reset = document.getElementById('life-reset');
-      const status = document.getElementById('life-status');
-      if (!canvas || !toggle || !reset || !status) return;
-
+      document.querySelectorAll('[data-specimen]').forEach((specimen) => {
+        const controls = specimen.querySelector('.journal-specimen-controls');
+        const buttons = [...controls.querySelectorAll('[data-stage]')];
+        const panels = [...specimen.querySelectorAll('[data-panel]')];
+        const select = (stage) => {
+          buttons.forEach((button) => button.setAttribute('aria-pressed', String(button.dataset.stage === stage)));
+          panels.forEach((panel) => { panel.hidden = panel.dataset.panel !== stage; });
+        };
+        select('capture');
+        controls.hidden = false;
+        buttons.forEach((button) => button.addEventListener('click', () => select(button.dataset.stage)));
+      });
+    })();
+    (() => {
+      const canvas = document.getElementById('journal-life-field');
+      const toggle = document.getElementById('journal-life-toggle');
+      const stepButton = document.getElementById('journal-life-step');
+      const reset = document.getElementById('journal-life-reset');
+      const status = document.getElementById('journal-life-status');
+      const fallback = document.getElementById('journal-life-fallback');
+      if (!canvas || !toggle || !stepButton || !reset || !status || !fallback) return;
       const context = canvas.getContext('2d');
       if (!context) return;
-
-      const columns = 60;
-      const rows = 48;
-      const cellSize = 12;
-      const generationInterval = 140;
-      let grid = new Uint8Array(columns * rows);
-      let nextGrid = new Uint8Array(columns * rows);
-      let generation = 0;
-      let animation = null;
-      let lastTick = 0;
-
+      const style = getComputedStyle(canvas);
+      const colors = { paper: style.getPropertyValue('--paper').trim(), grid: style.getPropertyValue('--paper-deep').trim(), cell: style.getPropertyValue('--viz-sage').trim() || style.getPropertyValue('--sage').trim() };
+      const lifeLabels = {
+        start: 'Start',
+        pause: 'Pause',
+        step: 'Step',
+        reset: 'Reset',
+        paused: 'Paused',
+        running: 'Running',
+        generation: 'Generation {generation}',
+        livingCells: '{population} living cells',
+      };
+      const columns = 60, rows = 48, cellSize = 12, generationInterval = 140;
+      let grid = new Uint8Array(columns * rows), nextGrid = new Uint8Array(columns * rows), generation = 0, population = 0, animation = null, lastTick = 0;
       const indexFor = (x, y) => y * columns + x;
-
       const seed = () => {
         grid.fill(0);
-        [[0, 1], [1, 0], [1, 1], [1, 2], [2, 0]].forEach(([x, y]) => {
-          grid[indexFor(x + 29, y + 22)] = 1;
-        });
+        [[0, 1], [1, 0], [1, 1], [1, 2], [2, 0]].forEach(([x, y]) => { grid[indexFor(x + 29, y + 22)] = 1; });
         generation = 0;
       };
-
+      const describe = () => {
+        const state = animation === null ? lifeLabels.paused : lifeLabels.running;
+        const generationText = lifeLabels.generation.replace('{generation}', String(generation));
+        const populationText = lifeLabels.livingCells.replace('{population}', String(population));
+        status.textContent = state + ' · ' + generationText + ' · ' + populationText;
+        canvas.setAttribute('aria-label', state + ' Game of Life field: ' + generationText + ', ' + populationText);
+      };
       const draw = () => {
-        context.fillStyle = '#111111';
+        context.fillStyle = colors.paper;
         context.fillRect(0, 0, canvas.width, canvas.height);
-        context.fillStyle = 'rgba(255, 216, 62, 0.08)';
+        context.fillStyle = colors.grid;
         for (let x = 0; x <= columns; x += 1) context.fillRect(x * cellSize, 0, 1, canvas.height);
         for (let y = 0; y <= rows; y += 1) context.fillRect(0, y * cellSize, canvas.width, 1);
-        context.fillStyle = '#ffd83e';
-        for (let y = 0; y < rows; y += 1) {
-          for (let x = 0; x < columns; x += 1) {
-            if (grid[indexFor(x, y)]) context.fillRect(x * cellSize + 1, y * cellSize + 1, cellSize - 2, cellSize - 2);
-          }
-        }
-        status.textContent = `Generation ${generation}`;
+        context.fillStyle = colors.cell; population = 0;
+        for (let y = 0; y < rows; y += 1) for (let x = 0; x < columns; x += 1) if (grid[indexFor(x, y)]) { context.fillRect(x * cellSize + 1, y * cellSize + 1, cellSize - 2, cellSize - 2); population += 1; }
+        describe();
       };
-
       const step = () => {
-        for (let y = 0; y < rows; y += 1) {
-          for (let x = 0; x < columns; x += 1) {
-            let neighbours = 0;
-            for (let yOffset = -1; yOffset <= 1; yOffset += 1) {
-              for (let xOffset = -1; xOffset <= 1; xOffset += 1) {
-                if (xOffset === 0 && yOffset === 0) continue;
-                const neighbourX = (x + xOffset + columns) % columns;
-                const neighbourY = (y + yOffset + rows) % rows;
-                neighbours += grid[indexFor(neighbourX, neighbourY)];
-              }
-            }
-            const cell = grid[indexFor(x, y)];
-            nextGrid[indexFor(x, y)] = neighbours === 3 || (cell === 1 && neighbours === 2) ? 1 : 0;
-          }
+        for (let y = 0; y < rows; y += 1) for (let x = 0; x < columns; x += 1) {
+          let neighbours = 0;
+          for (let dy = -1; dy <= 1; dy += 1) for (let dx = -1; dx <= 1; dx += 1) if (dx !== 0 || dy !== 0) neighbours += grid[indexFor((x + dx + columns) % columns, (y + dy + rows) % rows)];
+          nextGrid[indexFor(x, y)] = neighbours === 3 || (grid[indexFor(x, y)] === 1 && neighbours === 2) ? 1 : 0;
         }
-        [grid, nextGrid] = [nextGrid, grid];
-        generation += 1;
+        [grid, nextGrid] = [nextGrid, grid]; generation += 1;
       };
-
-      const stop = () => {
-        if (animation !== null) cancelAnimationFrame(animation);
-        animation = null;
-        toggle.textContent = 'Let it evolve';
-        toggle.setAttribute('aria-pressed', 'false');
-      };
-
-      const play = (timestamp) => {
-        if (animation === null) return;
-        if (timestamp - lastTick >= generationInterval) {
-          step();
-          draw();
-          lastTick = timestamp;
-        }
-        animation = requestAnimationFrame(play);
-      };
-
+      const stop = () => { if (animation !== null) cancelAnimationFrame(animation); animation = null; toggle.textContent = lifeLabels.start; toggle.setAttribute('aria-pressed', 'false'); status.setAttribute('aria-live', 'polite'); };
+      const play = (timestamp) => { if (animation === null) return; if (timestamp - lastTick >= generationInterval) { step(); draw(); lastTick = timestamp; } animation = requestAnimationFrame(play); };
       toggle.addEventListener('click', () => {
-        if (animation !== null) {
-          stop();
-          return;
-        }
-        toggle.textContent = 'Pause';
-        toggle.setAttribute('aria-pressed', 'true');
-        lastTick = performance.now();
-        animation = requestAnimationFrame(play);
+        if (animation !== null) stop(); else { toggle.textContent = lifeLabels.pause; toggle.setAttribute('aria-pressed', 'true'); status.setAttribute('aria-live', 'off'); lastTick = performance.now(); animation = requestAnimationFrame(play); }
+        describe();
       });
-
-      reset.addEventListener('click', () => {
-        stop();
-        seed();
-        draw();
-      });
-
-      seed();
-      draw();
+      stepButton.addEventListener('click', () => { stop(); step(); draw(); });
+      reset.addEventListener('click', () => { stop(); seed(); draw(); });
+      document.addEventListener('visibilitychange', () => { if (document.hidden) { stop(); describe(); } });
+      window.addEventListener('pagehide', () => { stop(); describe(); });
+      seed(); draw(); canvas.hidden = false; status.hidden = false; document.getElementById('journal-life-controls').hidden = false; fallback.hidden = true;
     })();
   </script>
-
 </body>
 </html>

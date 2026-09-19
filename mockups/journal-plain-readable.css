@@ -1,0 +1,272 @@
+/* The source theme and token snapshot load before this adapter. Keep the
+   journal's composition while mapping its elements to Plato's Cave roles. */
+body.journal {
+  --paper: inherit;
+  --ink: inherit;
+  --muted: var(--ink-faint);
+  --line: var(--ink-ghost);
+  --accent: var(--rust);
+  --concept-serif: var(--serif);
+  --concept-mono: var(--mono);
+  font: 400 var(--fs-body)/1.7 var(--serif);
+}
+
+.journal .wrap { width: min(1140px, calc(100% - 5rem)); }
+.journal .wrap > *,
+.journal .journal-section > *,
+.journal .specimen-panel > * { min-width: 0; }
+
+.journal h1,
+.journal h2,
+.journal .brand {
+  font-family: var(--serif-alt);
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: .04em;
+  line-height: 1.04;
+}
+
+.journal .brand { font-size: calc(var(--fs-nav-title) * 2.535); }
+.journal .journal-app-icon { flex-shrink: 0; object-fit: contain; }
+.journal .brand .journal-app-icon { width: 48px; height: 48px; }
+.journal .journal-hero h1 {
+  font-size: clamp(var(--fs-heading-hero-min), 7.4vw, var(--fs-heading-hero-max));
+  max-width: 14ch;
+  margin-block: 1.5rem 2rem;
+}
+.journal .journal-hero h1 em { font-style: normal; }
+.journal h2 {
+  font-size: clamp(var(--fs-heading-module-min), 4vw, var(--fs-heading-module-max));
+  max-width: 24ch;
+}
+.journal .observation h3,
+.journal .specimen-panel .explanation h3 {
+  font: 400 var(--fs-heading-module-card-md)/1.2 var(--serif);
+  letter-spacing: -.015em;
+}
+
+.journal .label {
+  font: 400 var(--fs-label-section)/1.6 var(--mono);
+  letter-spacing: .08em;
+}
+.journal .concept-bar {
+  font: 400 var(--fs-note-meta)/1.5 var(--mono);
+  gap: var(--space-md);
+  flex-wrap: wrap;
+}
+.journal .concept-bar nav { flex-wrap: wrap; }
+.journal .masthead {
+  min-height: 6rem;
+  border-color: var(--nav-surface-border);
+}
+.journal .masthead nav {
+  font: 400 var(--fs-link-nav)/1.5 var(--mono);
+  gap: 1.5rem;
+}
+.journal .masthead nav a { padding-block: var(--space-xs); }
+.journal a {
+  color: var(--link-text);
+  text-decoration-color: var(--link-underline);
+  text-decoration-thickness: 1px;
+  text-underline-offset: .2em;
+}
+.journal a:hover {
+  color: var(--link-text-hover);
+  text-decoration-color: var(--link-underline-hover);
+}
+.journal .brand { color: var(--ink); }
+.journal .masthead nav a:hover,
+.journal .site-footer a:hover { text-decoration: underline; }
+.journal :focus-visible { outline: 2px solid var(--sage); outline-offset: 2px; }
+.journal .text-link {
+  font: 400 var(--fs-link-diagnosis)/1.7 var(--mono);
+  padding-block: var(--space-xs);
+}
+.journal .footnote {
+  font: 400 var(--fs-note-meta)/1.7 var(--mono);
+  color: var(--ink-faint);
+}
+.journal .site-footer {
+  font: 400 var(--fs-footer-text)/1.7 var(--mono);
+  color: var(--ink-faint);
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  padding-block: 2rem;
+}
+.journal .site-footer nav { gap: 1.25rem; }
+
+.journal .journal-hero {
+  grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr);
+  gap: 3rem;
+  padding-block: 4rem;
+}
+.journal .journal-hero .lead {
+  font: 400 var(--fs-body-hero)/1.72 var(--serif);
+  color: var(--ink-mid);
+  max-width: 55ch;
+}
+.journal .journal-download {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-lg);
+  margin-top: 1.5rem;
+}
+/* Apple's badge requires a quarter-height clear space and unmodified artwork. */
+.journal .app-store-badge {
+  display: inline-flex;
+  flex-shrink: 0;
+  padding: 12px;
+  text-decoration: none;
+}
+.journal .app-store-badge img { width: auto; height: 48px; }
+.journal .journal-download + .text-link { margin-top: var(--space-sm); }
+.journal .journal-app-identity {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  margin-block: 1.25rem;
+}
+.journal .journal-app-identity h3 {
+  font: 400 2rem/1.04 var(--serif-alt);
+  letter-spacing: .04em;
+  margin-bottom: var(--space-xxs);
+}
+.journal .journal-trademark {
+  flex-basis: 100%;
+  font: 400 .625rem/1.7 var(--mono);
+  color: var(--ink-faint);
+  max-width: 95ch;
+}
+.journal .journal-plate {
+  background: var(--paper-dark);
+  border-color: var(--ink-ghost);
+  border-radius: var(--card-radius);
+  padding: 1.5rem;
+}
+.journal .plate-head { font-size: var(--fs-note-meta); }
+.journal .plate-caption { font-size: var(--fs-body); color: var(--ink-mid); }
+.journal .journal-plate svg { color: var(--viz-ink); }
+.journal .journal-plate svg text { font-family: var(--viz-font-mono); }
+.journal .diagram-note { fill: var(--viz-ink-ghost); }
+.journal .diagram-active { fill: var(--viz-sage); }
+
+.journal .journal-abstract {
+  grid-template-columns: 8rem minmax(0, 1fr) 12rem;
+  gap: 2rem;
+  padding-block: 1.5rem;
+}
+.journal .journal-abstract > p:not(.footnote) {
+  font: 400 var(--fs-heading-module-card)/1.5 var(--serif);
+}
+.journal .journal-abstract .footnote { padding-left: 1.5rem; }
+.journal .journal-section {
+  grid-template-columns: 8rem minmax(0, 1fr);
+  gap: 2rem;
+  padding-top: 4rem;
+}
+.journal .journal-section h2 { margin-bottom: 1.5rem; }
+.journal .observations { gap: 1.5rem; }
+.journal .observation { padding-top: 1rem; }
+.journal .observation h3 { margin-block: 1rem .75rem; }
+.journal .observation p,
+.journal .specimen-panel .explanation,
+.journal .legal-note { font-size: var(--fs-body); }
+.journal .observation p { color: var(--ink-mid); }
+.journal .observation .response { color: var(--ink); margin-top: 1.25rem; }
+.journal .margin-note p + p { margin-top: 1rem; }
+
+.journal .specimen { margin-top: 2rem; }
+.journal .specimen-controls button {
+  font: 400 var(--fs-button-action)/1.5 var(--mono);
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  padding: .75rem;
+  min-height: 44px;
+  color: var(--ink-mid);
+}
+.journal .specimen-controls button:hover { background: var(--link-surface-subtle); }
+.journal .specimen-controls button[aria-pressed="true"] {
+  background: var(--ink);
+  color: var(--paper);
+}
+.journal .specimen-controls button:focus-visible {
+  outline-color: var(--sage);
+  outline-offset: -4px;
+}
+.journal .specimen-panel { padding: 2rem; gap: 2rem; }
+.journal .specimen-panel pre { font: 400 var(--fs-note-meta)/2 var(--mono); }
+.journal .specimen-panel .explanation { padding-left: 1.5rem; }
+.journal .quiet-end { margin-top: 4rem; padding-top: 3rem; gap: 4rem; }
+.journal .quiet-end h2 { margin-block: 1rem 1.5rem; }
+
+.journal .journal-emergence-copy p + p { margin-top: 1rem; }
+.journal .journal-life {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  border: 1px solid var(--ink-ghost);
+  background: var(--paper-dark);
+}
+.journal .journal-life canvas {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin-block: 1.25rem;
+  border: 1px solid var(--paper-deep);
+  image-rendering: pixelated;
+}
+.journal .journal-life-controls { display: flex; flex-wrap: wrap; gap: var(--space-xs); }
+.journal .journal-life-controls button {
+  min-height: 44px;
+  padding: .75rem 1.25rem;
+  border: 1px solid var(--ink-ghost);
+  background: var(--paper);
+  color: var(--ink-mid);
+  font: 400 var(--fs-button-action)/1.25 var(--mono);
+  letter-spacing: .06em;
+  text-transform: uppercase;
+}
+.journal .journal-life-controls button:hover { border-color: var(--ink); background: var(--paper-deep); }
+.journal .journal-life-controls button[aria-pressed] { color: var(--paper); background: var(--ink); border-color: var(--ink); }
+.journal .journal-life-status { margin-block: 1rem; }
+.journal .journal-life-rules { margin-top: 1.25rem; }
+.journal .journal-life-rules summary { cursor: pointer; font: 400 var(--fs-button-action)/1.7 var(--mono); }
+.journal .journal-life-rules p { margin-top: 1rem; max-width: 65ch; color: var(--ink-mid); }
+.journal .journal-life-rules .text-link { margin-top: var(--space-sm); }
+.journal .journal-life-fallback { padding-block: 2rem; }
+
+@media (max-width: 1050px) {
+  .journal .journal-abstract { grid-template-columns: 8rem minmax(0, 1fr); }
+  .journal .journal-abstract .footnote { grid-column: 2; padding: 0; border: 0; }
+  .journal .journal-section { grid-template-columns: 1fr; gap: 1rem; }
+  .journal .margin-note p + p { max-width: none; margin-top: .5rem; }
+  .journal .quiet-end { gap: 2rem; }
+}
+@media (max-width: 760px) {
+  .journal .wrap { width: calc(100% - 2.5rem); }
+  .journal .masthead { min-height: 5rem; gap: 1rem; }
+  .journal .masthead nav { gap: 1rem; font-size: var(--fs-note-meta); }
+  .journal .journal-hero { grid-template-columns: 1fr; gap: 2rem; padding-block: 3rem; }
+  .journal .journal-hero h1 { font-size: clamp(var(--fs-heading-hero-min), 12vw, var(--fs-heading-hero-max)); }
+  .journal .journal-plate { max-width: none; }
+  .journal .journal-abstract { grid-template-columns: 1fr; gap: 1rem; }
+  .journal .journal-abstract .footnote { grid-column: auto; }
+  .journal .journal-section { padding-top: 3rem; }
+  .journal .observation .response { margin-top: .75rem; }
+  .journal .specimen-panel { padding: 1.25rem; gap: 1.25rem; }
+  .journal .specimen-panel .explanation { padding: 1.25rem 0 0; }
+  .journal .quiet-end { margin-top: 3rem; padding-top: 2rem; }
+  .journal .concept-bar { font-size: .625rem; }
+  .journal .concept-bar > span { max-width: none; }
+  .journal .concept-bar nav { justify-content: flex-start; }
+}
+@media (max-width: 420px) {
+  .journal .masthead { flex-wrap: wrap; padding-block: 1rem; }
+  .journal .masthead nav { width: 100%; justify-content: space-between; }
+}
+@media (max-width: 380px) {
+  .journal .specimen-controls button { font-size: .625rem; padding-inline: .5rem; }
+  .journal .plate-head { flex-wrap: wrap; gap: .5rem; }
+  .journal .journal-life { padding: 1rem; }
+  .journal .journal-life-controls button { padding-inline: .75rem; }
+}

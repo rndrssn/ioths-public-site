@@ -4,46 +4,34 @@
     {
       "code": "de",
       "name": "German",
-      "status": "published",
-      "reviewedBy": "Marketing localization review",
-      "reviewedOn": "2026-08-27"
+      "status": "draft"
     },
     {
       "code": "ja",
       "name": "Japanese",
-      "status": "published",
-      "nativeReviewRequired": true,
-      "reviewedBy": "Native-language review",
-      "reviewedOn": "2026-08-27"
+      "status": "draft",
+      "nativeReviewRequired": true
     },
     {
       "code": "ko",
       "name": "Korean",
-      "status": "published",
-      "nativeReviewRequired": true,
-      "reviewedBy": "Native-language review",
-      "reviewedOn": "2026-08-27"
+      "status": "draft",
+      "nativeReviewRequired": true
     },
     {
       "code": "fr",
       "name": "French",
-      "status": "published",
-      "reviewedBy": "Marketing localization review",
-      "reviewedOn": "2026-08-27"
+      "status": "draft"
     },
     {
       "code": "it",
       "name": "Italian",
-      "status": "published",
-      "reviewedBy": "Marketing localization review",
-      "reviewedOn": "2026-08-27"
+      "status": "draft"
     },
     {
       "code": "es",
       "name": "Spanish",
-      "status": "published",
-      "reviewedBy": "Marketing localization review",
-      "reviewedOn": "2026-08-27"
+      "status": "draft"
     }
   ]
 }

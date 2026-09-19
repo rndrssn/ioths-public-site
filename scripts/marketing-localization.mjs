@@ -10,7 +10,7 @@ const marketingRoot = path.join(localesRoot, 'marketing');
 const sourcePath = path.join(repositoryRoot, 'index.html');
 const manifestPath = path.join(localesRoot, 'marketing-locales.json');
 const sourceCatalogPath = path.join(marketingRoot, 'en.json');
-const protectedTerms = ['IOTHS', 'Markdown', 'Obsidian', 'GitHub', 'GitLab', 'App Store', "Conway's Game of Life", 'YAML', 'iPhone', 'iPad', 'Files', 'Box', 'Dropbox', 'Microsoft OneDrive', 'PDF', 'ZIP', "Plato's Cave"];
+const protectedTerms = ['IOTHS', 'ioths', 'Markdown', 'Obsidian', 'GitHub', 'GitLab', 'App Store', "Conway's Game of Life", 'YAML', 'iPhone', 'iPad', 'Files', 'Box', 'Dropbox', 'Microsoft OneDrive', 'PDF', 'ZIP', "Plato's Cave"];
 
 function readJSON(file) {
   return JSON.parse(fs.readFileSync(file, 'utf8'));
@@ -79,8 +79,14 @@ function extractSourceCatalog(html) {
     }
   }
 
+  add('life.start', 'Start', 'Game of Life control shown while the simulation is paused.');
   add('life.pause', 'Pause', 'Game of Life control shown while the simulation is running.');
+  add('life.step', 'Step', 'Game of Life control that advances one generation.');
+  add('life.reset', 'Reset', 'Game of Life control that restores the original seed.');
+  add('life.paused', 'Paused', 'Game of Life status shown while the simulation is paused.');
+  add('life.running', 'Running', 'Game of Life status shown while the simulation is running.');
   add('life.generation', 'Generation {generation}', 'Game of Life generation label. Keep {generation} exactly once.');
+  add('life.livingCells', '{population} living cells', 'Game of Life population label. Keep {population} exactly once.');
   add('localeSuggestion.prompt', 'View this page in your language', 'Browser-language suggestion. Translate naturally for the target locale.');
   add('localeSuggestion.language', 'your language', 'Link label for the translated marketing page.');
   add('localeSuggestion.dismiss', 'Stay in English', 'Dismissal action for the browser-language suggestion.');

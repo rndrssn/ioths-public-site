@@ -14,103 +14,17 @@
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <!-- Cloudflare Turnstile — bot protection, no fingerprinting, GDPR-safe -->
   <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
-  <style>
-    .contact-form {
-      display: flex;
-      flex-direction: column;
-      gap: var(--space-md);
-      margin-top: var(--space-lg);
-    }
-    .field {
-      display: flex;
-      flex-direction: column;
-      gap: var(--space-xs);
-    }
-    .field label {
-      font-family: var(--font-mono);
-      font-size: 0.6875rem;
-      letter-spacing: 0.06em;
-      color: var(--fg-ghost);
-      text-transform: uppercase;
-    }
-    .field input,
-    .field select,
-    .field textarea {
-      font-family: var(--font-serif);
-      font-size: 1rem;
-      color: var(--fg);
-      background: var(--surface);
-      border: 1px solid var(--separator);
-      border-radius: var(--radius-md);
-      padding: var(--space-sm) var(--space-md);
-      width: 100%;
-      box-sizing: border-box;
-      outline: none;
-      transition: border-color 0.15s;
-      -webkit-appearance: none;
-    }
-    .field input:focus,
-    .field select:focus,
-    .field textarea:focus {
-      border-color: var(--positive);
-    }
-    .field textarea {
-      min-height: 140px;
-      resize: vertical;
-    }
-    .field .hint {
-      font-family: var(--font-mono);
-      font-size: 0.625rem;
-      color: var(--fg-ghost);
-    }
-    /* Shares its type/color/radius/padding recipe with .button-primary in
-       style.css — only what's specific to a real <button> lives here. */
-    .submit-btn {
-      border: none;
-      cursor: pointer;
-      align-self: flex-start;
-      transition: opacity 0.15s;
-    }
-    .submit-btn:disabled {
-      opacity: 0.4;
-      cursor: default;
-    }
-    .privacy-notice {
-      font-family: var(--font-mono);
-      font-size: 0.625rem;
-      color: var(--fg-ghost);
-      line-height: 1.6;
-    }
-    .privacy-notice a {
-      color: var(--fg-mid);
-    }
-    #status {
-      font-family: var(--font-serif);
-      font-size: 0.9375rem;
-      padding: var(--space-sm) var(--space-md);
-      border-radius: var(--radius-md);
-      display: none;
-    }
-    #status.success {
-      color: var(--positive);
-      background: color-mix(in srgb, var(--positive) 10%, transparent);
-      display: block;
-    }
-    #status.error {
-      color: var(--destructive);
-      background: color-mix(in srgb, var(--destructive) 10%, transparent);
-      display: block;
-    }
-  </style>
 </head>
-<body>
-
-  <header>
-    <a class="wordmark" href="/"><span class="back-icon" aria-hidden="true">←</span>IOTHS</a>
+<body class="journal-document">
+  <a class="journal-document-skip" href="#main">Skip to content</a>
+  <header class="journal-document-header">
+    <div class="journal-document-wrap journal-document-masthead">
+      <a class="journal-document-wordmark" href="/"><span class="back-icon" aria-hidden="true">←</span><img src="/icon-why-240.png" alt="" width="32" height="32" decoding="async">ioths</a>
+      <p class="journal-document-label">Support</p>
+    </div>
   </header>
-
-  <main>
-
+  <main id="main" class="journal-document-main">
+    <p class="journal-document-label journal-document-accent">Support / contact</p>
     <h1>Contact</h1>
     <p class="meta">Questions, feedback, or privacy requests · Updated 8 September 2026 · Version 2026.09.3</p>
 
@@ -130,12 +44,12 @@
       </div>
 
       <div class="field">
-        <label for="subject">Subject <span style="color:var(--fg-ghost)">(optional)</span></label>
+        <label for="subject">Subject <span class="field-optional">(optional)</span></label>
         <input type="text" id="subject" name="subject" maxlength="150" placeholder="e.g. Privacy request, Bug report, Feedback">
       </div>
 
       <div class="field">
-        <label for="email">Email <span style="color:var(--fg-ghost)">(optional — required for a reply)</span></label>
+        <label for="email">Email <span class="field-optional">(optional — required for a reply)</span></label>
         <input type="email" id="email" name="email" maxlength="254" placeholder="you@example.com" autocomplete="email">
       </div>
 
@@ -160,9 +74,11 @@
 
   </main>
 
-  <footer>
-    <p>IOTHS &mdash; made with care</p>
-    <p><a href="/legal/privacy">Privacy Policy</a> &middot; <a href="/legal/terms">Terms of Use</a> &middot; <a href="/legal/legal-notice">Legal Notice</a></p>
+  <footer class="journal-document-footer">
+    <div class="journal-document-wrap">
+      <p>ioths / An independent tool by Bedrock Rebellion</p>
+      <nav aria-label="Legal"><a href="/legal/privacy">Privacy</a><a href="/legal/terms">Terms</a><a href="/legal/legal-notice">Legal notice</a></nav>
+    </div>
   </footer>
 
   <script>
