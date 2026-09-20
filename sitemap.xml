@@ -3,36 +3,36 @@
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://ioths.bedrockrebel.app/</loc>
-    <lastmod>2026-09-19</lastmod>
+    <lastmod>2026-09-20</lastmod>
     <image:image>
       <image:loc>https://ioths.bedrockrebel.app/assets/marketing/library-744.png</image:loc>
-      <image:title>IOTHS offline Markdown notes library</image:title>
-      <image:caption>IOTHS Library on iPhone with notes, task progress, tags, and link previews.</image:caption>
+      <image:title>ioths library with task progress on each note</image:title>
+      <image:caption>ioths Library on iPhone with notes, task progress, tags, and link previews.</image:caption>
     </image:image>
     <image:image>
       <image:loc>https://ioths.bedrockrebel.app/assets/marketing/kanban-notes-mode-v3.png</image:loc>
-      <image:title>IOTHS kanban board for Markdown notes</image:title>
-      <image:caption>IOTHS Kanban in note mode, with note cards in Open, In Progress, and Done lanes.</image:caption>
+      <image:title>ioths kanban board of notes</image:title>
+      <image:caption>ioths Kanban in note mode, with note cards in Open, In Progress, and Done lanes.</image:caption>
     </image:image>
     <image:image>
       <image:loc>https://ioths.bedrockrebel.app/assets/marketing/kanban-tasks-mode-v3.png</image:loc>
-      <image:title>IOTHS kanban board for tasks</image:title>
-      <image:caption>IOTHS Kanban in task mode, with individual tasks grouped under their source notes.</image:caption>
+      <image:title>ioths kanban board of tasks</image:title>
+      <image:caption>ioths Kanban in task mode, with individual tasks grouped under their source notes.</image:caption>
     </image:image>
     <image:image>
       <image:loc>https://ioths.bedrockrebel.app/assets/marketing/natural-note-744.png</image:loc>
-      <image:title>IOTHS natural Markdown note editor</image:title>
-      <image:caption>IOTHS note editor with a photo, Markdown link, tags, and checklist.</image:caption>
+      <image:title>ioths note editor</image:title>
+      <image:caption>ioths note editor with a photo, Markdown link, tags, and checklist.</image:caption>
     </image:image>
     <image:image>
       <image:loc>https://ioths.bedrockrebel.app/assets/marketing/raw-markdown-744.png</image:loc>
-      <image:title>IOTHS raw Markdown editor</image:title>
-      <image:caption>IOTHS raw editor showing the portable Markdown source of a note.</image:caption>
+      <image:title>ioths raw Markdown editor</image:title>
+      <image:caption>ioths raw editor showing the portable Markdown source of a note.</image:caption>
     </image:image>
     <image:image>
       <image:loc>https://ioths.bedrockrebel.app/assets/marketing/storage-744.png</image:loc>
-      <image:title>IOTHS Storage setup</image:title>
-      <image:caption>IOTHS Storage setup with on-device, Files folder, GitHub, GitLab, and portable export options.</image:caption>
+      <image:title>ioths storage setup</image:title>
+      <image:caption>ioths storage setup with on-device, Files folder, GitHub, GitLab, and portable export options.</image:caption>
     </image:image>
   </url>
 </urlset>

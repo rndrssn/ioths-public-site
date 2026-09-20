@@ -66,13 +66,8 @@
   --ink-faint:   #9c8e78;
   --ink-ghost:   #c8bda8;
   --rust:        #8b3a2a;
-  --rust-light:  #b85c40;
   --sage:        #4a6741;
-  --sage-light:  #6b8f62;
-  --ochre:       #9a7b3a;
-  --gold:        #b8943a;
   --slate:       #3d4f5c;
-  --slate-light: #5a7080;
   --serif:       "EB Garamond", Georgia, serif;
   --serif-alt:   "Cormorant Garamond", Georgia, serif;
   --mono:        "DM Mono", "Courier New", monospace;
@@ -81,36 +76,33 @@
   --fs-heading-hero-min: 2.5rem;
   --fs-heading-hero-max: 5.5rem;
   --fs-body-hero: 0.875rem;
+  --fs-heading-module-max: 3.25rem;
+  --fs-heading-module-card: 1.5rem;
+  --fs-link-diagnosis: 0.8rem;
 
   --link-text: var(--ink-mid);
   --link-text-hover: var(--ink);
   --link-underline: color-mix(in srgb, var(--ink-mid) 42%, transparent 58%);
   --link-underline-hover: color-mix(in srgb, var(--ink) 74%, transparent 26%);
 
-  --bg: var(--paper);
   --bg-raised: var(--paper-dark);
   --bg-deep: var(--paper-deep);
   --separator: var(--ink-ghost);
   --fg: var(--ink);
   --fg-mid: var(--ink-mid);
-  --fg-faint: var(--ink-faint);
   --fg-ghost: var(--ink-ghost);
+
+  /* Yellow is the accent of the app itself: its compose button, its progress
+     marks and its live cells. On this site it always means "the action" or
+     "what is live or changed" — never decoration. */
   --attention: #ffd83e;
   --attention-text: #151515;
-  --positive: var(--sage);
-  --negative: var(--rust);
   --meta: var(--slate);
 
-  --surface: var(--paper-dark);
-  --destructive: var(--rust);
-
-  /* Radius */
   --radius-xs:   3px;
   --radius-sm:   8px;
-  --radius-md:   12px;
   --radius-pill: 999px;
 
-  /* Spacing */
   --space-xxs:  4px;
   --space-xs:   8px;
   --space-sm:   12px;
@@ -120,11 +112,9 @@
   --space-xxl:  24px;
   --space-xxxl: 32px;
 
-  --font-serif: var(--serif);
   --font-display: var(--serif-alt);
   --font-mono: var(--mono);
 
-  /* Shadow (light mode only) */
   --shadow-card: 0 2px 2px rgba(17, 34, 54, 0.08);
   --showcase-surface: #111111;
   --showcase-ink: #f5f5f5;
@@ -134,12 +124,12 @@
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
+/* The hidden attribute must win over the display values set on components. */
+[hidden] { display: none !important; }
+
 /* Base */
 
-html {
-  font-size: 18px;
-  overflow-x: hidden;
-}
+html { font-size: 18px; }
 
 @media (max-width: 640px) {
   html { font-size: 16px; }
@@ -147,6 +137,10 @@ html {
 
 @media (orientation: landscape) and (max-height: 500px) {
   html { font-size: 14px; }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html { scroll-behavior: smooth; }
 }
 
 body {
@@ -158,31 +152,30 @@ body {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.025'/%3E%3C/svg%3E");
   -webkit-font-smoothing: antialiased;
   font-synthesis: none;
-  overflow-x: hidden;
+  /* clip, not hidden: hidden makes body a scroll container and breaks the
+     sticky landing header. */
+  overflow-x: clip;
   min-height: 100dvh;
 }
 
-/* Layout */
-
-header {
-  border-bottom: 1px solid var(--separator);
-  padding: var(--space-md) var(--space-xxl);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+:focus-visible {
+  outline: 2px solid var(--sage);
+  outline-offset: 2px;
 }
 
-.wordmark {
+/* Wordmark — Bebas Neue has no lowercase, so the lowercase brand name is set in
+   Space Mono Bold. Legal pages that still spell it "IOTHS" are lowered here. */
+
+.wordmark,
+.journal-wordmark,
+.journal-document-wordmark {
   display: inline-flex;
   align-items: center;
-  gap: var(--space-xs);
-  font-family: var(--font-display);
-  font-size: calc(1.1rem * 2.535);
-  font-weight: 300;
-  font-style: italic;
-  line-height: 1.04;
-  letter-spacing: 0.04em;
-  color: var(--fg-ghost);
+  gap: 0.65rem;
+  color: var(--ink);
+  font: 700 1.75rem/1 var(--mono);
+  letter-spacing: -0.02em;
+  text-transform: lowercase;
   text-decoration: none;
 }
 
@@ -191,7 +184,18 @@ header {
 .back-icon {
   font-family: var(--font-mono);
   font-size: 0.875rem;
+  font-weight: 400;
   letter-spacing: normal;
+}
+
+/* Generic pages (Impressum, legal notice) */
+
+header {
+  border-bottom: 1px solid var(--separator);
+  padding: var(--space-md) var(--space-xxl);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .lang-switch {
@@ -206,27 +210,13 @@ header {
   padding: 0 var(--space-xxs);
 }
 
-.lang-switch a.active {
-  color: var(--fg);
-}
+.lang-switch a.active { color: var(--fg); }
 
 main {
   max-width: 720px;
   margin: 0 auto;
   padding: 3rem 1.25rem 6rem;
 }
-
-main.landing-main {
-  max-width: 1140px;
-  padding-top: 0;
-}
-
-main.not-found-main {
-  max-width: 720px;
-  padding-top: 3rem;
-}
-
-/* Typography */
 
 h1 {
   font-family: var(--font-display);
@@ -289,8 +279,6 @@ code {
   color: var(--fg-mid);
 }
 
-/* Effective date chip */
-
 .meta {
   font-family: var(--font-mono);
   font-size: 0.6875rem;
@@ -299,38 +287,17 @@ code {
   margin-bottom: var(--space-xxxl);
 }
 
-/* Section divider */
-
-section {
+/* The landing page and journal documents lay their own sections out. */
+:where(main:not(.journal-main)) section {
   border-top: 1px solid var(--ink-ghost);
   padding: 3rem 0;
   margin-top: 0;
 }
 
-section:first-of-type {
+:where(main:not(.journal-main)) section:first-of-type {
   border-top: none;
   margin-top: 0;
 }
-
-.hero + section {
-  border-top: 1px solid var(--ink-ghost);
-}
-
-/* Contact card */
-
-.contact-card {
-  background: var(--bg-raised);
-  border: 1px solid var(--separator);
-  border-radius: var(--radius-md);
-  padding: var(--space-lg);
-  margin-top: var(--space-md);
-  box-shadow: var(--shadow-card);
-}
-
-.contact-card p { margin-bottom: var(--space-xs); }
-.contact-card p:last-child { margin-bottom: 0; }
-
-/* Callout */
 
 .callout {
   background: var(--bg-deep);
@@ -340,8 +307,6 @@ section:first-of-type {
   margin-bottom: var(--space-md);
   color: var(--fg-mid);
 }
-
-/* Footer */
 
 footer {
   border-top: 1px solid var(--ink-ghost);
@@ -359,65 +324,6 @@ footer p {
   margin-bottom: 0;
 }
 
-/* Landing hero */
-
-.hero {
-  text-align: left;
-  padding-top: calc(4rem + 3rem);
-  padding-bottom: 3rem;
-  border-bottom: 1px solid var(--ink-ghost);
-}
-
-.hero .eyebrow {
-  font-family: var(--font-mono);
-  font-size: var(--fs-label-section);
-  font-weight: 300;
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-  color: var(--fg-faint);
-  margin-bottom: 1.5rem;
-}
-
-.hero h1 {
-  font-size: clamp(var(--fs-heading-hero-min), 8vw, var(--fs-heading-hero-max));
-  margin-bottom: 2rem;
-  max-width: 18ch;
-}
-
-.hero-product-name,
-.hero-descriptor {
-  display: block;
-}
-
-.hero-descriptor {
-  max-width: 30ch;
-  margin-top: 0.75rem;
-  font-family: var(--font-mono);
-  font-size: clamp(0.8rem, 1.7vw, 1.05rem);
-  font-weight: 400;
-  font-style: normal;
-  line-height: 1.35;
-  letter-spacing: 0.035em;
-  text-transform: uppercase;
-  color: var(--fg-mid);
-}
-
-.hero .lede {
-  font-family: var(--serif);
-  font-size: var(--fs-body-hero);
-  max-width: 55ch;
-  margin: 0 0 var(--space-xl);
-  color: var(--fg-mid);
-  line-height: 1.72;
-}
-
-.cta-row {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: var(--space-xs);
-}
-
 .button-primary {
   display: inline-block;
   font-family: var(--font-mono);
@@ -431,23 +337,10 @@ footer p {
   padding: var(--space-sm) var(--space-xl);
 }
 
-.button-primary a {
-  color: inherit;
-  text-decoration: none;
-}
-
 .button-primary:hover {
   color: var(--attention-text);
   opacity: 0.85;
   text-decoration: none;
-}
-
-.button-primary a:hover { text-decoration: none; }
-
-.cta-note {
-  font-family: var(--font-mono);
-  font-size: 0.6875rem;
-  color: var(--fg-ghost);
 }
 
 /* Browser-language suggestion; it stays out of the document flow so it never
@@ -500,17 +393,12 @@ footer p {
 .locale-suggestion-link:hover,
 .locale-suggestion-dismiss:hover { color: var(--link-text-hover); }
 
-html[data-design="control-room"] .locale-suggestion {
-  border-color: color-mix(in srgb, #ffd83e 36%, transparent);
-  color: #f6f4ee;
-  background: #151715;
-  box-shadow: 0 1rem 3rem color-mix(in srgb, #000000 50%, transparent);
-}
+@media (max-width: 600px) {
+  main { padding: var(--space-xxl) var(--space-md) calc(var(--space-xxxl) * 2); }
+  header { padding: var(--space-md); }
+  .wordmark { font-size: 1.5rem; }
+  h1 { font-size: 2rem; }
 
-html[data-design="control-room"] .locale-suggestion-link,
-html[data-design="control-room"] .locale-suggestion-dismiss { color: #ffd83e; }
-
-@media (max-width: 640px) {
   .locale-suggestion {
     right: var(--space-sm);
     bottom: var(--space-sm);
@@ -521,925 +409,545 @@ html[data-design="control-room"] .locale-suggestion-dismiss { color: #ffd83e; }
   .locale-suggestion-actions { margin-top: var(--space-xs); }
 }
 
-/* Landing feature grid */
-
-.feature-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: var(--space-xl);
-  margin-top: var(--space-md);
-}
-
-.feature h3 {
-  font-family: var(--font-display);
-  font-size: 1.0625rem;
-  letter-spacing: 0.03em;
-  color: var(--fg);
-  margin-bottom: var(--space-xs);
-}
-
-.feature p { color: var(--fg-mid); margin-bottom: 0; }
-
-/* Landing footer links */
-
-.link-row {
-  display: flex;
-  justify-content: center;
-  gap: var(--space-md);
-  margin-top: var(--space-xl);
-}
-
-.link-row a {
-  color: var(--fg-mid);
-  text-decoration: none;
-  font-family: var(--font-mono);
-  font-size: 0.8125rem;
-}
-
-.link-row a:hover { color: var(--fg); }
-
-header .link-row { margin-top: 0; }
-
-.why-section-content {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(12rem, 0.3fr);
-  align-items: center;
-  gap: clamp(2rem, 7vw, 6rem);
-}
-
-.why-artwork {
-  justify-self: end;
-  margin: 0;
-}
-
-.why-artwork img {
-  display: block;
-  width: min(13.333rem, 55vw);
-  height: auto;
-  border-radius: var(--radius-md);
-  box-shadow: var(--shadow-card);
-}
-
-/* Product artwork turns the landing page into a story about the app rather
-   than a list of claims. These are final, representative App Store captures. */
-.hero--product {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(20rem, 0.62fr);
-  align-items: center;
-  gap: clamp(3rem, 6vw, 5rem);
-}
-
-.hero-copy {
-  max-width: 37rem;
-}
-
-.product-artwork {
-  margin: 0;
-  overflow: hidden;
-  background: var(--showcase-surface);
-  box-shadow: 0 1.25rem 3.5rem color-mix(in srgb, var(--ink) 20%, transparent);
-}
-
-.product-artwork img {
-  display: block;
-  width: 100%;
-  height: auto;
-}
-
-.product-artwork--hero {
-  max-width: 26rem;
-  justify-self: end;
-  transform: rotate(2deg);
-}
-
-.feature-section--with-artwork {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(16rem, 0.48fr);
-  align-items: center;
-  gap: clamp(3rem, 6vw, 5rem);
-}
-
-.feature-section--kanban {
-  grid-template-columns: minmax(0, 1fr);
-}
-
-.feature-section--reversed .product-artwork {
-  order: -1;
-}
-
-.feature-section--reversed {
-  grid-template-columns: minmax(16rem, 0.48fr) minmax(0, 1fr);
-}
-
-.product-artwork--feature {
-  max-width: 22rem;
-  justify-self: end;
-  transform: rotate(1.25deg);
-}
-
-.product-artwork--kanban { max-width: 27rem; }
-
-.kanban-mode-gallery {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: clamp(1rem, 3vw, 2rem);
-  width: 100%;
-}
-
-.product-artwork--kanban-mode {
-  width: 100%;
-  transform: none;
-}
-
-.feature-section--reversed .product-artwork--feature {
-  justify-self: start;
-  transform: rotate(-1.25deg);
-}
-
-.source-showcase {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(16.5rem, 0.52fr);
-  align-items: center;
-  gap: clamp(3rem, 6vw, 5rem);
-  margin-top: 3rem;
-  padding: clamp(2rem, 7vw, 5rem);
-  border: 0;
-  background: var(--showcase-surface);
-}
-
-.source-showcase-copy {
-  max-width: 34rem;
-}
-
-.source-showcase .eyebrow,
-.source-showcase h2,
-.source-showcase p {
-  color: var(--showcase-ink);
-}
-
-.source-showcase .eyebrow {
-  margin-bottom: 1.5rem;
-}
-
-.source-showcase h2 {
-  font-size: clamp(2.25rem, 5vw, 4rem);
-  margin-top: 0;
-  margin-bottom: 1.5rem;
-}
-
-.source-showcase code {
-  background: color-mix(in srgb, var(--showcase-ink) 14%, transparent);
-  color: var(--showcase-ink);
-}
-
-/* The icon's reference needs to stay subordinate to the product story: this
-   is a small invitation to play, paired with the concrete work flow it evokes. */
-.emergence-story {
-  display: grid;
-  grid-template-columns: minmax(0, 0.95fr) minmax(20rem, 1fr);
-  align-items: center;
-  gap: clamp(3rem, 7vw, 6rem);
-  padding: clamp(3rem, 8vw, 6rem);
-  border: 1px solid color-mix(in srgb, #ffd83e 50%, transparent);
-  background: #151715;
-}
-
-.emergence-story h2,
-.emergence-story p,
-.emergence-story li,
-.emergence-story strong { color: #f6f4ee; }
-
-.emergence-story .eyebrow,
-.life-playground-kicker,
-.life-playground-note,
-.life-status { color: color-mix(in srgb, #f6f4ee 64%, transparent); }
-
-.emergence-story h2 {
-  font-size: clamp(2.25rem, 5vw, 4rem);
-  margin-top: 0;
-  margin-bottom: 1.5rem;
-}
-
-.emergence-story-copy { max-width: 36rem; }
-
-.work-shape-path {
-  display: grid;
-  gap: var(--space-sm);
-  list-style: none;
-  margin-top: var(--space-xl);
-}
-
-.work-shape-path li {
-  display: grid;
-  grid-template-columns: 2.25rem minmax(0, 1fr);
-  gap: var(--space-sm);
-  align-items: baseline;
-  padding-top: var(--space-sm);
-  border-top: 1px solid color-mix(in srgb, #ffffff 18%, transparent);
-  font-family: var(--font-mono);
-  font-size: 0.75rem;
-  line-height: 1.6;
-}
-
-.work-shape-path strong { font-weight: 700; }
-
-.work-shape-step {
-  color: #ffd83e;
-  font-size: 0.6875rem;
-}
-
-.life-playground {
-  padding: var(--space-sm);
-  border: 1px solid color-mix(in srgb, #ffffff 18%, transparent);
-  background: #0e0f0e;
-}
-
-.life-playground-heading {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: var(--space-sm);
-  margin-bottom: var(--space-xs);
-}
-
-.life-playground-kicker {
-  margin: 0;
-  font-family: var(--font-mono);
-  font-size: 0.6875rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-}
-
-.life-playground-icon {
-  display: block;
-  flex: 0 0 auto;
-  width: 2.5rem;
-  height: 2.5rem;
-  border-radius: var(--radius-sm);
-  box-shadow: var(--shadow-card);
-}
-
-.life-field {
-  display: block;
-  width: 100%;
-  height: auto;
-  background: #111111;
-  image-rendering: pixelated;
-}
-
-.life-controls {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: var(--space-xs);
-  margin-top: var(--space-sm);
-}
-
-.life-button {
-  border: 1px solid #ffd83e;
-  border-radius: var(--radius-pill);
-  padding: var(--space-xs) var(--space-sm);
-  color: #111111;
-  background: #ffd83e;
-  font-family: var(--font-mono);
-  font-size: 0.6875rem;
-  letter-spacing: 0.04em;
-  cursor: pointer;
-}
-
-.life-button:hover { opacity: 0.84; }
-
-.life-button--quiet {
-  color: #f6f4ee;
-  background: transparent;
-  border-color: color-mix(in srgb, #ffffff 30%, transparent);
-}
-
-.life-status {
-  margin-left: auto;
-  font-family: var(--font-mono);
-  font-size: 0.6875rem;
-}
-
-.life-context {
-  margin-top: var(--space-sm);
-}
-
-.life-playground-note {
-  margin: 0;
-  font-family: var(--font-mono);
-  font-size: 0.6875rem;
-  line-height: 1.6;
-  cursor: pointer;
-}
-
-.life-playground-note::after {
-  content: "+";
-  margin-left: var(--space-xs);
-  color: #ffd83e;
-}
-
-.life-context[open] .life-playground-note::after { content: "−"; }
-
-.life-context-copy {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: var(--space-xs) var(--space-sm);
-  margin-top: var(--space-xs);
-}
-
-.life-deeper-link {
-  margin: 0;
-  color: color-mix(in srgb, #f6f4ee 64%, transparent);
-  font-family: var(--font-mono);
-  font-size: 0.6875rem;
-  line-height: 1.6;
-}
-
-.life-deeper-link a { color: #ffd83e; }
-
-.life-reference {
-  margin: 0;
-  color: color-mix(in srgb, #f6f4ee 52%, transparent);
-  font-family: var(--font-mono);
-  font-size: 0.625rem;
-  line-height: 1.6;
-}
-
-.life-reference a { color: color-mix(in srgb, #ffd83e 82%, transparent); }
-
-.product-artwork--source {
-  max-width: 22rem;
-  justify-self: end;
-  transform: rotate(2deg);
-}
-
-/* Responsive */
-
-@media (max-width: 600px) {
-  main { padding: var(--space-xxl) var(--space-md) calc(var(--space-xxxl) * 2); }
-  header { padding: var(--space-md); }
-  .wordmark { font-size: calc(1.1rem * 1.8525); }
-  h1 { font-size: 2rem; }
-  .feature-grid { grid-template-columns: 1fr; }
-  .life-context-copy { grid-template-columns: 1fr; }
-}
-
-@media (max-width: 760px) {
-  main.landing-main { max-width: 720px; }
-
-  .hero--product,
-  .feature-section--with-artwork,
-  .source-showcase,
-  .emergence-story,
-  .why-section-content {
-    grid-template-columns: 1fr;
-  }
-
-  .hero--product { gap: 3rem; }
-
-  .product-artwork--hero,
-  .product-artwork--feature,
-  .feature-section--reversed .product-artwork--feature,
-  .product-artwork--source,
-  .why-artwork {
-    justify-self: center;
-  }
-
-  .product-artwork--hero { max-width: min(26rem, 82vw); }
-  .product-artwork--feature,
-  .product-artwork--source { max-width: min(22rem, 78vw); }
-
-  .product-artwork--kanban { max-width: min(27rem, 78vw); }
-
-  .kanban-mode-gallery { grid-template-columns: 1fr; max-width: min(44rem, 92vw); justify-self: center; }
-
-  .feature-section--reversed .product-artwork { order: 0; }
-
-  .source-showcase { margin-top: 0; }
-
-  .life-status { margin-left: 0; }
-}
-
-html[data-design] .product-artwork--hero { max-width: 20rem; }
-html[data-design] .product-artwork--feature { max-width: 16rem; }
-html[data-design] .product-artwork--kanban { max-width: 27rem; }
-html[data-design] .product-artwork--source { max-width: 16.5rem; }
-
-/* Direction one — a warm, annotated field notebook. */
-html[data-design="field-notes"] body {
-  background-color: #f5f1e6;
-  background-image:
-    linear-gradient(to right, transparent 0, transparent 4.7rem, color-mix(in srgb, var(--rust) 18%, transparent) 4.7rem, color-mix(in srgb, var(--rust) 18%, transparent) calc(4.7rem + 1px), transparent calc(4.7rem + 1px)),
-    repeating-linear-gradient(to bottom, transparent 0, transparent 2rem, color-mix(in srgb, var(--ink-ghost) 35%, transparent) 2rem, color-mix(in srgb, var(--ink-ghost) 35%, transparent) calc(2rem + 1px));
-}
-
-html[data-design="field-notes"] .hero--product {
-  padding-top: clamp(5rem, 12vw, 10rem);
-  border-bottom-style: dashed;
-}
-
-html[data-design="field-notes"] .hero-copy::before {
-  content: "01 / A place for the unfinished";
-  display: block;
-  margin-bottom: 1.1rem;
-  color: var(--rust);
-  font-family: var(--mono);
-  font-size: 0.64rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-}
-
-html[data-design="field-notes"] .hero h1 {
-  font-size: clamp(4rem, 10vw, 8rem);
-  letter-spacing: 0.015em;
-}
-
-html[data-design="field-notes"] .product-artwork {
-  border: 0.45rem solid var(--paper);
-  box-shadow: 0 0.9rem 0 color-mix(in srgb, var(--rust) 52%, transparent), 0 1.5rem 3rem color-mix(in srgb, var(--ink) 18%, transparent);
-}
-
-html[data-design="field-notes"] .feature-section {
-  border-top-style: dashed;
-}
-
-html[data-design="field-notes"] .source-showcase {
-  background: #2a2018;
-}
-
-/* Direction two — a dark, instrumental personal control room. */
-html[data-design="control-room"] body {
-  color: #f6f4ee;
-  background-color: #0e0f0e;
-  background-image:
-    linear-gradient(color-mix(in srgb, #ffd83e 8%, transparent) 1px, transparent 1px),
-    linear-gradient(90deg, color-mix(in srgb, #ffd83e 8%, transparent) 1px, transparent 1px);
-  background-size: 2rem 2rem;
-}
-
-html[data-design="control-room"] header {
-  border-color: color-mix(in srgb, #ffffff 18%, transparent);
-  background: #0e0f0e;
-}
-
-html[data-design="control-room"] .wordmark,
-html[data-design="control-room"] header .link-row a,
-html[data-design="control-room"] .landing-main h1,
-html[data-design="control-room"] .landing-main h2,
-html[data-design="control-room"] .landing-main h3,
-html[data-design="control-room"] .landing-main p,
-html[data-design="control-room"] .landing-main li {
-  color: #f6f4ee;
-}
-
-html[data-design="control-room"] .landing-main a { color: #ffd83e; }
-
-html[data-design="control-room"] .landing-main section,
-html[data-design="control-room"] .hero {
-  border-color: color-mix(in srgb, #ffffff 20%, transparent);
-}
-
-html[data-design="control-room"] .hero--product {
-  min-height: min(46rem, 90vh);
-  padding-top: clamp(4rem, 11vw, 9rem);
-}
-
-html[data-design="control-room"] .hero-copy::before {
-  content: "IOTHS / Personal system online";
-  display: block;
-  margin-bottom: 1.1rem;
-  color: #ffd83e;
-  font-family: var(--mono);
-  font-size: 0.64rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-}
-
-html[data-design="control-room"] .hero h1 {
-  font-size: clamp(4rem, 11vw, 9rem);
-  color: #ffd83e;
-}
-
-html[data-design="control-room"] .hero-descriptor {
-  color: #f6f4ee;
-}
-
-html[data-design="control-room"] .landing-main .button-primary {
-  color: #111111;
-  background: #ffd83e;
-  text-decoration: none;
-}
-
-html[data-design="control-room"] .landing-main .button-primary a { color: #111111; }
-
-html[data-design="control-room"] .cta-note,
-html[data-design="control-room"] .eyebrow,
-html[data-design="control-room"] .feature p {
-  color: color-mix(in srgb, #f6f4ee 68%, transparent) !important;
-}
-
-html[data-design="control-room"] .feature-grid {
-  gap: 0.8rem;
-}
-
-html[data-design="control-room"] .feature {
-  padding: 1rem;
-  border: 1px solid color-mix(in srgb, #ffffff 16%, transparent);
-  background: color-mix(in srgb, #ffffff 4%, transparent);
-}
-
-html[data-design="control-room"] .product-artwork {
-  border: 1px solid color-mix(in srgb, #ffd83e 62%, transparent);
-  box-shadow: 0 0 0 0.35rem color-mix(in srgb, #ffd83e 12%, transparent), 0 1.5rem 4rem color-mix(in srgb, #000000 80%, transparent);
-}
-
-html[data-design="control-room"] .source-showcase {
-  border: 1px solid color-mix(in srgb, #ffd83e 36%, transparent);
-  background: #151715;
-}
-
-html[data-design="control-room"] footer,
-html[data-design="control-room"] footer p,
-html[data-design="control-room"] footer a {
-  color: color-mix(in srgb, #f6f4ee 56%, transparent);
-  border-color: color-mix(in srgb, #ffffff 18%, transparent);
-}
-
-/* Direction three — fragments condense into a deliberate working structure. */
-html[data-design="emergence"] body {
-  background-color: #ffffff;
-  background-image:
-    radial-gradient(circle at 14% 16%, color-mix(in srgb, #ffd83e 42%, transparent) 0 0.25rem, transparent 0.28rem),
-    radial-gradient(circle at 82% 8%, color-mix(in srgb, var(--rust) 28%, transparent) 0 0.18rem, transparent 0.2rem);
-  background-size: 3.2rem 3.2rem, 4.8rem 4.8rem;
-}
-
-html[data-design="emergence"] .hero--product {
-  padding-top: clamp(5rem, 13vw, 11rem);
-  border-bottom: 0;
-}
-
-html[data-design="emergence"] .hero h1 {
-  font-size: clamp(4.5rem, 13vw, 10rem);
-  line-height: 0.9;
-}
-
-html[data-design="emergence"] .hero-copy::before {
-  content: "Fragments / focus / flow";
-  display: block;
-  margin-bottom: 1.1rem;
-  color: var(--rust);
-  font-family: var(--mono);
-  font-size: 0.64rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-}
-
-html[data-design="emergence"] .landing-main > .feature-section:first-of-type {
-  margin-top: 2rem;
-  padding: clamp(3rem, 8vw, 7rem);
-  border: 0;
-  background: #111111;
-}
-
-html[data-design="emergence"] .landing-main > .feature-section:first-of-type h2,
-html[data-design="emergence"] .landing-main > .feature-section:first-of-type h3,
-html[data-design="emergence"] .landing-main > .feature-section:first-of-type p {
-  color: #ffffff;
-}
-
-html[data-design="emergence"] .landing-main > .feature-section:first-of-type .feature p {
-  color: color-mix(in srgb, #ffffff 68%, transparent);
-}
-
-html[data-design="emergence"] .landing-main > .feature-section:first-of-type .product-artwork {
-  border: 0.4rem solid #ffd83e;
-}
-
-html[data-design="emergence"] .feature-section--reversed {
-  position: relative;
-  margin-top: 3rem;
-  padding: clamp(3rem, 8vw, 7rem);
-  border: 0;
-  background: #ffd83e;
-}
-
-html[data-design="emergence"] .feature-section--reversed .product-artwork {
-  border: 0.4rem solid #111111;
-}
-
-html[data-design="emergence"] .source-showcase {
-  margin-top: 3rem;
-  background: #111111;
-}
-
-html[data-design="emergence"] .product-artwork--hero { transform: rotate(4deg) translateY(1rem); }
-html[data-design="emergence"] .product-artwork--feature { transform: rotate(-3deg); }
-html[data-design="emergence"] .feature-section--reversed .product-artwork--feature { transform: rotate(3deg); }
-html[data-design="emergence"] .product-artwork--source { transform: rotate(-4deg); }
-
-@media (max-width: 760px) {
-  html[data-design] .product-artwork--hero { max-width: min(17.5rem, 75vw); }
-  html[data-design] .product-artwork--feature,
-  html[data-design] .product-artwork--source { max-width: min(14rem, 60vw); }
-
-  html[data-design] .product-artwork--kanban { max-width: min(27rem, 78vw); }
-
-  html[data-design="control-room"] .hero--product { min-height: 0; }
-  html[data-design="emergence"] .landing-main > .feature-section:first-of-type,
-  html[data-design="emergence"] .feature-section--reversed { margin-inline: 0; }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .product-artwork,
-  .product-artwork--hero,
-  .product-artwork--feature,
-  .product-artwork--source { transform: none !important; }
-}
-
-/* Research journal — the production landing page. Its rules are scoped so the
-   legal and support pages retain their independent layouts. */
-html[data-design="research-journal"] {
-  --journal-fs-nav-title: 1.1rem;
-  --journal-fs-link-nav: .75rem;
-  --journal-fs-footer-text: .75rem;
-  --journal-fs-heading-card: 1.5rem;
-  --journal-fs-heading-min: 2rem;
-  --journal-fs-button: .75rem;
-  --journal-fs-note-meta: .7rem;
-  scroll-behavior: smooth;
-}
-html[data-design="research-journal"] body {
-  overflow-x: clip;
-}
-
-html[data-design="research-journal"] .skip {
+/* Landing page. Selectors are scoped by the journal-* class names, which the
+   legal and support pages never use. */
+
+.skip,
+.journal-document-skip {
   position: absolute;
   top: -6rem;
   left: 1rem;
   z-index: 20;
-  padding: .5rem .75rem;
+  padding: 0.5rem 0.75rem;
   color: var(--paper);
   background: var(--ink);
 }
-html[data-design="research-journal"] .skip:focus { top: 1rem; }
-html[data-design="research-journal"] .journal-wrap {
+
+.skip:focus,
+.journal-document-skip:focus { top: 1rem; }
+
+.journal-wrap {
   width: min(1140px, calc(100% - 5rem));
   margin-inline: auto;
 }
-html[data-design="research-journal"] .journal-header {
+
+.journal-header {
   display: block;
-  max-width: none;
-  margin: 0;
   padding: 0;
   border: 0;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: color-mix(in srgb, var(--paper) 94%, transparent);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
 }
-html[data-design="research-journal"] .journal-masthead {
+
+.journal-masthead {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  min-height: 6rem;
+  min-height: 4.75rem;
   gap: 1.5rem;
   border-bottom: 1px solid var(--ink);
 }
-html[data-design="research-journal"] .journal-brand,
-html[data-design="research-journal"] .journal-wordmark,
-html[data-design="research-journal"] .journal-download,
-html[data-design="research-journal"] .journal-app-identity,
-html[data-design="research-journal"] .journal-life-controls,
-html[data-design="research-journal"] .journal-footer > div,
-html[data-design="research-journal"] .journal-footer nav {
+
+.journal-brand,
+.journal-wordmark,
+.journal-download,
+.journal-app-identity,
+.journal-life-controls,
+.journal-footer > div,
+.journal-footer nav {
   display: flex;
   align-items: center;
 }
-html[data-design="research-journal"] .journal-brand { gap: 1.5rem; }
-html[data-design="research-journal"] .journal-wordmark {
-  gap: .75rem;
-  color: var(--ink);
-  font-family: var(--serif-alt);
-  font-size: calc(var(--journal-fs-nav-title) * 2.535);
-  line-height: 1;
-  letter-spacing: .04em;
-  text-decoration: none;
-}
-html[data-design="research-journal"] .journal-app-icon { flex: none; object-fit: contain; }
-html[data-design="research-journal"] .journal-tagline {
+
+.journal-brand { gap: 1.5rem; }
+.journal-app-icon { flex: none; object-fit: contain; }
+
+.journal-tagline {
   padding-left: 1.5rem;
   border-left: 1px solid var(--ink-ghost);
 }
-html[data-design="research-journal"] .journal-masthead nav {
+
+.journal-masthead nav {
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
   gap: 1.5rem;
-  font: 400 var(--journal-fs-link-nav)/1.5 var(--mono);
+  font: 400 0.75rem/1.5 var(--mono);
 }
-html[data-design="research-journal"] .journal-masthead nav a,
-html[data-design="research-journal"] .journal-footer a {
+
+.journal-masthead nav a,
+.journal-footer a {
   color: var(--link-text);
   text-decoration: none;
 }
-html[data-design="research-journal"] .journal-masthead nav a:hover,
-html[data-design="research-journal"] .journal-footer a:hover { text-decoration: underline; color: var(--link-text-hover); }
-html[data-design="research-journal"] .journal-main {
+
+.journal-masthead nav a:not(.journal-nav-cta) {
+  padding-block: 0.5rem;
+  border-bottom: 2px solid transparent;
+}
+
+.journal-masthead nav a:not(.journal-nav-cta):hover { border-bottom-color: var(--ink-ghost); }
+
+.journal-masthead nav a[aria-current="true"] {
+  color: var(--ink);
+  border-bottom-color: var(--attention);
+}
+
+.journal-masthead .journal-nav-cta {
+  padding: 0.5rem 0.9rem;
+  border: 1px solid var(--ink);
+  color: var(--attention-text);
+  background: var(--attention);
+}
+
+.journal-masthead .journal-nav-cta:hover { background: var(--ink); color: var(--attention); }
+.journal-footer a:hover { text-decoration: underline; color: var(--link-text-hover); }
+
+.journal-main {
   max-width: none;
   margin: 0 auto;
   padding: 0;
 }
-html[data-design="research-journal"] .journal-main section,
-html[data-design="research-journal"] .journal-main section:first-of-type {
-  margin: 0;
-  border: 0;
-}
-html[data-design="research-journal"] .journal-main h1,
-html[data-design="research-journal"] .journal-main h2,
-html[data-design="research-journal"] .journal-main h3,
-html[data-design="research-journal"] .journal-main p,
-html[data-design="research-journal"] .journal-main pre,
-html[data-design="research-journal"] .journal-main figure {
-  margin: 0;
-}
-html[data-design="research-journal"] .journal-main h1,
-html[data-design="research-journal"] .journal-main h2 {
+
+.journal-main h1,
+.journal-main h2,
+.journal-main h3,
+.journal-main p,
+.journal-main pre,
+.journal-main figure { margin: 0; }
+
+.journal-main h1,
+.journal-main h2 {
   font-family: var(--serif-alt);
   font-weight: 400;
   font-style: normal;
-  letter-spacing: .04em;
+  letter-spacing: 0.04em;
   line-height: 1.04;
+  text-wrap: balance;
 }
-html[data-design="research-journal"] .journal-main h1 {
-  max-width: 14ch;
+
+.journal-main h1 {
+  max-width: 17ch;
   margin-block: 1.5rem 2rem;
   font-size: clamp(var(--fs-heading-hero-min), 7.4vw, var(--fs-heading-hero-max));
 }
-html[data-design="research-journal"] .journal-main h1 em { color: var(--rust); font-style: normal; }
-html[data-design="research-journal"] .journal-main h2 {
+
+.journal-main h1 em { color: var(--rust); font-style: normal; }
+
+.journal-main h2 {
   max-width: 24ch;
   margin-bottom: 1.5rem;
-  font-size: clamp(var(--journal-fs-heading-min), 4vw, var(--fs-heading-module-max));
+  color: var(--ink);
+  font-size: clamp(2rem, 4vw, var(--fs-heading-module-max));
 }
-html[data-design="research-journal"] .journal-main h3 {
-  font: 400 var(--journal-fs-heading-card)/1.2 var(--serif);
-  letter-spacing: -.015em;
+
+.journal-main h3 {
+  font: 400 var(--fs-heading-module-card)/1.2 var(--serif);
+  letter-spacing: -0.015em;
 }
-html[data-design="research-journal"] .journal-label {
+
+.journal-label {
   font: 400 var(--fs-label-section)/1.6 var(--mono);
-  letter-spacing: .08em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
 }
-html[data-design="research-journal"] .journal-accent { color: var(--rust); }
-html[data-design="research-journal"] .journal-muted,
-html[data-design="research-journal"] .journal-footnote,
-html[data-design="research-journal"] .journal-legal-note { color: var(--ink-faint); }
-html[data-design="research-journal"] .journal-footnote {
-  font: 400 var(--journal-fs-note-meta)/1.7 var(--mono);
-}
-html[data-design="research-journal"] .journal-lead {
+
+.journal-accent { color: var(--rust); }
+
+.journal-footnote,
+.journal-legal-note { color: var(--ink-faint); }
+.journal-footnote { font: 400 0.7rem/1.7 var(--mono); }
+
+.journal-lead {
   max-width: 55ch;
   color: var(--ink-mid);
   font: 400 var(--fs-body-hero)/1.72 var(--serif);
 }
-html[data-design="research-journal"] .journal-hero {
+
+.journal-hero {
   display: grid;
   grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr);
   gap: 3rem;
   padding-block: 4rem;
 }
-html[data-design="research-journal"] .journal-download {
+
+.journal-download {
   flex-wrap: wrap;
   gap: var(--space-lg);
   margin-top: 1.5rem;
 }
+
 /* Apple's badge requires a quarter-height clear space and unmodified artwork. */
-html[data-design="research-journal"] .app-store-badge {
+.app-store-badge {
   display: inline-flex;
   flex: none;
   padding: 12px;
   text-decoration: none;
 }
-html[data-design="research-journal"] .app-store-badge img { width: auto; height: 48px; }
-html[data-design="research-journal"] .app-store-badge--closing { margin-top: 1rem; }
-html[data-design="research-journal"] .journal-text-link {
+
+.app-store-badge img { width: auto; height: 48px; }
+
+.journal-text-link {
   display: inline-block;
   margin-top: var(--space-sm);
   color: var(--link-text);
   font: 400 var(--fs-link-diagnosis)/1.7 var(--mono);
 }
-html[data-design="research-journal"] .journal-text-link:hover { color: var(--link-text-hover); }
-html[data-design="research-journal"] .journal-plate,
-html[data-design="research-journal"] .journal-life {
+
+.journal-text-link:hover { color: var(--link-text-hover); }
+.journal-text-link span { display: inline-block; transition: transform 0.2s ease; }
+.journal-text-link:hover span { transform: translateY(2px); }
+
+.journal-plate,
+.journal-life,
+.journal-shots {
   padding: 1.5rem;
   border: 1px solid var(--ink-ghost);
   background: var(--paper-dark);
 }
-html[data-design="research-journal"] .journal-plate { align-self: center; }
-html[data-design="research-journal"] .journal-plate svg {
+
+.journal-plate { align-self: center; }
+
+.journal-plate svg {
   display: block;
   width: 100%;
   height: auto;
   margin-block: 1.25rem;
   color: var(--ink);
 }
-html[data-design="research-journal"] .journal-plate svg text { font-family: var(--mono); }
-html[data-design="research-journal"] .diagram-note { fill: var(--ink-ghost); }
-html[data-design="research-journal"] .diagram-active { fill: var(--sage); }
-html[data-design="research-journal"] .journal-plate-head {
+
+.journal-plate svg text { font-family: var(--mono); }
+.diagram-note { fill: var(--ink-ghost); }
+.diagram-active { fill: var(--attention); }
+
+.journal-plate-head {
   display: flex;
   justify-content: space-between;
   gap: 1rem;
   padding-bottom: 1rem;
   border-bottom: 1px solid var(--ink-ghost);
 }
-html[data-design="research-journal"] .journal-plate-caption {
+
+.journal-plate-caption {
   padding-top: 1rem;
   border-top: 1px solid var(--ink-ghost);
   color: var(--ink-mid);
   font-size: var(--fs-body);
 }
-html[data-design="research-journal"] .journal-abstract {
+
+.journal-abstract {
   display: grid;
   grid-template-columns: 8rem minmax(0, 1fr) 12rem;
   gap: 2rem;
   padding-block: 1.5rem;
   border-block: 1px solid var(--ink);
 }
-html[data-design="research-journal"] .journal-abstract > p:not(.journal-footnote) {
+
+.journal-abstract > p:not(.journal-footnote) {
+  color: var(--ink);
   font: 400 var(--fs-heading-module-card)/1.5 var(--serif);
 }
-html[data-design="research-journal"] .journal-abstract .journal-footnote {
+
+.journal-abstract .journal-footnote {
   padding-left: 1.5rem;
   border-left: 1px solid var(--ink-ghost);
 }
-html[data-design="research-journal"] .journal-section {
+
+.journal-section {
   display: grid;
   grid-template-columns: 8rem minmax(0, 1fr);
   gap: 2rem;
-  padding-top: 4rem;
+  margin-top: 4rem;
+  padding-top: 3rem;
+  border-top: 1px solid var(--ink-ghost);
 }
-html[data-design="research-journal"] .journal-margin-note p + p { margin-top: 1rem; }
-html[data-design="research-journal"] .journal-explanation,
-html[data-design="research-journal"] .journal-legal-note {
+
+.journal-margin-note p + p { margin-top: 1rem; }
+
+.journal-explanation,
+.journal-legal-note {
   color: var(--ink-mid);
   font-size: var(--fs-body);
 }
-html[data-design="research-journal"] .journal-specimen {
+
+.journal-about-copy { max-width: 60ch; }
+.journal-about-copy p + p { margin-top: 1rem; }
+
+/* What's different */
+
+.journal-points {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 2rem 3rem;
+  margin-top: 2rem;
+}
+
+.journal-point { padding-top: 1.25rem; border-top: 1px solid var(--ink); }
+.journal-point h3 { margin-bottom: 0.5rem; }
+.journal-point p { color: var(--ink-mid); }
+
+/* Practical example */
+
+.journal-specimen {
   margin-top: 2rem;
   border: 1px solid var(--ink-ghost);
 }
-html[data-design="research-journal"] .journal-specimen-controls {
+
+.journal-specimen-cue {
+  padding: 0.6rem 1rem;
+  border-bottom: 1px solid var(--ink-ghost);
+  color: var(--ink-mid);
+  background: var(--paper-dark);
+}
+
+.journal-specimen-cue::before {
+  content: "";
+  display: inline-block;
+  width: 0.55rem;
+  height: 0.55rem;
+  margin-right: 0.6rem;
+  border: 1px solid var(--ink);
+  background: var(--attention);
+}
+
+.journal-specimen-tabs {
   display: flex;
   border-bottom: 1px solid var(--ink-ghost);
 }
-html[data-design="research-journal"] .journal-specimen-controls button {
+
+.journal-specimen-tabs button {
   flex: 1;
   min-height: 44px;
-  padding: .75rem;
+  padding: 0.75rem;
   border: 0;
   border-right: 1px solid var(--ink-ghost);
   color: var(--ink-mid);
   background: var(--paper);
-  font: 400 var(--journal-fs-button)/1.5 var(--mono);
-  letter-spacing: .06em;
+  font: 400 0.75rem/1.5 var(--mono);
+  letter-spacing: 0.06em;
   text-transform: uppercase;
+  cursor: pointer;
 }
-html[data-design="research-journal"] .journal-specimen-controls button:last-child { border-right: 0; }
-html[data-design="research-journal"] .journal-specimen-controls button[aria-pressed="true"] { color: var(--paper); background: var(--ink); }
-html[data-design="research-journal"] .journal-specimen-panel {
+
+.journal-specimen-tabs button:hover { background: var(--paper-deep); }
+.journal-specimen-tabs button:last-child { border-right: 0; }
+.journal-specimen-tabs button[aria-pressed="true"] { color: var(--paper); background: var(--ink); }
+
+.journal-specimen-panel {
   display: grid;
   grid-template-columns: 1.3fr 1fr;
   gap: 2rem;
   min-height: 14rem;
   padding: 2rem;
 }
-html[data-design="research-journal"] .journal-specimen-panel[hidden] { display: none; }
-html[data-design="research-journal"] .journal-specimen-panel pre {
+
+.journal-specimen-panel pre {
   overflow-wrap: anywhere;
   white-space: pre-wrap;
-  font: 400 var(--journal-fs-note-meta)/2 var(--mono);
+  font: 400 0.7rem/2 var(--mono);
 }
-html[data-design="research-journal"] .journal-explanation {
+
+/* Marks the lines that changed since the previous stage. */
+.journal-specimen-panel mark {
+  color: var(--attention-text);
+  background: color-mix(in srgb, var(--attention) 65%, transparent);
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+
+.journal-explanation {
   padding-left: 1.5rem;
   border-left: 1px solid var(--ink-ghost);
 }
-html[data-design="research-journal"] .journal-explanation h3 { margin-bottom: .75rem; }
-html[data-design="research-journal"] .journal-life { margin-top: 2rem; }
-html[data-design="research-journal"] .journal-emergence-layout {
+
+.journal-explanation h3 { margin-bottom: 0.75rem; }
+
+.journal-result {
+  margin-top: 1.25rem;
+  padding: 0.75rem;
+  border: 1px solid var(--ink-ghost);
+  background: var(--paper-dark);
+  font: 400 0.7rem/1.5 var(--mono);
+}
+
+.journal-result-label { display: block; margin-bottom: 0.4rem; color: var(--ink-faint); }
+
+.journal-result-list { margin: 0; list-style: none; }
+
+.journal-result-list li {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  margin: 0;
+  padding: 0.35rem 0;
+  border-top: 1px solid var(--paper-deep);
+  color: var(--ink);
+}
+
+.journal-check {
+  flex: none;
+  width: 0.7rem;
+  height: 0.7rem;
+  border: 1px solid var(--ink);
+  transform: translateY(0.1rem);
+}
+
+.journal-tag { margin-left: auto; color: var(--meta); }
+
+.journal-board {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.5rem;
+}
+
+.journal-board > div {
+  min-height: 5rem;
+  padding: 0.4rem;
+  border: 1px solid var(--ink-ghost);
+  background: var(--paper);
+}
+
+.journal-lane {
+  display: block;
+  color: var(--ink-faint);
+  font-size: 0.625rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.journal-card {
+  display: block;
+  margin-top: 0.4rem;
+  padding: 0.4rem;
+  border: 1px solid var(--ink);
+  color: var(--attention-text);
+  background: var(--attention);
+  overflow-wrap: anywhere;
+}
+
+.journal-card-progress { display: block; margin-top: 0.2rem; font-weight: 700; }
+
+/* App screenshots */
+
+.journal-main .journal-shots { margin-top: 3rem; }
+
+.journal-main .journal-shots-row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 16rem)) minmax(0, 1fr);
+  gap: 1.5rem;
+  align-items: end;
+  margin-top: 1.25rem;
+}
+
+.journal-main .journal-shots-wide { margin-top: 2rem; }
+.journal-shots-wide img { margin-bottom: 1rem; }
+
+.journal-shots img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.journal-shots .shot-dark { display: none; }
+.journal-shots.is-dark .shot-dark { display: block; }
+.journal-shots.is-dark .shot-light { display: none; }
+
+.journal-appearance { display: flex; }
+
+.journal-appearance button {
+  padding: 0.3rem 0.8rem;
+  border: 1px solid var(--ink-ghost);
+  color: var(--ink-mid);
+  background: var(--paper);
+  font: 400 0.7rem/1.5 var(--mono);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.journal-appearance button + button { border-left: 0; }
+.journal-appearance button[aria-pressed="true"] { color: var(--paper); border-color: var(--ink); background: var(--ink); }
+
+.journal-shots.is-dark {
+  border-color: var(--ink);
+  color: var(--showcase-ink);
+  background: var(--showcase-surface);
+}
+
+.journal-shots.is-dark .journal-plate-head { border-bottom-color: color-mix(in srgb, var(--showcase-ink) 25%, transparent); }
+
+.journal-shots.is-dark .journal-plate-caption {
+  border-top-color: color-mix(in srgb, var(--showcase-ink) 25%, transparent);
+  color: color-mix(in srgb, var(--showcase-ink) 78%, transparent);
+}
+
+/* Emergence */
+
+.journal-emergence-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 27rem);
   align-items: start;
-  gap: 2rem;
+  gap: 3rem;
 }
-html[data-design="research-journal"] .journal-life--emergence {
-  margin-top: 0;
-  padding: 1rem;
-}
-html[data-design="research-journal"] .journal-emergence-copy h2 { margin-bottom: 1.5rem; }
-html[data-design="research-journal"] .journal-emergence-copy p + p { margin-top: 1rem; }
-html[data-design="research-journal"] .journal-emergence-copy .journal-footnote {
+
+.journal-emergence-copy p + p { margin-top: 1rem; }
+
+.journal-emergence-copy .journal-footnote {
   padding-top: 1rem;
   border-top: 1px solid var(--ink-ghost);
 }
-html[data-design="research-journal"] .journal-life canvas {
+
+.journal-rules-block {
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--ink);
+}
+
+.journal-rules-block summary {
+  cursor: pointer;
+  font: 400 0.75rem/1.7 var(--mono);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.journal-rules-block[open] summary { margin-bottom: 1rem; }
+.journal-rules-block p + p { margin-top: 1rem; }
+
+.journal-rules {
+  margin: 1.25rem 0 0;
+  list-style: none;
+  counter-reset: rule;
+  border-top: 1px solid var(--ink-ghost);
+}
+
+.journal-rules li {
+  position: relative;
+  margin: 0;
+  padding: 0.75rem 0 0.75rem 2.75rem;
+  border-bottom: 1px solid var(--ink-ghost);
+  color: var(--ink-mid);
+  counter-increment: rule;
+}
+
+.journal-rules li::before {
+  content: counter(rule, decimal-leading-zero);
+  position: absolute;
+  left: 0;
+  top: 0.75rem;
+  color: var(--rust);
+  font: 400 0.7rem/1.9 var(--mono);
+}
+
+.journal-rules strong { color: var(--ink); }
+.journal-rules-block .journal-rules + p { margin-top: 1.25rem; }
+
+.journal-life { align-self: start; padding: 1rem; }
+
+.journal-life canvas {
   display: block;
   width: 100%;
   height: auto;
@@ -1447,113 +955,188 @@ html[data-design="research-journal"] .journal-life canvas {
   border: 1px solid var(--paper-deep);
   image-rendering: pixelated;
 }
-html[data-design="research-journal"] .journal-life-controls { flex-wrap: wrap; gap: var(--space-xs); }
-html[data-design="research-journal"] .journal-life-controls button {
+
+.journal-life-controls { flex-wrap: wrap; gap: var(--space-xs); }
+
+.journal-life-controls button {
   min-height: 44px;
-  padding: .75rem 1.25rem;
+  padding: 0.75rem 1.25rem;
   border: 1px solid var(--ink-ghost);
   color: var(--ink-mid);
   background: var(--paper);
-  font: 400 var(--journal-fs-button)/1.25 var(--mono);
-  letter-spacing: .06em;
+  font: 400 0.75rem/1.25 var(--mono);
+  letter-spacing: 0.06em;
   text-transform: uppercase;
+  cursor: pointer;
 }
-html[data-design="research-journal"] .journal-life-controls button:hover { border-color: var(--ink); background: var(--paper-deep); }
-html[data-design="research-journal"] .journal-life-controls button[aria-pressed] { color: var(--paper); border-color: var(--ink); background: var(--ink); }
-html[data-design="research-journal"] .journal-life-status { margin-block: 1rem; }
-html[data-design="research-journal"] .journal-life-rules { margin-top: 1.25rem; }
-html[data-design="research-journal"] .journal-life-rules summary { cursor: pointer; font: 400 var(--journal-fs-button)/1.7 var(--mono); }
-html[data-design="research-journal"] .journal-life-rules p { max-width: 65ch; margin-top: 1rem; color: var(--ink-mid); }
-html[data-design="research-journal"] .journal-life-fallback { padding-block: 2rem; }
-html[data-design="research-journal"] .journal-end {
+
+.journal-life-controls button:hover { border-color: var(--ink); background: var(--paper-deep); }
+
+/* Filled only while the field is running, so Start never looks already chosen. */
+.journal-life-controls button[aria-pressed="true"] {
+  color: var(--attention-text);
+  border-color: var(--ink);
+  background: var(--attention);
+}
+
+.journal-life-status { margin-block: 1rem 0.25rem; }
+.journal-life-fallback { padding-block: 2rem; }
+.journal-life .journal-plate-caption { margin-top: 1rem; }
+
+/* Closing call to action */
+
+.journal-cta {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 4rem;
-  margin-top: 4rem !important;
-  padding-top: 3rem;
-  border-top: 1px solid var(--ink) !important;
+  grid-template-columns: auto minmax(0, 1.4fr) auto;
+  gap: 3rem;
+  align-items: center;
+  margin-top: 4rem;
+  padding-block: 2.5rem;
+  border-block: 1px solid var(--ink);
 }
-html[data-design="research-journal"] .journal-end h2 { margin-block: 1rem 1.5rem; }
-html[data-design="research-journal"] .journal-end p + p { margin-top: 1rem; }
-html[data-design="research-journal"] .journal-app-identity { gap: var(--space-md); margin-block: 1.25rem; }
-html[data-design="research-journal"] .journal-app-identity h3 {
-  font: 400 2rem/1.04 var(--serif-alt);
-  letter-spacing: .04em;
+
+.journal-app-identity { gap: var(--space-md); }
+
+.journal-cta h2 {
+  max-width: none;
+  margin: 0;
+  color: var(--ink);
+  font: 700 2rem/1 var(--mono);
+  letter-spacing: -0.02em;
   text-transform: lowercase;
 }
-html[data-design="research-journal"] .journal-footer {
+
+.journal-cta .journal-cta-copy p + p { margin-top: 0.75rem; }
+.journal-cta-copy .journal-label { margin-bottom: 0.5rem; }
+.journal-cta-actions { display: flex; flex-direction: column; align-items: flex-start; }
+.journal-cta-actions .journal-text-link { margin-left: 12px; }
+
+.journal-footer {
   max-width: none;
   margin: 4rem 0 0;
   padding: 2rem 0;
   border-top: 1px solid var(--ink-ghost);
   text-align: left;
 }
-html[data-design="research-journal"] .journal-footer > div {
+
+.journal-footer > div {
   flex-wrap: wrap;
   gap: 1.5rem;
   color: var(--ink-faint);
-  font: 400 var(--journal-fs-footer-text)/1.7 var(--mono);
+  font: 400 0.75rem/1.7 var(--mono);
 }
-html[data-design="research-journal"] .journal-footer p {
+
+.journal-footer p {
   color: inherit;
   font: inherit;
   letter-spacing: 0;
 }
-html[data-design="research-journal"] .journal-footer nav { flex-wrap: wrap; gap: 1.25rem; }
-html[data-design="research-journal"] .journal-trademark {
+
+.journal-footer nav { flex-wrap: wrap; gap: 1.25rem; }
+
+.journal-trademark {
   flex-basis: 100%;
   max-width: 95ch;
-  font-size: .625rem !important;
+  font-size: 0.625rem !important;
 }
-html[data-design="research-journal"] :focus-visible { outline: 2px solid var(--sage); outline-offset: 2px; }
+
+/* Motion. Content is only hidden while a page script is running, and never
+   for visitors who ask for reduced motion. */
+@media (prefers-reduced-motion: no-preference) {
+  .js .reveal {
+    opacity: 0;
+    transform: translateY(1rem);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+
+  .js .reveal.is-visible { opacity: 1; transform: none; }
+
+  .journal-hero > * { animation: journal-rise 0.7s ease both; }
+  .journal-hero > *:nth-child(2) { animation-delay: 0.12s; }
+
+  @keyframes journal-rise {
+    from { opacity: 0; transform: translateY(1rem); }
+    to { opacity: 1; transform: none; }
+  }
+}
+
+/* Reading-progress line on the sticky header, where the browser can tie it to
+   the scroll position without script. */
+@media (prefers-reduced-motion: no-preference) {
+  @supports (animation-timeline: scroll()) {
+    .journal-header::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 1px;
+      height: 3px;
+      background: var(--attention);
+      transform-origin: 0 50%;
+      transform: scaleX(0);
+      animation: journal-progress linear both;
+      animation-timeline: scroll(root);
+    }
+
+    @keyframes journal-progress { to { transform: scaleX(1); } }
+  }
+}
 
 @media (max-width: 1050px) {
-  html[data-design="research-journal"] .journal-abstract { grid-template-columns: 8rem minmax(0, 1fr); }
-  html[data-design="research-journal"] .journal-abstract .journal-footnote { grid-column: 2; padding: 0; border: 0; }
-  html[data-design="research-journal"] .journal-section { grid-template-columns: 1fr; gap: 1rem; }
-  html[data-design="research-journal"] .journal-end { gap: 2rem; }
+  .journal-abstract { grid-template-columns: 8rem minmax(0, 1fr); }
+  .journal-abstract .journal-footnote { grid-column: 2; padding: 0; border: 0; }
+  .journal-section { grid-template-columns: 1fr; gap: 1rem; }
+  .journal-cta { grid-template-columns: auto minmax(0, 1fr); gap: 2rem; }
+  .journal-cta-actions { grid-column: 1 / -1; flex-direction: row; flex-wrap: wrap; align-items: center; gap: 1.5rem; }
+  .journal-cta-actions .journal-text-link { margin: 0; }
 }
+
+@media (min-width: 761px) {
+  .journal-life--emergence { position: sticky; top: 6.5rem; }
+}
+
 @media (max-width: 760px) {
-  html[data-design="research-journal"] .journal-wrap { width: calc(100% - 2.5rem); }
-  html[data-design="research-journal"] .journal-masthead { min-height: 5rem; gap: 1rem; }
-  html[data-design="research-journal"] .journal-tagline { display: none; }
-  html[data-design="research-journal"] .journal-masthead nav { gap: 1rem; font-size: var(--journal-fs-note-meta); }
-  html[data-design="research-journal"] .journal-hero { grid-template-columns: 1fr; gap: 2rem; padding-block: 3rem; }
-  html[data-design="research-journal"] .journal-main h1 { font-size: clamp(var(--fs-heading-hero-min), 12vw, var(--fs-heading-hero-max)); }
-  html[data-design="research-journal"] .journal-abstract { grid-template-columns: 1fr; gap: 1rem; }
-  html[data-design="research-journal"] .journal-abstract .journal-footnote { grid-column: auto; }
-  html[data-design="research-journal"] .journal-section { padding-top: 3rem; }
-  html[data-design="research-journal"] .journal-emergence-layout { grid-template-columns: 1fr; gap: 1.5rem; }
-  html[data-design="research-journal"] .journal-specimen-panel { grid-template-columns: 1fr; gap: 1.25rem; padding: 1.25rem; }
-  html[data-design="research-journal"] .journal-explanation { padding: 1.25rem 0 0; border-top: 1px solid var(--ink-ghost); border-left: 0; }
-  html[data-design="research-journal"] .journal-end { grid-template-columns: 1fr; gap: 2rem; margin-top: 3rem !important; padding-top: 2rem; }
-  html[data-design="research-journal"] .journal-footer { margin-top: 3rem; }
+  .journal-wrap { width: calc(100% - 2.5rem); }
+  .journal-header { position: static; }
+  .journal-header::after { display: none; }
+  .journal-masthead { min-height: 5rem; gap: 1rem; }
+  .journal-tagline { display: none; }
+  .journal-masthead nav { gap: 1rem; font-size: 0.7rem; }
+  .journal-hero { grid-template-columns: 1fr; gap: 2rem; padding-block: 3rem; }
+  .journal-main h1 { font-size: clamp(var(--fs-heading-hero-min), 12vw, var(--fs-heading-hero-max)); }
+  .journal-abstract { grid-template-columns: 1fr; gap: 1rem; }
+  .journal-abstract .journal-footnote { grid-column: auto; }
+  .journal-section { margin-top: 3rem; padding-top: 2rem; }
+  .journal-emergence-layout { grid-template-columns: 1fr; gap: 2rem; }
+  .journal-points { grid-template-columns: 1fr; gap: 1.5rem; }
+  .journal-specimen-panel { grid-template-columns: 1fr; gap: 1.25rem; padding: 1.25rem; }
+  .journal-explanation { padding: 1.25rem 0 0; border-top: 1px solid var(--ink-ghost); border-left: 0; }
+  .journal-shots-row { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .journal-shots-row .journal-plate-caption { grid-column: 1 / -1; }
+  .journal-cta { grid-template-columns: 1fr; gap: 1.5rem; margin-top: 3rem; padding-block: 2rem; }
+  .journal-footer { margin-top: 3rem; }
 }
+
+@media (max-width: 600px) {
+  .journal-masthead { flex-wrap: wrap; padding-block: 1rem; }
+  .journal-masthead nav { width: 100%; justify-content: space-between; }
+}
+
 @media (max-width: 420px) {
-  html[data-design="research-journal"] .journal-masthead { flex-wrap: wrap; padding-block: 1rem; }
-  html[data-design="research-journal"] .journal-masthead nav { width: 100%; justify-content: space-between; }
-  html[data-design="research-journal"] .journal-specimen-controls button { font-size: .625rem; padding-inline: .5rem; }
-  html[data-design="research-journal"] .journal-life { padding: 1rem; }
-  html[data-design="research-journal"] .journal-life-controls button { padding-inline: .75rem; }
+  .journal-specimen-tabs button { font-size: 0.625rem; padding-inline: 0.5rem; }
+  .journal-plate,
+  .journal-life,
+  .journal-shots { padding: 1rem; }
+  .journal-life-controls button { padding-inline: 0.75rem; }
 }
 
 /* Journal documents share the public site's reading system while preserving
    the long-form measure required by support and legal content. */
-body.journal-document { overflow-x: clip; }
 .journal-document-wrap {
   width: min(1140px, calc(100% - 5rem));
   margin-inline: auto;
 }
-.journal-document-skip {
-  position: absolute;
-  top: -6rem;
-  left: 1rem;
-  z-index: 20;
-  padding: .5rem .75rem;
-  color: var(--paper);
-  background: var(--ink);
-}
-.journal-document-skip:focus { top: 1rem; }
+
 .journal-document-header {
   display: block;
   max-width: none;
@@ -1561,6 +1144,7 @@ body.journal-document { overflow-x: clip; }
   padding: 0;
   border: 0;
 }
+
 .journal-document-masthead {
   display: flex;
   align-items: center;
@@ -1569,108 +1153,111 @@ body.journal-document { overflow-x: clip; }
   gap: 1.5rem;
   border-bottom: 1px solid var(--ink);
 }
-.journal-document-wordmark {
-  display: inline-flex;
-  align-items: center;
-  gap: .65rem;
-  color: var(--ink);
-  font-family: var(--serif-alt);
-  font-size: calc(1.1rem * 2.535);
-  font-style: normal;
-  font-weight: 400;
-  letter-spacing: .04em;
-  line-height: 1;
-  text-decoration: none;
-}
+
 .journal-document-wordmark img { flex: none; object-fit: contain; }
-.journal-document-wordmark .back-icon {
-  color: var(--ink-faint);
-  font-family: var(--mono);
-  font-size: .75rem;
-}
+.journal-document-wordmark .back-icon { color: var(--ink-faint); font-size: 0.75rem; }
+
 .journal-document-label {
   margin: 0;
   color: var(--ink-faint);
   font: 400 var(--fs-label-section)/1.6 var(--mono);
-  letter-spacing: .08em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
 }
+
 .journal-document-accent { color: var(--rust); }
+
 .journal-document-language {
   display: flex;
-  gap: .75rem;
-  font: 400 .75rem/1.5 var(--mono);
-  letter-spacing: .06em;
+  gap: 0.75rem;
+  font: 400 0.75rem/1.5 var(--mono);
+  letter-spacing: 0.06em;
 }
+
 .journal-document-language a {
-  padding: .25rem .4rem;
+  padding: 0.25rem 0.4rem;
   color: var(--ink-faint);
   text-decoration: none;
 }
+
 .journal-document-language a.active {
   color: var(--paper);
   background: var(--ink);
 }
+
 .journal-document-main {
   max-width: 720px;
   margin: 0 auto;
   padding: 3.5rem 0 5rem;
 }
+
 .journal-document-main h1,
 .journal-document-main h2 {
   font-family: var(--serif-alt);
   font-style: normal;
   font-weight: 400;
-  letter-spacing: .04em;
+  letter-spacing: 0.04em;
   line-height: 1.04;
 }
+
 .journal-document-main h1 {
-  margin: 1rem 0 .5rem;
+  margin: 1rem 0 0.5rem;
   color: var(--ink);
   font-size: clamp(2.7rem, 6vw, 4.5rem);
 }
+
 .journal-document-main h2 {
   margin: 0 0 1rem;
   color: var(--ink);
   font-size: clamp(1.8rem, 3.5vw, 2.5rem);
 }
+
 .journal-document-main .meta {
   margin-bottom: 2.5rem;
   color: var(--ink-faint);
-  font: 400 var(--journal-fs-note-meta, .7rem)/1.7 var(--mono);
-  letter-spacing: .04em;
+  font: 400 0.7rem/1.7 var(--mono);
+  letter-spacing: 0.04em;
 }
+
 .journal-document-main .callout {
   margin-bottom: 0;
   padding: 1.5rem;
   border: 1px solid var(--ink-ghost);
-  border-left: 1px solid var(--ink-ghost);
   border-radius: 0;
   color: var(--ink-mid);
   background: var(--paper-dark);
 }
+
 .journal-document-main .callout p { margin: 0; }
+
 .journal-document-main section {
   margin: 0;
   padding: 2.5rem 0;
   border-top: 1px solid var(--ink-ghost);
 }
+
 .journal-document-main .callout + section { margin-top: 2.5rem; }
 .journal-document-main section:first-of-type { border-top: 1px solid var(--ink-ghost); }
+
 .journal-document-main p,
 .journal-document-main li { color: var(--ink-mid); }
+
 .journal-document-main ul {
   margin: 0 0 1rem 1.25rem;
   color: var(--ink-mid);
 }
-.journal-document-main li + li { margin-top: .5rem; }
+
+.journal-document-main li + li { margin-top: 0.5rem; }
+
 .journal-document-main code {
   color: var(--ink-mid);
   border-radius: 0;
   background: var(--paper-deep);
 }
+
 .journal-document-main a { color: var(--link-text); }
 .journal-document-main a:hover { color: var(--link-text-hover); }
+
 .journal-document-footer {
   max-width: none;
   margin: 0;
@@ -1678,29 +1265,34 @@ body.journal-document { overflow-x: clip; }
   border-top: 1px solid var(--ink-ghost);
   text-align: left;
 }
+
 .journal-document-footer > div {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   gap: 1.5rem;
   color: var(--ink-faint);
-  font: 400 .75rem/1.7 var(--mono);
+  font: 400 0.75rem/1.7 var(--mono);
 }
+
 .journal-document-footer p {
   margin: 0;
   color: inherit;
   font: inherit;
   letter-spacing: 0;
 }
+
 .journal-document-footer nav {
   display: flex;
   flex-wrap: wrap;
   gap: 1.25rem;
 }
+
 .journal-document-footer a {
   color: var(--link-text);
   text-decoration: none;
 }
+
 .journal-document-footer a:hover { color: var(--link-text-hover); text-decoration: underline; }
 
 /* The form shares its surface, hierarchy, and focus treatment with the
@@ -1713,27 +1305,31 @@ body.journal-document { overflow-x: clip; }
   padding-top: 2.5rem;
   border-top: 1px solid var(--ink-ghost);
 }
+
 .journal-document .field {
   display: flex;
   flex-direction: column;
   gap: var(--space-xs);
 }
+
 .journal-document .field label,
 .journal-document .field .hint,
 .journal-document .privacy-notice {
   color: var(--ink-faint);
   font-family: var(--mono);
-  font-size: .7rem;
-  letter-spacing: .04em;
+  font-size: 0.7rem;
+  letter-spacing: 0.04em;
 }
+
 .journal-document .field label { text-transform: uppercase; }
 .journal-document .field-optional { color: var(--ink-faint); text-transform: none; }
+
 .journal-document .field input,
 .journal-document .field select,
 .journal-document .field textarea {
   width: 100%;
   box-sizing: border-box;
-  padding: .75rem 1rem;
+  padding: 0.75rem 1rem;
   border: 1px solid var(--ink-ghost);
   border-radius: 0;
   outline: none;
@@ -1742,6 +1338,7 @@ body.journal-document { overflow-x: clip; }
   font: 400 1rem/1.5 var(--serif);
   -webkit-appearance: none;
 }
+
 .journal-document .field input:focus,
 .journal-document .field select:focus,
 .journal-document .field textarea:focus {
@@ -1749,35 +1346,41 @@ body.journal-document { overflow-x: clip; }
   outline: 1px solid var(--sage);
   outline-offset: 2px;
 }
+
 .journal-document .field textarea { min-height: 140px; resize: vertical; }
 .journal-document .privacy-notice { margin: 0; line-height: 1.7; }
 .journal-document .privacy-notice a { color: var(--link-text); }
+
 .journal-document .submit-btn {
   align-self: flex-start;
-  padding: .75rem 1.25rem;
+  padding: 0.75rem 1.25rem;
   border: 1px solid var(--ink);
   border-radius: 0;
   color: var(--paper);
   background: var(--ink);
   cursor: pointer;
-  font: 400 .75rem/1.25 var(--mono);
-  letter-spacing: .06em;
+  font: 400 0.75rem/1.25 var(--mono);
+  letter-spacing: 0.06em;
   text-transform: uppercase;
 }
+
 .journal-document .submit-btn:hover { background: var(--ink-mid); }
-.journal-document .submit-btn:disabled { cursor: default; opacity: .45; }
+.journal-document .submit-btn:disabled { cursor: default; opacity: 0.45; }
+
 .journal-document #status {
   display: none;
-  padding: .75rem 1rem;
+  padding: 0.75rem 1rem;
   border: 1px solid var(--ink-ghost);
-  font: 400 .875rem/1.5 var(--serif);
+  font: 400 0.875rem/1.5 var(--serif);
 }
+
 .journal-document #status.success {
   display: block;
   color: var(--sage);
   border-color: var(--sage);
   background: color-mix(in srgb, var(--sage) 8%, var(--paper));
 }
+
 .journal-document #status.error {
   display: block;
   color: var(--rust);

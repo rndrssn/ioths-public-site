@@ -1,45 +1,45 @@
 {
   "locale": "en",
-  "sourceDigest": "b8040a297e0ab049996837f8a9ac6abfe76df22b069b6a6b723010ae293bcb74",
+  "sourceDigest": "1ef2f1bdd330de43419585ad2a018bdb18fe66d57a9d4971be869eb00cce25a9",
   "entries": [
     {
       "id": "metadata.title",
-      "source": "ioths — A note doesn’t need a plan",
+      "source": "ioths — Notes that turn into work",
       "context": "Browser title and social-card title."
     },
     {
       "id": "metadata.description.0",
-      "source": "Offline Markdown notes for iPhone and iPad. Write down a question, add tasks when they become clear, and keep the files in a format Obsidian can read.",
+      "source": "Notes that turn into work, on iPhone and iPad. A checklist in a note becomes a task on a kanban board for one, in plain Markdown files. Offline, no account.",
       "context": "Metadata: description."
     },
     {
       "id": "metadata.og.title.1",
-      "source": "ioths — A note doesn’t need a plan",
+      "source": "ioths — Notes that turn into work",
       "context": "Metadata: og:title."
     },
     {
       "id": "metadata.og.description.2",
-      "source": "Offline Markdown notes for iPhone and iPad. Write down a question, add tasks when they become clear, and keep the files in a format Obsidian can read.",
+      "source": "Notes that turn into work, on iPhone and iPad. A checklist in a note becomes a task on a kanban board for one, in plain Markdown files. Offline, no account.",
       "context": "Metadata: og:description."
     },
     {
       "id": "metadata.og.image.alt.3",
-      "source": "IOTHS: private Markdown capture for an existing notes library",
+      "source": "ioths: notes that turn into work. A kanban board for one, with offline-first plain files that are private by default.",
       "context": "Metadata: og:image:alt."
     },
     {
       "id": "metadata.twitter.title.4",
-      "source": "ioths — A note doesn’t need a plan",
+      "source": "ioths — Notes that turn into work",
       "context": "Metadata: twitter:title."
     },
     {
       "id": "metadata.twitter.description.5",
-      "source": "Offline Markdown notes for iPhone and iPad. Write down a question, add tasks when they become clear, and keep the files in a format Obsidian can read.",
+      "source": "Notes that turn into work, on iPhone and iPad. A checklist in a note becomes a task on a kanban board for one, in plain Markdown files. Offline, no account.",
       "context": "Metadata: twitter:description."
     },
     {
       "id": "metadata.twitter.image.alt.6",
-      "source": "IOTHS: private Markdown capture for an existing notes library",
+      "source": "ioths: notes that turn into work. A kanban board for one, with offline-first plain files that are private by default.",
       "context": "Metadata: twitter:image:alt."
     },
     {
@@ -54,31 +54,66 @@
     },
     {
       "id": "accessibility.2",
-      "source": "Choose a stage of the example note",
+      "source": "Appearance of the screenshots",
       "context": "Accessible description."
     },
     {
       "id": "accessibility.3",
-      "source": "Paused Game of Life field: generation 0, 5 living cells",
+      "source": "A note in the ioths editor, with a photo attachment, a paragraph of text and a checklist of two completed items and one open item.",
       "context": "Accessible description."
     },
     {
       "id": "accessibility.4",
-      "source": "Game of Life controls",
+      "source": "The same note in the ioths editor in dark appearance.",
       "context": "Accessible description."
     },
     {
       "id": "accessibility.5",
-      "source": "ioths app icon: a note dissolving into yellow cells",
+      "source": "The ioths board on an iPhone held upright, showing note cards in an Open lane. Each card shows a title, a preview, tags and how far through its checklist the note is, such as 1/3.",
       "context": "Accessible description."
     },
     {
       "id": "accessibility.6",
-      "source": "Download on the App Store",
+      "source": "The same board in dark appearance.",
       "context": "Accessible description."
     },
     {
       "id": "accessibility.7",
+      "source": "The ioths board on an iPhone held sideways. Open, In progress and Done lanes sit side by side, each holding note cards with tags and checklist progress.",
+      "context": "Accessible description."
+    },
+    {
+      "id": "accessibility.8",
+      "source": "The ioths board on an iPhone held sideways in dark appearance, with Open, In progress and Done lanes side by side.",
+      "context": "Accessible description."
+    },
+    {
+      "id": "accessibility.9",
+      "source": "Choose a stage of the example note",
+      "context": "Accessible description."
+    },
+    {
+      "id": "accessibility.10",
+      "source": "Paused Game of Life field: generation 0, 5 living cells",
+      "context": "Accessible description."
+    },
+    {
+      "id": "accessibility.11",
+      "source": "Game of Life controls",
+      "context": "Accessible description."
+    },
+    {
+      "id": "accessibility.12",
+      "source": "ioths app icon: a note dissolving into yellow cells",
+      "context": "Accessible description."
+    },
+    {
+      "id": "accessibility.13",
+      "source": "Download on the App Store",
+      "context": "Accessible description."
+    },
+    {
+      "id": "accessibility.14",
       "source": "Legal and support",
       "context": "Accessible description."
     },
@@ -94,17 +129,17 @@
     },
     {
       "id": "content.span.2",
-      "source": "Notes, tasks<br>and unfinished questions",
+      "source": "Tasks inside your notes,<br>on a board for one",
       "context": "SPAN content. Preserve any inline HTML tags and attributes."
     },
     {
       "id": "content.a.3",
-      "source": "Practice",
+      "source": "Difference",
       "context": "A content. Preserve any inline HTML tags and attributes."
     },
     {
       "id": "content.a.4",
-      "source": "Emergence",
+      "source": "Practice",
       "context": "A content. Preserve any inline HTML tags and attributes."
     },
     {
@@ -113,293 +148,458 @@
       "context": "A content. Preserve any inline HTML tags and attributes."
     },
     {
-      "id": "content.p.6",
-      "source": "Offline notes in Markdown",
+      "id": "content.a.6",
+      "source": "App Store <span aria-hidden=\"true\">↗</span>",
+      "context": "A content. Preserve any inline HTML tags and attributes."
+    },
+    {
+      "id": "content.p.7",
+      "source": "A kanban board for one, in Markdown",
       "context": "P content. Preserve any inline HTML tags and attributes."
     },
     {
-      "id": "content.h1.7",
-      "source": "A note doesn’t<br>need a <em>plan.</em>",
+      "id": "content.h1.8",
+      "source": "Notes that turn into <em>work.</em>",
       "context": "H1 content. Preserve any inline HTML tags and attributes."
     },
     {
-      "id": "content.p.8",
-      "source": "You can know that something is worth writing down without knowing what to do with it. ioths is a notes app for iPhone and iPad. It works offline and saves Markdown files, so the note can become part of an existing Obsidian library.",
+      "id": "content.p.9",
+      "source": "ioths keeps the task inside the note. Add a checklist and the note appears on a kanban board built for one person, with a limit you set on how much can be in progress. Every note is a plain Markdown file on your device, in the same format Obsidian uses.",
       "context": "P content. Preserve any inline HTML tags and attributes."
     },
     {
-      "id": "content.a.9",
+      "id": "content.a.10",
       "source": "<img src=\"/assets/marketing/download-on-the-app-store.svg\" alt=\"Download on the App Store\" width=\"144\" height=\"48\">",
       "context": "A content. Preserve any inline HTML tags and attributes."
     },
     {
-      "id": "content.p.10",
+      "id": "content.p.11",
       "source": "For iPhone and iPad.<br>No ioths account required.",
       "context": "P content. Preserve any inline HTML tags and attributes."
     },
     {
-      "id": "content.a.11",
+      "id": "content.a.12",
       "source": "See the example <span aria-hidden=\"true\">↓</span>",
       "context": "A content. Preserve any inline HTML tags and attributes."
     },
     {
-      "id": "content.span.12",
+      "id": "content.span.13",
       "source": "Fig. 01 / From note to task",
       "context": "SPAN content. Preserve any inline HTML tags and attributes."
     },
     {
-      "id": "content.span.13",
-      "source": "IOTHS",
+      "id": "content.span.14",
+      "source": "ioths",
       "context": "SPAN content. Preserve any inline HTML tags and attributes."
     },
     {
-      "id": "content.span.14",
+      "id": "content.span.15",
       "source": "The premise",
       "context": "SPAN content. Preserve any inline HTML tags and attributes."
     },
     {
-      "id": "content.p.15",
+      "id": "content.p.16",
       "source": "Writing something down and deciding what to do about it are different decisions.",
       "context": "P content. Preserve any inline HTML tags and attributes."
     },
     {
-      "id": "content.p.16",
-      "source": "For an existing Markdown library.<br>Obsidian users in particular.",
-      "context": "P content. Preserve any inline HTML tags and attributes."
-    },
-    {
       "id": "content.p.17",
-      "source": "01 / In practice",
+      "source": "Files Obsidian can read,<br>so it fits an existing library.",
       "context": "P content. Preserve any inline HTML tags and attributes."
     },
     {
       "id": "content.p.18",
+      "source": "01 / What’s different",
+      "context": "P content. Preserve any inline HTML tags and attributes."
+    },
+    {
+      "id": "content.p.19",
+      "source": "Four choices, made on purpose.",
+      "context": "P content. Preserve any inline HTML tags and attributes."
+    },
+    {
+      "id": "content.h2.20",
+      "source": "What ioths does differently.",
+      "context": "H2 content. Preserve any inline HTML tags and attributes."
+    },
+    {
+      "id": "content.h3.21",
+      "source": "The task lives in the note.",
+      "context": "H3 content. Preserve any inline HTML tags and attributes."
+    },
+    {
+      "id": "content.p.22",
+      "source": "Add a checklist to any note and it becomes a task note. Its card shows how far along it is, and the Tasks screen gathers every open item from across your notes.",
+      "context": "P content. Preserve any inline HTML tags and attributes."
+    },
+    {
+      "id": "content.h3.23",
+      "source": "A kanban board for one.",
+      "context": "H3 content. Preserve any inline HTML tags and attributes."
+    },
+    {
+      "id": "content.p.24",
+      "source": "Open and done follow your checklists; you flag what you are working on. A work-in-progress limit that you set stops you starting more than you meant to carry.",
+      "context": "P content. Preserve any inline HTML tags and attributes."
+    },
+    {
+      "id": "content.h3.25",
+      "source": "Plain files, in storage you choose.",
+      "context": "H3 content. Preserve any inline HTML tags and attributes."
+    },
+    {
+      "id": "content.p.26",
+      "source": "Every note is a Markdown file with frontmatter Obsidian understands. Keep them on the device, or use a Files folder, GitHub or GitLab.",
+      "context": "P content. Preserve any inline HTML tags and attributes."
+    },
+    {
+      "id": "content.h3.27",
+      "source": "Private, offline, no account.",
+      "context": "H3 content. Preserve any inline HTML tags and attributes."
+    },
+    {
+      "id": "content.p.28",
+      "source": "Everything works without a network and without an ioths account. Analytics are off unless you turn them on, and nothing is sold or used to train a model.",
+      "context": "P content. Preserve any inline HTML tags and attributes."
+    },
+    {
+      "id": "content.span.29",
+      "source": "Fig. 02 / In the app",
+      "context": "SPAN content. Preserve any inline HTML tags and attributes."
+    },
+    {
+      "id": "content.button.30",
+      "source": "Light",
+      "context": "BUTTON content. Preserve any inline HTML tags and attributes."
+    },
+    {
+      "id": "content.button.31",
+      "source": "Dark",
+      "context": "BUTTON content. Preserve any inline HTML tags and attributes."
+    },
+    {
+      "id": "content.p.32",
+      "source": "02 / In practice",
+      "context": "P content. Preserve any inline HTML tags and attributes."
+    },
+    {
+      "id": "content.p.33",
       "source": "An example note, with its follow-up work.",
       "context": "P content. Preserve any inline HTML tags and attributes."
     },
     {
-      "id": "content.h2.19",
+      "id": "content.h2.34",
       "source": "Keep the task with its context.",
       "context": "H2 content. Preserve any inline HTML tags and attributes."
     },
     {
-      "id": "content.p.20",
+      "id": "content.p.35",
       "source": "The example below starts with a question about a changed deadline. The next steps appear in the same note, beside the reason for doing them.",
       "context": "P content. Preserve any inline HTML tags and attributes."
     },
     {
-      "id": "content.button.21",
+      "id": "content.p.36",
+      "source": "Try it: choose a stage of the note",
+      "context": "P content. Preserve any inline HTML tags and attributes."
+    },
+    {
+      "id": "content.button.37",
       "source": "01 / Note",
       "context": "BUTTON content. Preserve any inline HTML tags and attributes."
     },
     {
-      "id": "content.button.22",
+      "id": "content.button.38",
       "source": "02 / Checklist",
       "context": "BUTTON content. Preserve any inline HTML tags and attributes."
     },
     {
-      "id": "content.button.23",
+      "id": "content.button.39",
       "source": "03 / Working",
       "context": "BUTTON content. Preserve any inline HTML tags and attributes."
     },
     {
-      "id": "content.h3.24",
+      "id": "content.h3.40",
       "source": "The question is still open.",
       "context": "H3 content. Preserve any inline HTML tags and attributes."
     },
     {
-      "id": "content.p.25",
+      "id": "content.p.41",
       "source": "The note records what changed and what remains uncertain. That is enough to come back to, even before there is an answer.",
       "context": "P content. Preserve any inline HTML tags and attributes."
     },
     {
-      "id": "content.h3.26",
+      "id": "content.span.42",
+      "source": "In the library",
+      "context": "SPAN content. Preserve any inline HTML tags and attributes."
+    },
+    {
+      "id": "content.li.43",
+      "source": "<span>Why are we reviewing this again?</span><span class=\"journal-tag\">#delivery</span>",
+      "context": "LI content. Preserve any inline HTML tags and attributes."
+    },
+    {
+      "id": "content.h3.44",
       "source": "There is something to check.",
       "context": "H3 content. Preserve any inline HTML tags and attributes."
     },
     {
-      "id": "content.p.27",
+      "id": "content.p.45",
       "source": "A checklist makes the follow-up explicit. Its open items also appear in Tasks, alongside items from other notes. The original question stays where it was written.",
       "context": "P content. Preserve any inline HTML tags and attributes."
     },
     {
-      "id": "content.h3.28",
+      "id": "content.span.46",
+      "source": "In Tasks",
+      "context": "SPAN content. Preserve any inline HTML tags and attributes."
+    },
+    {
+      "id": "content.li.47",
+      "source": "<span class=\"journal-check\" aria-hidden=\"true\"></span><span>Compare scope with the deadline</span>",
+      "context": "LI content. Preserve any inline HTML tags and attributes."
+    },
+    {
+      "id": "content.li.48",
+      "source": "<span class=\"journal-check\" aria-hidden=\"true\"></span><span>Raise the trade-off at the review</span>",
+      "context": "LI content. Preserve any inline HTML tags and attributes."
+    },
+    {
+      "id": "content.h3.49",
       "source": "One item done; one still open.",
       "context": "H3 content. Preserve any inline HTML tags and attributes."
     },
     {
-      "id": "content.p.29",
+      "id": "content.p.50",
       "source": "Mark the note in progress to put it in the board’s In Progress lane. The work-in-progress limit caps how many notes carry that status. You choose the limit.",
       "context": "P content. Preserve any inline HTML tags and attributes."
     },
     {
-      "id": "content.p.30",
-      "source": "02 / Emergence",
-      "context": "P content. Preserve any inline HTML tags and attributes."
-    },
-    {
-      "id": "content.p.31",
-      "source": "What the icon refers to.",
-      "context": "P content. Preserve any inline HTML tags and attributes."
-    },
-    {
-      "id": "content.span.32",
-      "source": "Fig. 02 / Game of Life",
+      "id": "content.span.51",
+      "source": "On the board",
       "context": "SPAN content. Preserve any inline HTML tags and attributes."
     },
     {
-      "id": "content.span.33",
-      "source": "Seed: R-pentomino",
+      "id": "content.span.52",
+      "source": "Open",
       "context": "SPAN content. Preserve any inline HTML tags and attributes."
     },
     {
-      "id": "content.p.34",
-      "source": "This interactive figure needs JavaScript and canvas support. It begins with five living cells in an R-pentomino pattern; the rules are described below.",
-      "context": "P content. Preserve any inline HTML tags and attributes."
+      "id": "content.span.53",
+      "source": "In progress",
+      "context": "SPAN content. Preserve any inline HTML tags and attributes."
     },
     {
-      "id": "content.button.35",
-      "source": "Start",
-      "context": "BUTTON content. Preserve any inline HTML tags and attributes."
+      "id": "content.span.54",
+      "source": "Why are we reviewing this again? <span class=\"journal-card-progress\">1/2",
+      "context": "SPAN content. Preserve any inline HTML tags and attributes."
     },
     {
-      "id": "content.button.36",
-      "source": "Step",
-      "context": "BUTTON content. Preserve any inline HTML tags and attributes."
+      "id": "content.span.55",
+      "source": "Done",
+      "context": "SPAN content. Preserve any inline HTML tags and attributes."
     },
     {
-      "id": "content.button.37",
-      "source": "Reset",
-      "context": "BUTTON content. Preserve any inline HTML tags and attributes."
-    },
-    {
-      "id": "content.summary.39",
-      "source": "Read the rules",
-      "context": "SUMMARY content. Preserve any inline HTML tags and attributes."
-    },
-    {
-      "id": "content.p.40",
-      "source": "A living cell survives with two or three living neighbours. An empty cell becomes alive with exactly three. All other cells are empty in the next generation. Every cell updates at the same time.",
-      "context": "P content. Preserve any inline HTML tags and attributes."
-    },
-    {
-      "id": "content.p.41",
-      "source": "This field is finite: the left and right edges join, as do the top and bottom. A pattern that reaches an edge can return from the other side.",
-      "context": "P content. Preserve any inline HTML tags and attributes."
-    },
-    {
-      "id": "content.a.42",
-      "source": "More on emergence at Plato’s Cave <span aria-hidden=\"true\">↗</span>",
-      "context": "A content. Preserve any inline HTML tags and attributes."
-    },
-    {
-      "id": "content.h2.43",
-      "source": "What follows is not always visible at the start.",
-      "context": "H2 content. Preserve any inline HTML tags and attributes."
-    },
-    {
-      "id": "content.p.44",
-      "source": "A thought becomes a note before it becomes anything else. Later, a return to that note may make a question, a decision, or a piece of work distinct. The path matters, but it cannot be inferred from the first fragment alone.",
-      "context": "P content. Preserve any inline HTML tags and attributes."
-    },
-    {
-      "id": "content.p.45",
-      "source": "Game of Life makes the same constraint visible in miniature. Its rules are fixed and local, yet a pattern’s larger behaviour only becomes legible as it unfolds. In complex systems, the causes remain real; the account of how they combined is often made retrospectively.",
-      "context": "P content. Preserve any inline HTML tags and attributes."
-    },
-    {
-      "id": "content.p.46",
-      "source": "The comparison is limited. A note does not cause its own next step. New circumstances and attention do. Keeping the earlier thought makes that connection easier to see and explain.",
-      "context": "P content. Preserve any inline HTML tags and attributes."
-    },
-    {
-      "id": "content.p.47",
+      "id": "content.p.56",
       "source": "03 / About",
       "context": "P content. Preserve any inline HTML tags and attributes."
     },
     {
-      "id": "content.h2.48",
+      "id": "content.p.57",
+      "source": "Why it exists.",
+      "context": "P content. Preserve any inline HTML tags and attributes."
+    },
+    {
+      "id": "content.h2.58",
       "source": "Why I made it.",
       "context": "H2 content. Preserve any inline HTML tags and attributes."
     },
     {
-      "id": "content.p.49",
+      "id": "content.p.59",
       "source": "I built ioths for myself because the notes apps I had tried never quite fitted, either in what they did or how they felt to use.",
       "context": "P content. Preserve any inline HTML tags and attributes."
     },
     {
-      "id": "content.p.50",
+      "id": "content.p.60",
       "source": "The result is fairly specific: somewhere to write on the phone, keep the file, and add tasks without copying the thought into another tool. If you already use Obsidian, the file format will be familiar.",
       "context": "P content. Preserve any inline HTML tags and attributes."
     },
     {
-      "id": "content.p.51",
-      "source": "Using the app",
+      "id": "content.p.61",
+      "source": "04 / The icon",
       "context": "P content. Preserve any inline HTML tags and attributes."
     },
     {
-      "id": "content.h3.52",
-      "source": "IOTHS",
-      "context": "H3 content. Preserve any inline HTML tags and attributes."
+      "id": "content.p.62",
+      "source": "What it refers to.",
+      "context": "P content. Preserve any inline HTML tags and attributes."
     },
     {
-      "id": "content.p.53",
+      "id": "content.h2.63",
+      "source": "A note, dissolving into cells.",
+      "context": "H2 content. Preserve any inline HTML tags and attributes."
+    },
+    {
+      "id": "content.p.64",
+      "source": "The icon nods to Conway’s Game of Life: a few fixed rules, and a pattern whose course you cannot read from its first shape. A scrap of writing can turn out the same way, into a decision or a piece of work.",
+      "context": "P content. Preserve any inline HTML tags and attributes."
+    },
+    {
+      "id": "content.p.65",
+      "source": "It is only a comparison. A note does not cause its own next step; new circumstances and attention do.",
+      "context": "P content. Preserve any inline HTML tags and attributes."
+    },
+    {
+      "id": "content.summary.66",
+      "source": "The rules, in full",
+      "context": "SUMMARY content. Preserve any inline HTML tags and attributes."
+    },
+    {
+      "id": "content.p.67",
+      "source": "Conway’s Game of Life is played on a grid of square cells. Each cell is either alive or empty. To find the next generation, count each cell’s neighbours: the eight cells that touch it, diagonals included. Then apply four rules.",
+      "context": "P content. Preserve any inline HTML tags and attributes."
+    },
+    {
+      "id": "content.li.68",
+      "source": "<strong>Loneliness.</strong> A living cell with fewer than two living neighbours dies.",
+      "context": "LI content. Preserve any inline HTML tags and attributes."
+    },
+    {
+      "id": "content.li.69",
+      "source": "<strong>Survival.</strong> A living cell with two or three living neighbours stays alive.",
+      "context": "LI content. Preserve any inline HTML tags and attributes."
+    },
+    {
+      "id": "content.li.70",
+      "source": "<strong>Crowding.</strong> A living cell with more than three living neighbours dies.",
+      "context": "LI content. Preserve any inline HTML tags and attributes."
+    },
+    {
+      "id": "content.li.71",
+      "source": "<strong>Birth.</strong> An empty cell with exactly three living neighbours becomes alive.",
+      "context": "LI content. Preserve any inline HTML tags and attributes."
+    },
+    {
+      "id": "content.p.72",
+      "source": "Every cell is judged at the same moment, using only the current generation. The whole grid then changes at once. The mathematician John Conway devised the rules in 1970.",
+      "context": "P content. Preserve any inline HTML tags and attributes."
+    },
+    {
+      "id": "content.p.73",
+      "source": "The field here is finite: the left and right edges join, as do the top and bottom, so a pattern that leaves one side returns from the other. It starts from the R-pentomino, five cells that take 1,103 generations to settle on an unbounded grid. On a small, wrapped field they unfold differently, so use Step to follow the first few generations.",
+      "context": "P content. Preserve any inline HTML tags and attributes."
+    },
+    {
+      "id": "content.a.74",
+      "source": "More on emergence at Plato’s Cave <span aria-hidden=\"true\">↗</span>",
+      "context": "A content. Preserve any inline HTML tags and attributes."
+    },
+    {
+      "id": "content.span.75",
+      "source": "Fig. 03 / Game of Life",
+      "context": "SPAN content. Preserve any inline HTML tags and attributes."
+    },
+    {
+      "id": "content.span.76",
+      "source": "Seed: R-pentomino",
+      "context": "SPAN content. Preserve any inline HTML tags and attributes."
+    },
+    {
+      "id": "content.p.77",
+      "source": "This interactive figure needs JavaScript and canvas support. It begins with five living cells in an R-pentomino pattern; the rules are described in the text beside it.",
+      "context": "P content. Preserve any inline HTML tags and attributes."
+    },
+    {
+      "id": "content.button.78",
+      "source": "Start",
+      "context": "BUTTON content. Preserve any inline HTML tags and attributes."
+    },
+    {
+      "id": "content.button.79",
+      "source": "Step",
+      "context": "BUTTON content. Preserve any inline HTML tags and attributes."
+    },
+    {
+      "id": "content.button.80",
+      "source": "Reset",
+      "context": "BUTTON content. Preserve any inline HTML tags and attributes."
+    },
+    {
+      "id": "content.p.82",
+      "source": "Start runs the field. Step advances one generation. Reset returns to the seed.",
+      "context": "P content. Preserve any inline HTML tags and attributes."
+    },
+    {
+      "id": "content.h2.83",
+      "source": "ioths",
+      "context": "H2 content. Preserve any inline HTML tags and attributes."
+    },
+    {
+      "id": "content.p.84",
       "source": "For iPhone and iPad.",
       "context": "P content. Preserve any inline HTML tags and attributes."
     },
     {
-      "id": "content.p.54",
+      "id": "content.p.85",
+      "source": "Using the app",
+      "context": "P content. Preserve any inline HTML tags and attributes."
+    },
+    {
+      "id": "content.p.86",
       "source": "There’s no ioths account to create. Notes stay on your device unless you choose an external storage destination.",
       "context": "P content. Preserve any inline HTML tags and attributes."
     },
     {
-      "id": "content.p.55",
+      "id": "content.p.87",
       "source": "Usage analytics are off unless you turn them on; they never include note content, titles, or tags. Nothing is sold or used to train an AI model. Read the <a href=\"/legal/privacy\">Privacy Policy</a>.",
       "context": "P content. Preserve any inline HTML tags and attributes."
     },
     {
-      "id": "content.a.56",
+      "id": "content.a.88",
       "source": "<img src=\"/assets/marketing/download-on-the-app-store.svg\" alt=\"Download on the App Store\" width=\"144\" height=\"48\">",
       "context": "A content. Preserve any inline HTML tags and attributes."
     },
     {
-      "id": "content.p.57",
+      "id": "content.a.89",
+      "source": "Questions or feedback? Contact support",
+      "context": "A content. Preserve any inline HTML tags and attributes."
+    },
+    {
+      "id": "content.p.90",
       "source": "ioths / An independent tool by Bedrock Rebellion",
       "context": "P content. Preserve any inline HTML tags and attributes."
     },
     {
-      "id": "content.a.58",
+      "id": "content.a.91",
       "source": "Contact",
       "context": "A content. Preserve any inline HTML tags and attributes."
     },
     {
-      "id": "content.a.59",
+      "id": "content.a.92",
       "source": "Privacy",
       "context": "A content. Preserve any inline HTML tags and attributes."
     },
     {
-      "id": "content.a.60",
+      "id": "content.a.93",
       "source": "Terms",
       "context": "A content. Preserve any inline HTML tags and attributes."
     },
     {
-      "id": "content.a.61",
+      "id": "content.a.94",
       "source": "Legal notice",
       "context": "A content. Preserve any inline HTML tags and attributes."
     },
     {
-      "id": "content.p.62",
+      "id": "content.p.95",
       "source": "Apple, the Apple logo, iPhone, and iPad are trademarks of Apple Inc., registered in the U.S. and other countries. App Store is a service mark of Apple Inc.",
       "context": "P content. Preserve any inline HTML tags and attributes."
     },
     {
       "id": "structuredData.website.description",
-      "source": "Offline Markdown notes for iPhone and iPad. Write down a question, add tasks when they become clear, and keep the files in a format Obsidian can read.",
+      "source": "Notes that turn into work, on iPhone and iPad. A checklist in a note becomes a task on a kanban board for one, in plain Markdown files. Offline, no account.",
       "context": "Schema.org WebSite description. Preserve the product claim exactly."
     },
     {
       "id": "structuredData.application.description",
-      "source": "An offline Markdown notes app for iPhone and iPad. Write down a question, add tasks when they become clear, and keep the files in a format Obsidian can read.",
+      "source": "An offline app for iPhone and iPad in which a checklist inside a note becomes a task on a kanban board built for one person, with a work-in-progress limit. Notes are plain Markdown files in a format Obsidian can read.",
       "context": "Schema.org SoftwareApplication description. Preserve the product claim exactly."
     },
     {
@@ -414,7 +614,7 @@
     },
     {
       "id": "structuredData.application.feature.2",
-      "source": "Checklist, task, and board views",
+      "source": "Checklist tasks and a kanban board with a work-in-progress limit",
       "context": "Schema.org SoftwareApplication feature. Keep concise and factual."
     },
     {

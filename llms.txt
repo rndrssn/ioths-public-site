@@ -1,11 +1,11 @@
 # IOTHS
 
-> IOTHS is a private, offline-first Markdown notes and task-management app for iPhone and iPad. It stores each note as a portable `.md` file with YAML frontmatter and requires no IOTHS account.
+> IOTHS is an offline-first app for iPhone and iPad in which a checklist inside a note becomes a task on a kanban board built for one person. Each note is a portable `.md` file with YAML frontmatter, and no IOTHS account is required.
 
 ## Product facts
 
 - Platforms: iPhone and iPad, requiring iOS 18.0 or iPadOS 18.0 or later.
-- Core workflow: write notes, add Markdown checklists, view open tasks together, and organize note cards or individual tasks on a kanban board.
+- Core workflow: write notes, add Markdown checklists, view open tasks together, and organize note cards or individual tasks on a kanban board with a configurable work-in-progress limit.
 - File format: UTF-8 Markdown files with YAML frontmatter; compatible with an existing Markdown notes library, including the structure used by Obsidian.
 - Capture: typing, dictation, camera, Share Extension, and on-device PDF-to-Markdown conversion.
 - Privacy: notes remain on the device unless the user explicitly activates a storage or sync destination. Optional usage analytics never include note content, titles, or tags.
