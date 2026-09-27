@@ -1,45 +1,45 @@
 {
   "locale": "en",
-  "sourceDigest": "1ef2f1bdd330de43419585ad2a018bdb18fe66d57a9d4971be869eb00cce25a9",
+  "sourceDigest": "0699a2e296ef34ff9340a3496390f6e6c6cb24a059aa57ba8a7d9598cbdd31e7",
   "entries": [
     {
       "id": "metadata.title",
-      "source": "ioths — Notes that turn into work",
+      "source": "ioths — Thoughts that go somewhere",
       "context": "Browser title and social-card title."
     },
     {
       "id": "metadata.description.0",
-      "source": "Notes that turn into work, on iPhone and iPad. A checklist in a note becomes a task on a kanban board for one, in plain Markdown files. Offline, no account.",
+      "source": "Thoughts that go somewhere, on iPhone and iPad. Write in plain Markdown; add a checklist and the note shows up in Tasks and on a kanban board built for one. Offline, no account.",
       "context": "Metadata: description."
     },
     {
       "id": "metadata.og.title.1",
-      "source": "ioths — Notes that turn into work",
+      "source": "ioths — Thoughts that go somewhere",
       "context": "Metadata: og:title."
     },
     {
       "id": "metadata.og.description.2",
-      "source": "Notes that turn into work, on iPhone and iPad. A checklist in a note becomes a task on a kanban board for one, in plain Markdown files. Offline, no account.",
+      "source": "Thoughts that go somewhere, on iPhone and iPad. Write in plain Markdown; add a checklist and the note shows up in Tasks and on a kanban board built for one. Offline, no account.",
       "context": "Metadata: og:description."
     },
     {
       "id": "metadata.og.image.alt.3",
-      "source": "ioths: notes that turn into work. A kanban board for one, with offline-first plain files that are private by default.",
+      "source": "ioths: thoughts that go somewhere. Plain Markdown notes for iPhone and iPad, with no account and private by default.",
       "context": "Metadata: og:image:alt."
     },
     {
       "id": "metadata.twitter.title.4",
-      "source": "ioths — Notes that turn into work",
+      "source": "ioths — Thoughts that go somewhere",
       "context": "Metadata: twitter:title."
     },
     {
       "id": "metadata.twitter.description.5",
-      "source": "Notes that turn into work, on iPhone and iPad. A checklist in a note becomes a task on a kanban board for one, in plain Markdown files. Offline, no account.",
+      "source": "Thoughts that go somewhere, on iPhone and iPad. Write in plain Markdown; add a checklist and the note shows up in Tasks and on a kanban board built for one. Offline, no account.",
       "context": "Metadata: twitter:description."
     },
     {
       "id": "metadata.twitter.image.alt.6",
-      "source": "ioths: notes that turn into work. A kanban board for one, with offline-first plain files that are private by default.",
+      "source": "ioths: thoughts that go somewhere. Plain Markdown notes for iPhone and iPad, with no account and private by default.",
       "context": "Metadata: twitter:image:alt."
     },
     {
@@ -129,7 +129,7 @@
     },
     {
       "id": "content.span.2",
-      "source": "Tasks inside your notes,<br>on a board for one",
+      "source": "Plain Markdown notes,<br>private by default",
       "context": "SPAN content. Preserve any inline HTML tags and attributes."
     },
     {
@@ -154,17 +154,17 @@
     },
     {
       "id": "content.p.7",
-      "source": "A kanban board for one, in Markdown",
+      "source": "Markdown notes for iPhone and iPad",
       "context": "P content. Preserve any inline HTML tags and attributes."
     },
     {
       "id": "content.h1.8",
-      "source": "Notes that turn into <em>work.</em>",
+      "source": "Thoughts that go <em>somewhere.</em>",
       "context": "H1 content. Preserve any inline HTML tags and attributes."
     },
     {
       "id": "content.p.9",
-      "source": "ioths keeps the task inside the note. Add a checklist and the note appears on a kanban board built for one person, with a limit you set on how much can be in progress. Every note is a plain Markdown file on your device, in the same format Obsidian uses.",
+      "source": "Write anything. When a note needs a next step, add a checklist: it shows up in Tasks and on a kanban board built for one person, with a limit you set on how much can be in progress. Every note is a plain Markdown file on your device, in the same format Obsidian uses.",
       "context": "P content. Preserve any inline HTML tags and attributes."
     },
     {
@@ -594,12 +594,12 @@
     },
     {
       "id": "structuredData.website.description",
-      "source": "Notes that turn into work, on iPhone and iPad. A checklist in a note becomes a task on a kanban board for one, in plain Markdown files. Offline, no account.",
+      "source": "Thoughts that go somewhere, on iPhone and iPad. Write in plain Markdown; add a checklist and the note shows up in Tasks and on a kanban board built for one. Offline, no account.",
       "context": "Schema.org WebSite description. Preserve the product claim exactly."
     },
     {
       "id": "structuredData.application.description",
-      "source": "An offline app for iPhone and iPad in which a checklist inside a note becomes a task on a kanban board built for one person, with a work-in-progress limit. Notes are plain Markdown files in a format Obsidian can read.",
+      "source": "An offline notes app for iPhone and iPad. Notes are plain Markdown files in a format Obsidian can read; a checklist inside a note puts it in Tasks and on a kanban board built for one person, with a work-in-progress limit.",
       "context": "Schema.org SoftwareApplication description. Preserve the product claim exactly."
     },
     {
