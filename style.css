@@ -143,6 +143,14 @@ html { font-size: 18px; }
   html { scroll-behavior: smooth; }
 }
 
+/* In-page links land below the sticky masthead (4.75rem plus its rule)
+   instead of under it. Below 760px the masthead scrolls away with the page. */
+html { scroll-padding-top: 5rem; }
+
+@media (max-width: 760px) {
+  html { scroll-padding-top: 0; }
+}
+
 body {
   font-family: var(--serif);
   font-size: var(--fs-body);
@@ -639,24 +647,6 @@ footer p {
   font-size: var(--fs-body);
 }
 
-.journal-abstract {
-  display: grid;
-  grid-template-columns: 8rem minmax(0, 1fr) 12rem;
-  gap: 2rem;
-  padding-block: 1.5rem;
-  border-block: 1px solid var(--ink);
-}
-
-.journal-abstract > p:not(.journal-footnote) {
-  color: var(--ink);
-  font: 400 var(--fs-heading-module-card)/1.5 var(--serif);
-}
-
-.journal-abstract .journal-footnote {
-  padding-left: 1.5rem;
-  border-left: 1px solid var(--ink-ghost);
-}
-
 .journal-section {
   display: grid;
   grid-template-columns: 8rem minmax(0, 1fr);
@@ -831,34 +821,26 @@ footer p {
 
 .journal-card-progress { display: block; margin-top: 0.2rem; font-weight: 700; }
 
-/* App screenshots */
+/* App preview films. Section films are 16:9 with a 4:5 portrait cut for
+   phones; the hero film is always the portrait cut. The aspect ratio reserves
+   the right space before either loads. */
 
 .journal-main .journal-shots { margin-top: 3rem; }
 
-.journal-main .journal-shots-row {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 16rem)) minmax(0, 1fr);
-  gap: 1.5rem;
-  align-items: end;
-  margin-top: 1.25rem;
-}
+.journal-hero .journal-hero-video { align-self: start; margin-top: 0; }
 
-.journal-main .journal-shots-wide { margin-top: 2rem; }
-.journal-shots-wide img { margin-bottom: 1rem; }
-
-.journal-shots img {
+.journal-preview-video {
   display: block;
   width: 100%;
   height: auto;
+  aspect-ratio: 16 / 9;
+  margin-block: 1.25rem;
+  background: var(--paper-dark);
 }
 
-.journal-shots .shot-dark { display: none; }
-.journal-shots.is-dark .shot-dark { display: block; }
-.journal-shots.is-dark .shot-light { display: none; }
+.journal-preview-video--portrait { aspect-ratio: 4 / 5; }
 
-.journal-appearance { display: flex; }
-
-.journal-appearance button {
+.journal-video-toggle {
   padding: 0.3rem 0.8rem;
   border: 1px solid var(--ink-ghost);
   color: var(--ink-mid);
@@ -869,21 +851,28 @@ footer p {
   cursor: pointer;
 }
 
-.journal-appearance button + button { border-left: 0; }
-.journal-appearance button[aria-pressed="true"] { color: var(--paper); border-color: var(--ink); background: var(--ink); }
+.journal-video-toggle:hover { border-color: var(--ink); }
 
-.journal-shots.is-dark {
-  border-color: var(--ink);
-  color: var(--showcase-ink);
-  background: var(--showcase-surface);
+.journal-video + .journal-points { margin-top: 3rem; }
+
+.journal-download--inline { margin-top: 2rem; }
+
+/* How it works: the introduction sits beside the note-to-task diagram. */
+
+.journal-practice-intro {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 24rem);
+  gap: 2rem;
+  align-items: start;
+  margin-bottom: 2rem;
 }
 
-.journal-shots.is-dark .journal-plate-head { border-bottom-color: color-mix(in srgb, var(--showcase-ink) 25%, transparent); }
-
-.journal-shots.is-dark .journal-plate-caption {
-  border-top-color: color-mix(in srgb, var(--showcase-ink) 25%, transparent);
-  color: color-mix(in srgb, var(--showcase-ink) 78%, transparent);
+@media (max-width: 600px) {
+  .journal-preview-video { aspect-ratio: 4 / 5; }
 }
+
+.journal-preview-video[data-shape="wide"] { aspect-ratio: 16 / 9; }
+.journal-preview-video[data-shape="tall"] { aspect-ratio: 4 / 5; }
 
 /* Emergence */
 
@@ -1083,8 +1072,6 @@ footer p {
 }
 
 @media (max-width: 1050px) {
-  .journal-abstract { grid-template-columns: 8rem minmax(0, 1fr); }
-  .journal-abstract .journal-footnote { grid-column: 2; padding: 0; border: 0; }
   .journal-section { grid-template-columns: 1fr; gap: 1rem; }
   .journal-cta { grid-template-columns: auto minmax(0, 1fr); gap: 2rem; }
   .journal-cta-actions { grid-column: 1 / -1; flex-direction: row; flex-wrap: wrap; align-items: center; gap: 1.5rem; }
@@ -1104,15 +1091,12 @@ footer p {
   .journal-masthead nav { gap: 1rem; font-size: 0.7rem; }
   .journal-hero { grid-template-columns: 1fr; gap: 2rem; padding-block: 3rem; }
   .journal-main h1 { font-size: clamp(var(--fs-heading-hero-min), 12vw, var(--fs-heading-hero-max)); }
-  .journal-abstract { grid-template-columns: 1fr; gap: 1rem; }
-  .journal-abstract .journal-footnote { grid-column: auto; }
   .journal-section { margin-top: 3rem; padding-top: 2rem; }
   .journal-emergence-layout { grid-template-columns: 1fr; gap: 2rem; }
   .journal-points { grid-template-columns: 1fr; gap: 1.5rem; }
   .journal-specimen-panel { grid-template-columns: 1fr; gap: 1.25rem; padding: 1.25rem; }
   .journal-explanation { padding: 1.25rem 0 0; border-top: 1px solid var(--ink-ghost); border-left: 0; }
-  .journal-shots-row { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .journal-shots-row .journal-plate-caption { grid-column: 1 / -1; }
+  .journal-practice-intro { grid-template-columns: 1fr; }
   .journal-cta { grid-template-columns: 1fr; gap: 1.5rem; margin-top: 3rem; padding-block: 2rem; }
   .journal-footer { margin-top: 3rem; }
 }

@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title description">
-  <title id="title">ioths — Thoughts that go somewhere</title>
-  <desc id="description">Dark artwork for ioths with a yellow grid, the product name, and the message that thoughts go somewhere: plain Markdown notes with no account, private by default.</desc>
+  <title id="title">ioths — Notes, with the tasks inside them</title>
+  <desc id="description">Dark artwork for ioths with a yellow grid, the product name, and the message that notes keep their tasks inside them: plain Markdown notes with no account, private by default.</desc>
   <defs>
     <pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse">
       <path d="M48 0H0V48" fill="none" stroke="#ffd83e" stroke-opacity="0.09" stroke-width="2"/>
@@ -11,7 +11,7 @@
   <rect x="64" y="64" width="1072" height="502" fill="none" stroke="#ffd83e" stroke-opacity="0.55" stroke-width="2"/>
   <text x="104" y="126" fill="#ffd83e" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="22" letter-spacing="5">NOTES FOR IPHONE AND IPAD</text>
   <text x="96" y="354" fill="#ffd83e" font-family="Menlo, ui-monospace, monospace" font-weight="700" font-size="200" letter-spacing="-8">ioths</text>
-  <text x="104" y="426" fill="#f6f4ee" font-family="Georgia, serif" font-size="37">Thoughts that go somewhere.</text>
+  <text x="104" y="426" fill="#f6f4ee" font-family="Georgia, serif" font-size="37">Notes, with the tasks inside them.</text>
   <g fill="#ffd83e" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="18" letter-spacing="2">
     <text x="104" y="513">PLAIN MARKDOWN</text>
     <text x="405" y="513">NO ACCOUNT</text>
