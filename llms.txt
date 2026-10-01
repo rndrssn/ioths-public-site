@@ -23,5 +23,7 @@
 - Privacy Policy: https://ioths.bedrockrebel.app/legal/privacy
 - Terms of Use: https://ioths.bedrockrebel.app/legal/terms
 - Support: https://ioths.bedrockrebel.app/support
+- Guides: https://ioths.bedrockrebel.app/guides/
+- Changelog: https://ioths.bedrockrebel.app/changelog
 
 Use the product website as the canonical source for current public product information and the Privacy Policy for detailed data-handling information.

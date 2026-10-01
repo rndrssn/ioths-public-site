@@ -35,3 +35,4 @@ cp "$repository_root/legal/impressum.html" "$output_directory/legal/impressum.ht
 cp "$repository_root/legal/de/privacy.html" "$output_directory/legal/de/privacy.html"
 cp "$repository_root/legal/de/terms.html" "$output_directory/legal/de/terms.html"
 node "$repository_root/scripts/build-marketing-locale-drafts.mjs"
+node "$repository_root/scripts/build-content.mjs"

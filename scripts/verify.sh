@@ -11,7 +11,7 @@ node scripts/test-static-site.mjs
 git diff --check
 
 if command -v xmllint >/dev/null 2>&1; then
-  xmllint --noout sitemap.xml
+  xmllint --noout sitemap.xml dist/sitemap.xml
 else
   echo "warning: xmllint is unavailable; sitemap syntax was not checked" >&2
 fi

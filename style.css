@@ -1372,6 +1372,41 @@ footer p {
   background: color-mix(in srgb, var(--rust) 8%, var(--paper));
 }
 
+/* Generated guide and changelog pages (scripts/build-content.mjs) reuse the
+   document layout; their titles are sentences, so they run smaller than the
+   one-word legal headings. */
+.journal-content h1 { font-size: clamp(2.2rem, 5vw, 3.4rem); }
+
+.journal-content h3 {
+  margin: 1.75rem 0 0.75rem;
+  color: var(--ink);
+  font: 400 0.75rem/1.5 var(--mono);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.journal-content ol {
+  margin: 0 0 1rem 1.25rem;
+  color: var(--ink-mid);
+}
+
+.journal-content pre {
+  margin: 0 0 1rem;
+  padding: 1rem 1.25rem;
+  overflow-x: auto;
+  border: 1px solid var(--ink-ghost);
+  background: var(--paper-deep);
+  font: 400 0.75rem/1.6 var(--mono);
+}
+
+.journal-content pre code { padding: 0; background: none; }
+
+.journal-content section .meta { margin-bottom: 1rem; }
+
+.journal-content .content-cta { margin-top: 1rem; }
+.journal-content .content-cta p + p { margin-top: 1rem; }
+.journal-content a.button-primary { color: var(--attention-text); }
+
 @media (max-width: 760px) {
   .journal-document-wrap { width: calc(100% - 2.5rem); }
   .journal-document-masthead { min-height: 5rem; }

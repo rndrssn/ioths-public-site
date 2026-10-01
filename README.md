@@ -34,7 +34,10 @@ App and documentation links use the `ioths.bedrockrebel.app` custom domain.
 
 | Path | What it is |
 | --- | --- |
-| `index.html` | Marketing landing page (the only indexed page here) |
+| `index.html` | Marketing landing page (indexed) |
+| `content/guides/*.md` | Search-facing guides, built into `/guides/<slug>` (indexed) |
+| `content/changelog/*.md` | One entry per App Store version, built into `/changelog` (indexed); imported from App Store Connect release notes |
+| `scripts/build-content.mjs` | Renders guides and changelog with JSON-LD and appends them to the built sitemap |
 | `llms.txt` | Concise product facts and canonical links for AI systems that choose to use the emerging convention; the HTML landing page remains authoritative |
 | `legal/privacy.html` / `legal/de/privacy.html` | Privacy policy (EN / DE) |
 | `legal/terms.html` / `legal/de/terms.html` | Terms of Use (EN / DE) |

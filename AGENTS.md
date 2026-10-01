@@ -10,7 +10,8 @@ Agent instructions for this repository.
 
 The repository contains:
 
-- Marketing landing page: `index.html` (indexed, unlike everything else here)
+- Marketing landing page: `index.html` (indexed)
+- Guides and changelog: Markdown in `content/guides/` and `content/changelog/`, rendered by `scripts/build-content.mjs` into `/guides/` and `/changelog` (indexed)
 - Static legal pages: `legal/privacy.html`, `legal/terms.html`, `legal/de/privacy.html`, `legal/de/terms.html`, and `legal/impressum.html`
 - Support/contact page: `support.html`
 - Shared styling: `style.css`
@@ -48,6 +49,22 @@ Ignore documentation inside `node_modules/`; it belongs to dependencies, not thi
 
 ---
 
+## Content Rules for Guides and Changelog
+
+- A guide is search-facing product copy: every claim must match current app behaviour, verified in the `ioths` repo, under the same standard as the legal pages.
+- Guides must not name iCloud and must never brand "Personal Kanban"; `scripts/test-static-site.mjs` enforces both.
+- Guide frontmatter needs `title`, `description` (70–160 characters), `published`, and `updated`. Bump `updated` whenever a guide's content changes; it feeds the sitemap `lastmod` and structured data.
+- Changelog entries come from App Store Connect release notes, not `docs/product/whats-new.md` (which is reset after each submission). After a version goes live, run from this repository:
+
+```sh
+node ../ioths/scripts/app-store-release-notes.js > /private/tmp/ioths-release-notes.json
+node scripts/import-release-notes.mjs /private/tmp/ioths-release-notes.json
+```
+
+  The import only adds missing versions; existing entries, including hand edits, are kept unless `--force` is passed.
+
+---
+
 ## Localization Rules
 
 - English and German legal pages must stay in sync:
@@ -66,7 +83,7 @@ Ignore documentation inside `node_modules/`; it belongs to dependencies, not thi
 - Use plain HTML, CSS, and minimal vanilla JavaScript. Do not add a frontend framework, bundler, or build step unless the task explicitly requires it.
 - Keep shared visual styling in `style.css` and use its existing design tokens for colors, spacing, radii, and typography.
 - Keep page structure simple: `header`, `main`, `section`, and `footer`.
-- Keep `<meta name="robots" content="noindex">` on every legal and support page unless the user explicitly asks to change indexing behavior. The marketing landing page (`index.html`) is the deliberate exception — it must not carry `noindex`.
+- Keep `<meta name="robots" content="noindex">` on every legal and support page unless the user explicitly asks to change indexing behavior. The marketing landing page (`index.html`) and the generated guide and changelog pages are the deliberate exceptions — they must not carry `noindex`.
 - The landing page must never name iCloud as the paid Files-folder capability, and must never capitalize or brand "Personal Kanban" as a proper noun (it's an actively-commercialized third-party methodology name). See `docs/product/app-store-listing.md` in the `ioths` repo for the full rationale — this site's landing copy must stay consistent with that document.
 - External links that open a new tab must use `rel="noopener noreferrer"`.
 - Do not put secrets, access tokens, private addresses beyond the existing Impressum content, or hidden operational notes in static HTML.

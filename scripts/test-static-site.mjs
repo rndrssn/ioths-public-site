@@ -3,6 +3,7 @@ import crypto from 'node:crypto';
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { readCollection } from './content.mjs';
 
 const repositoryRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const outputRoot = path.join(repositoryRoot, 'dist');
@@ -36,7 +37,7 @@ function sha256(relativePath) {
 
 for (const relativePath of expectedFiles) {
   assert.ok(fs.existsSync(path.join(outputRoot, relativePath)), `build is missing ${relativePath}`);
-  if (hasPublishedLocale && ['index.html', 'sitemap.xml'].includes(relativePath)) continue;
+  if (relativePath === 'sitemap.xml' || (hasPublishedLocale && relativePath === 'index.html')) continue;
   assert.equal(sha256(relativePath), sha256(path.join('dist', relativePath)), `build differs from source: ${relativePath}`);
 }
 
@@ -142,7 +143,42 @@ for (const locale of localeManifest.locales) {
   assert.equal((localePage.match(/<meta[^>]+name=["']robots["']/gi) ?? []).length, 1, `${locale.code} page must have one robots directive`);
 }
 
-for (const page of htmlPages.filter((file) => file !== 'index.html' && !localeManifest.locales.some((locale) => file === `${locale.code}/index.html`))) {
+const guides = readCollection('guides');
+const changelog = readCollection('changelog');
+const contentPages = new Map([
+  ...guides.map((guide) => [`guides/${guide.slug}.html`, `https://ioths.bedrockrebel.app/guides/${guide.slug}`]),
+  ...(guides.length > 0 ? [['guides/index.html', 'https://ioths.bedrockrebel.app/guides/']] : []),
+  ...(changelog.length > 0 ? [['changelog.html', 'https://ioths.bedrockrebel.app/changelog']] : []),
+]);
+const builtSitemap = read('dist/sitemap.xml');
+for (const [page, url] of contentPages) {
+  const html = read(path.join('dist', page));
+  assert.doesNotMatch(html, /<meta[^>]+name=["']robots["'][^>]+noindex/i, `${page} must be indexable`);
+  assert.match(html, new RegExp(`<link rel="canonical" href="${url.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}">`), `${page} needs its canonical URL`);
+  assert.equal((html.match(/<h1\b/g) ?? []).length, 1, `${page} needs exactly one h1`);
+  const title = html.match(/<title>([^<]+)<\/title>/)?.[1] ?? '';
+  assert.ok(title.length > 0 && title.length <= 65, `${page} title must be 1-65 characters for search results: ${title}`);
+  const description = html.match(/<meta name="description" content="([^"]+)">/)?.[1] ?? '';
+  assert.ok(description.length >= 70 && description.length <= 160, `${page} description must be 70-160 characters, is ${description.length}`);
+  const structuredData = JSON.parse(html.match(/<script[^>]*type=["']application\/ld\+json["'][^>]*>([\s\S]*?)<\/script>/i)?.[1] ?? 'null');
+  assert.ok(structuredData?.['@graph']?.some((entry) => entry['@type'] === 'BreadcrumbList'), `${page} needs breadcrumb structured data`);
+  assert.match(html, /href="https:\/\/apps\.apple\.com\/app\/id6787224776"/, `${page} needs the App Store link`);
+  assert.match(html, /cdn\.telemetrydeck\.com\/websdk/, `${page} needs the disclosed website analytics`);
+  assert.equal(builtSitemap.split(`<loc>${url}</loc>`).length - 1, 1, `sitemap must list ${url} once`);
+  assert.match(builtSitemap, new RegExp(`<loc>${url.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}</loc>`), `sitemap is missing ${url}`);
+  assert.doesNotMatch(html, /Personal Kanban/, `${page} must not brand "Personal Kanban"`);
+}
+for (const guide of guides) {
+  // Release notes may mention iCloud in a fix; guides describe what the paid
+  // storage is and must never name iCloud as the Files-folder capability.
+  assert.doesNotMatch(guide.body + guide.fields.title + guide.fields.description, /icloud/i, `${guide.file} must not name iCloud`);
+  const html = read(path.join('dist', `guides/${guide.slug}.html`));
+  assert.ok(JSON.parse(html.match(/<script[^>]*type=["']application\/ld\+json["'][^>]*>([\s\S]*?)<\/script>/i)[1])['@graph'].some((entry) => entry['@type'] === 'TechArticle' && entry.dateModified === guide.fields.updated), `${guide.file} needs TechArticle structured data with its updated date`);
+}
+assert.match(index, /href="\/guides\/"/, 'index.html must link to the guides');
+assert.match(index, /href="\/changelog"/, 'index.html must link to the changelog');
+
+for (const page of htmlPages.filter((file) => file !== 'index.html' && !contentPages.has(file) && !localeManifest.locales.some((locale) => file === `${locale.code}/index.html`))) {
   assert.match(read(path.join('dist', page)), /<meta[^>]+name=["']robots["'][^>]+noindex/i, `${page} must remain noindex`);
 }
 
