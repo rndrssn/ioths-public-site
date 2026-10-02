@@ -7,10 +7,11 @@
 - Platforms: iPhone and iPad, requiring iOS 18.0 or iPadOS 18.0 or later.
 - Core workflow: write notes, add Markdown checklists, view open tasks together, and organize note cards or individual tasks on a kanban board with a configurable work-in-progress limit.
 - File format: UTF-8 Markdown files with YAML frontmatter; compatible with an existing Markdown notes library, including the structure used by Obsidian.
-- Capture: typing, dictation, camera, Share Extension, and on-device PDF-to-Markdown conversion.
+- Capture: typing, dictation, camera, voice recordings, and the Share Extension. Shared web links become notes titled with the page name; shared PDFs are converted to Markdown on device.
+- Import: Google Keep notes from a Google Takeout export, on device, with checklists, labels, and photos.
 - Privacy: notes remain on the device unless the user explicitly activates a storage or sync destination. Optional usage analytics never include note content, titles, or tags.
-- Free features: capture, editing, reading, sharing, PDF conversion, tagging, task tracking, archive, and trash recovery.
-- Full Unlock: a one-time in-app purchase, not a subscription. It adds Files-folder, GitHub, GitLab, and OneDrive storage plus portable ZIP export.
+- Free features: capture, editing, reading, sharing, PDF conversion, Google Keep import, tagging, task tracking, archive, and trash recovery.
+- Full Unlock: a one-time in-app purchase, not a subscription. It adds Files-folder, GitHub, GitLab, and OneDrive storage plus portable ZIP export. Price: US$14.99 in the United States and €17.99 in the euro area; other storefronts use equivalent App Store prices.
 - Developer: Bedrock Rebellion.
 
 ## Canonical links

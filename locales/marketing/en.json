@@ -1,6 +1,6 @@
 {
   "locale": "en",
-  "sourceDigest": "67c1e7bf44b9088b26b49e343ddce9ccbbdf3ee749296c0a815ebb6bbbbb8390",
+  "sourceDigest": "e8c0d9b05128d3712077666896a9831d0d3993ad2390591ec753dd13b9fba970",
   "entries": [
     {
       "id": "metadata.title",
@@ -134,7 +134,7 @@
     },
     {
       "id": "content.p.9",
-      "source": "Write anything. When a note needs a next step, add a checklist: it shows up in Tasks and on a kanban board built for one person, with a limit you set on how much can be in progress. Every note is a plain Markdown file on your device, in the same format Obsidian uses.",
+      "source": "Write anything. When a note needs a next step, add a checklist: it shows up in Tasks and on a kanban board built for one person, with a limit you set on how much can be in progress. Every note is a plain Markdown file on your device, in the same format Obsidian uses, so any Markdown editor can open it.",
       "context": "P content. Preserve any inline HTML tags and attributes."
     },
     {
@@ -169,7 +169,7 @@
     },
     {
       "id": "content.p.16",
-      "source": "Four things it does.",
+      "source": "What it does, and how it fits beside Obsidian.",
       "context": "P content. Preserve any inline HTML tags and attributes."
     },
     {
@@ -238,347 +238,367 @@
       "context": "BUTTON content. Preserve any inline HTML tags and attributes."
     },
     {
-      "id": "content.a.30",
+      "id": "content.h3.30",
+      "source": "Capture from wherever you are.",
+      "context": "H3 content. Preserve any inline HTML tags and attributes."
+    },
+    {
+      "id": "content.p.31",
+      "source": "Type, dictate, take a photo or record a voice note. Share a web link and it becomes a note named after the page; share a PDF and it is converted to Markdown on the device. Moving from Google Keep? Import a Takeout export, checklists and labels included.",
+      "context": "P content. Preserve any inline HTML tags and attributes."
+    },
+    {
+      "id": "content.h3.32",
+      "source": "Already use Obsidian?",
+      "context": "H3 content. Preserve any inline HTML tags and attributes."
+    },
+    {
+      "id": "content.p.33",
+      "source": "ioths is not trying to replace it. Use it as the phone side: write into a folder of your vault, and keep that folder’s tasks on a board with a work-in-progress limit, with no plugins to set up. Obsidian reads the notes as they are. Writing into a vault folder is part of Full Unlock; <a href=\"/guides/obsidian-vault-on-iphone\">see how it works</a>.",
+      "context": "P content. Preserve any inline HTML tags and attributes."
+    },
+    {
+      "id": "content.a.34",
       "source": "<img src=\"/assets/marketing/download-on-the-app-store.svg\" alt=\"Download on the App Store\" width=\"144\" height=\"48\">",
       "context": "A content. Preserve any inline HTML tags and attributes."
     },
     {
-      "id": "content.p.31",
+      "id": "content.p.35",
       "source": "For iPhone and iPad.<br>No ioths account required.",
       "context": "P content. Preserve any inline HTML tags and attributes."
     },
     {
-      "id": "content.p.32",
+      "id": "content.p.36",
       "source": "02 / How it works",
       "context": "P content. Preserve any inline HTML tags and attributes."
     },
     {
-      "id": "content.p.33",
+      "id": "content.p.37",
       "source": "An example note, with its follow-up work.",
       "context": "P content. Preserve any inline HTML tags and attributes."
     },
     {
-      "id": "content.h2.34",
+      "id": "content.h2.38",
       "source": "Keep the task with its context.",
       "context": "H2 content. Preserve any inline HTML tags and attributes."
     },
     {
-      "id": "content.p.35",
+      "id": "content.p.39",
       "source": "The example below starts with a question about a changed deadline. The next steps appear in the same note, beside the reason for doing them.",
       "context": "P content. Preserve any inline HTML tags and attributes."
     },
     {
-      "id": "content.span.36",
+      "id": "content.span.40",
       "source": "Fig. 01 / From note to task",
       "context": "SPAN content. Preserve any inline HTML tags and attributes."
     },
     {
-      "id": "content.span.37",
+      "id": "content.span.41",
       "source": "ioths",
       "context": "SPAN content. Preserve any inline HTML tags and attributes."
     },
     {
-      "id": "content.p.38",
+      "id": "content.p.42",
       "source": "Try it: choose a stage of the note",
       "context": "P content. Preserve any inline HTML tags and attributes."
     },
     {
-      "id": "content.button.39",
+      "id": "content.button.43",
       "source": "01 / Note",
       "context": "BUTTON content. Preserve any inline HTML tags and attributes."
     },
     {
-      "id": "content.button.40",
+      "id": "content.button.44",
       "source": "02 / Checklist",
       "context": "BUTTON content. Preserve any inline HTML tags and attributes."
     },
     {
-      "id": "content.button.41",
+      "id": "content.button.45",
       "source": "03 / Working",
       "context": "BUTTON content. Preserve any inline HTML tags and attributes."
     },
     {
-      "id": "content.h3.42",
+      "id": "content.h3.46",
       "source": "The question is still open.",
       "context": "H3 content. Preserve any inline HTML tags and attributes."
     },
     {
-      "id": "content.p.43",
+      "id": "content.p.47",
       "source": "The note records what changed and what remains uncertain. That is enough to come back to, even before there is an answer.",
       "context": "P content. Preserve any inline HTML tags and attributes."
     },
     {
-      "id": "content.span.44",
+      "id": "content.span.48",
       "source": "In the library",
       "context": "SPAN content. Preserve any inline HTML tags and attributes."
     },
     {
-      "id": "content.li.45",
+      "id": "content.li.49",
       "source": "<span>Why are we reviewing this again?</span><span class=\"journal-tag\">#delivery</span>",
       "context": "LI content. Preserve any inline HTML tags and attributes."
     },
     {
-      "id": "content.h3.46",
+      "id": "content.h3.50",
       "source": "There is something to check.",
       "context": "H3 content. Preserve any inline HTML tags and attributes."
     },
     {
-      "id": "content.p.47",
+      "id": "content.p.51",
       "source": "A checklist makes the follow-up explicit. Its open items also appear in Tasks, alongside items from other notes. The original question stays where it was written.",
       "context": "P content. Preserve any inline HTML tags and attributes."
     },
     {
-      "id": "content.span.48",
+      "id": "content.span.52",
       "source": "In Tasks",
       "context": "SPAN content. Preserve any inline HTML tags and attributes."
     },
     {
-      "id": "content.li.49",
+      "id": "content.li.53",
       "source": "<span class=\"journal-check\" aria-hidden=\"true\"></span><span>Compare scope with the deadline</span>",
       "context": "LI content. Preserve any inline HTML tags and attributes."
     },
     {
-      "id": "content.li.50",
+      "id": "content.li.54",
       "source": "<span class=\"journal-check\" aria-hidden=\"true\"></span><span>Raise the trade-off at the review</span>",
       "context": "LI content. Preserve any inline HTML tags and attributes."
     },
     {
-      "id": "content.h3.51",
+      "id": "content.h3.55",
       "source": "One item done; one still open.",
       "context": "H3 content. Preserve any inline HTML tags and attributes."
     },
     {
-      "id": "content.p.52",
+      "id": "content.p.56",
       "source": "Mark the note in progress to put it in the board’s In Progress lane. The work-in-progress limit caps how many notes carry that status. You choose the limit.",
       "context": "P content. Preserve any inline HTML tags and attributes."
     },
     {
-      "id": "content.span.53",
+      "id": "content.span.57",
       "source": "On the board",
       "context": "SPAN content. Preserve any inline HTML tags and attributes."
     },
     {
-      "id": "content.span.54",
+      "id": "content.span.58",
       "source": "Open",
       "context": "SPAN content. Preserve any inline HTML tags and attributes."
     },
     {
-      "id": "content.span.55",
+      "id": "content.span.59",
       "source": "In progress",
       "context": "SPAN content. Preserve any inline HTML tags and attributes."
     },
     {
-      "id": "content.span.56",
+      "id": "content.span.60",
       "source": "Why are we reviewing this again? <span class=\"journal-card-progress\">1/2",
       "context": "SPAN content. Preserve any inline HTML tags and attributes."
     },
     {
-      "id": "content.span.57",
+      "id": "content.span.61",
       "source": "Done",
       "context": "SPAN content. Preserve any inline HTML tags and attributes."
     },
     {
-      "id": "content.h2.58",
+      "id": "content.h2.62",
       "source": "ioths",
       "context": "H2 content. Preserve any inline HTML tags and attributes."
     },
     {
-      "id": "content.p.59",
+      "id": "content.p.63",
       "source": "For iPhone and iPad.",
       "context": "P content. Preserve any inline HTML tags and attributes."
     },
     {
-      "id": "content.p.60",
+      "id": "content.p.64",
       "source": "Using the app",
       "context": "P content. Preserve any inline HTML tags and attributes."
     },
     {
-      "id": "content.p.61",
+      "id": "content.p.65",
       "source": "There’s no ioths account to create. Notes stay on your device unless you choose an external storage destination.",
       "context": "P content. Preserve any inline HTML tags and attributes."
     },
     {
-      "id": "content.p.62",
-      "source": "Free to use on your device. A one-time Full Unlock, not a subscription, adds Files, GitHub, GitLab and OneDrive storage, and export.",
-      "context": "P content. Preserve any inline HTML tags and attributes."
-    },
-    {
-      "id": "content.p.63",
-      "source": "Usage analytics are off unless you turn them on; they never include note content, titles, or tags. Nothing is sold or used to train an AI model. Read the <a href=\"/legal/privacy\">Privacy Policy</a>.",
-      "context": "P content. Preserve any inline HTML tags and attributes."
-    },
-    {
-      "id": "content.a.64",
-      "source": "<img src=\"/assets/marketing/download-on-the-app-store.svg\" alt=\"Download on the App Store\" width=\"144\" height=\"48\">",
-      "context": "A content. Preserve any inline HTML tags and attributes."
-    },
-    {
-      "id": "content.a.65",
-      "source": "Questions or feedback? Contact support",
-      "context": "A content. Preserve any inline HTML tags and attributes."
-    },
-    {
       "id": "content.p.66",
-      "source": "03 / About",
+      "source": "Free to use on your device. Full Unlock is a one-time purchase, not a subscription: US$14.99 in the United States and €17.99 in the euro area, with equivalent prices set by the App Store elsewhere. It adds Files, GitHub, GitLab and OneDrive storage, and export.",
       "context": "P content. Preserve any inline HTML tags and attributes."
     },
     {
       "id": "content.p.67",
-      "source": "Why it exists.",
+      "source": "Usage analytics are off unless you turn them on; they never include note content, titles, or tags. Nothing is sold or used to train an AI model. Read the <a href=\"/legal/privacy\">Privacy Policy</a>.",
       "context": "P content. Preserve any inline HTML tags and attributes."
     },
     {
-      "id": "content.h2.68",
-      "source": "Why I made it.",
-      "context": "H2 content. Preserve any inline HTML tags and attributes."
+      "id": "content.a.68",
+      "source": "<img src=\"/assets/marketing/download-on-the-app-store.svg\" alt=\"Download on the App Store\" width=\"144\" height=\"48\">",
+      "context": "A content. Preserve any inline HTML tags and attributes."
     },
     {
-      "id": "content.p.69",
-      "source": "I built ioths for myself because the notes apps I had tried never quite fitted, either in what they did or how they felt to use.",
-      "context": "P content. Preserve any inline HTML tags and attributes."
+      "id": "content.a.69",
+      "source": "Questions or feedback? Contact support",
+      "context": "A content. Preserve any inline HTML tags and attributes."
     },
     {
       "id": "content.p.70",
-      "source": "The result is fairly specific: somewhere to write on the phone, keep the file, and add tasks without copying the thought into another tool.",
+      "source": "03 / About",
       "context": "P content. Preserve any inline HTML tags and attributes."
     },
     {
       "id": "content.p.71",
+      "source": "Why it exists.",
+      "context": "P content. Preserve any inline HTML tags and attributes."
+    },
+    {
+      "id": "content.h2.72",
+      "source": "Why I made it.",
+      "context": "H2 content. Preserve any inline HTML tags and attributes."
+    },
+    {
+      "id": "content.p.73",
+      "source": "I built ioths for myself because the notes apps I had tried never quite fitted, either in what they did or how they felt to use.",
+      "context": "P content. Preserve any inline HTML tags and attributes."
+    },
+    {
+      "id": "content.p.74",
+      "source": "The result is fairly specific: somewhere to write on the phone, keep the file, and add tasks without copying the thought into another tool.",
+      "context": "P content. Preserve any inline HTML tags and attributes."
+    },
+    {
+      "id": "content.p.75",
       "source": "04 / The icon",
       "context": "P content. Preserve any inline HTML tags and attributes."
     },
     {
-      "id": "content.p.72",
+      "id": "content.p.76",
       "source": "What it refers to.",
       "context": "P content. Preserve any inline HTML tags and attributes."
     },
     {
-      "id": "content.h2.73",
+      "id": "content.h2.77",
       "source": "A note, dissolving into cells.",
       "context": "H2 content. Preserve any inline HTML tags and attributes."
     },
     {
-      "id": "content.p.74",
+      "id": "content.p.78",
       "source": "The icon nods to Conway’s Game of Life: a grid of cells that changes by a few fixed rules.",
       "context": "P content. Preserve any inline HTML tags and attributes."
     },
     {
-      "id": "content.summary.75",
+      "id": "content.summary.79",
       "source": "The rules, in full",
       "context": "SUMMARY content. Preserve any inline HTML tags and attributes."
     },
     {
-      "id": "content.p.76",
+      "id": "content.p.80",
       "source": "Conway’s Game of Life is played on a grid of square cells. Each cell is either alive or empty. To find the next generation, count each cell’s neighbours: the eight cells that touch it, diagonals included. Then apply four rules.",
       "context": "P content. Preserve any inline HTML tags and attributes."
     },
     {
-      "id": "content.li.77",
+      "id": "content.li.81",
       "source": "<strong>Loneliness.</strong> A living cell with fewer than two living neighbours dies.",
       "context": "LI content. Preserve any inline HTML tags and attributes."
     },
     {
-      "id": "content.li.78",
+      "id": "content.li.82",
       "source": "<strong>Survival.</strong> A living cell with two or three living neighbours stays alive.",
       "context": "LI content. Preserve any inline HTML tags and attributes."
     },
     {
-      "id": "content.li.79",
+      "id": "content.li.83",
       "source": "<strong>Crowding.</strong> A living cell with more than three living neighbours dies.",
       "context": "LI content. Preserve any inline HTML tags and attributes."
     },
     {
-      "id": "content.li.80",
+      "id": "content.li.84",
       "source": "<strong>Birth.</strong> An empty cell with exactly three living neighbours becomes alive.",
       "context": "LI content. Preserve any inline HTML tags and attributes."
     },
     {
-      "id": "content.p.81",
+      "id": "content.p.85",
       "source": "Every cell is judged at the same moment, using only the current generation. The whole grid then changes at once. The mathematician John Conway devised the rules in 1970.",
       "context": "P content. Preserve any inline HTML tags and attributes."
     },
     {
-      "id": "content.p.82",
+      "id": "content.p.86",
       "source": "The field here is finite: the left and right edges join, as do the top and bottom, so a pattern that leaves one side returns from the other. It starts from the R-pentomino, five cells that take 1,103 generations to settle on an unbounded grid. On a small, wrapped field they unfold differently, so use Step to follow the first few generations.",
       "context": "P content. Preserve any inline HTML tags and attributes."
     },
     {
-      "id": "content.a.83",
+      "id": "content.a.87",
       "source": "More on emergence at Plato’s Cave <span aria-hidden=\"true\">↗</span>",
       "context": "A content. Preserve any inline HTML tags and attributes."
     },
     {
-      "id": "content.span.84",
+      "id": "content.span.88",
       "source": "Fig. 02 / Game of Life",
       "context": "SPAN content. Preserve any inline HTML tags and attributes."
     },
     {
-      "id": "content.span.85",
+      "id": "content.span.89",
       "source": "Seed: R-pentomino",
       "context": "SPAN content. Preserve any inline HTML tags and attributes."
     },
     {
-      "id": "content.p.86",
+      "id": "content.p.90",
       "source": "This interactive figure needs JavaScript and canvas support. It begins with five living cells in an R-pentomino pattern; the rules are described in the text beside it.",
       "context": "P content. Preserve any inline HTML tags and attributes."
     },
     {
-      "id": "content.button.87",
+      "id": "content.button.91",
       "source": "Start",
       "context": "BUTTON content. Preserve any inline HTML tags and attributes."
     },
     {
-      "id": "content.button.88",
+      "id": "content.button.92",
       "source": "Step",
       "context": "BUTTON content. Preserve any inline HTML tags and attributes."
     },
     {
-      "id": "content.button.89",
+      "id": "content.button.93",
       "source": "Reset",
       "context": "BUTTON content. Preserve any inline HTML tags and attributes."
     },
     {
-      "id": "content.p.91",
+      "id": "content.p.95",
       "source": "Start runs the field. Step advances one generation. Reset returns to the seed.",
       "context": "P content. Preserve any inline HTML tags and attributes."
     },
     {
-      "id": "content.p.92",
+      "id": "content.p.96",
       "source": "ioths / An independent tool by Bedrock Rebellion",
       "context": "P content. Preserve any inline HTML tags and attributes."
     },
     {
-      "id": "content.a.93",
+      "id": "content.a.97",
       "source": "Guides",
       "context": "A content. Preserve any inline HTML tags and attributes."
     },
     {
-      "id": "content.a.94",
+      "id": "content.a.98",
       "source": "Changelog",
       "context": "A content. Preserve any inline HTML tags and attributes."
     },
     {
-      "id": "content.a.95",
+      "id": "content.a.99",
       "source": "Contact",
       "context": "A content. Preserve any inline HTML tags and attributes."
     },
     {
-      "id": "content.a.96",
+      "id": "content.a.100",
       "source": "Privacy",
       "context": "A content. Preserve any inline HTML tags and attributes."
     },
     {
-      "id": "content.a.97",
+      "id": "content.a.101",
       "source": "Terms",
       "context": "A content. Preserve any inline HTML tags and attributes."
     },
     {
-      "id": "content.a.98",
+      "id": "content.a.102",
       "source": "Legal notice",
       "context": "A content. Preserve any inline HTML tags and attributes."
     },
     {
-      "id": "content.p.99",
+      "id": "content.p.103",
       "source": "Apple, the Apple logo, iPhone, and iPad are trademarks of Apple Inc., registered in the U.S. and other countries. App Store is a service mark of Apple Inc.",
       "context": "P content. Preserve any inline HTML tags and attributes."
     },
